@@ -2,7 +2,7 @@
 <RomConfig>
     <GeneralConfig>
         <Type>ROM</Type>
-        <Device>EG4S20BG256</Device>
+        <Device>EF2L15LG100B</Device>
         <create_VHDL>false</create_VHDL>
         <inst>ImgROM</inst>
         <debug_enable>false</debug_enable>

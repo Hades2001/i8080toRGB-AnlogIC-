@@ -5,8 +5,8 @@
     <UCode>00011000</UCode>
     <Name>LCD_8080ToRGB</Name>
     <HardWare>
-        <Family>EG4</Family>
-        <Device>EG4S20BG256</Device>
+        <Family>EF2</Family>
+        <Device>EF2L15LG100B</Device>
     </HardWare>
     <Source_Files>
         <Verilog>
@@ -24,12 +24,12 @@
         <CWC_FILE/>
     </Source_Files>
     <TOP_MODULE>
-        <LABEL/>
+        <LABEL></LABEL>
         <MODULE>TOP</MODULE>
         <CREATEINDEX>auto</CREATEINDEX>
     </TOP_MODULE>
     <Project_Settings>
-        <Step_Last_Change>2019-05-13 11:08:32</Step_Last_Change>
+        <Step_Last_Change>2019-05-13 23:51:29</Step_Last_Change>
         <Current_Step>0</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>

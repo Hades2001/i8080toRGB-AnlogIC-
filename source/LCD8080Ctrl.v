@@ -66,7 +66,7 @@ module LCD8080Ctrl
     end
 
     assign  FIFO_WClk   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? J80_CLK : CLK; 
-    assign  FIFOWe      = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1    : 1'b0;
+    assign  FIFOWe      = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1 : 1'b0 ;
     assign  J80_Re      = ( LCD_Ctrl_Reg[3] ) ? ( HSYNC | VSYNC ) : HSYNC ;
 
 
@@ -93,7 +93,7 @@ module LCD8080Ctrl
         end
     end
 
-    assign FIFOWe = (( AddrCtrl >= 16'd0 )&&(AddrCtrl < 16'd1600)&&( VSYNC == 1'b0 )&&( HSYNC == 1'b0 )) ? 1'b1 : 1'b0;
+    //assign FIFOWe = (( AddrCtrl >= 16'd0 )&&(AddrCtrl < 16'd1600)&&( VSYNC == 1'b0 )&&( HSYNC == 1'b0 )) ? 1'b1 : 1'b0;
 
     assign RGBData = (( AddrCtrl[0] == 0 )&&( AddrCtrl >= 16'd0    )&&(AddrCtrl < 16'd400  )) ? 8'b0000_0000 : 
                      (( AddrCtrl[0] == 1 )&&( AddrCtrl >= 16'd0    )&&(AddrCtrl < 16'd400  )) ? 8'b0001_1111 :

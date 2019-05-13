@@ -1,0 +1,284 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\13.1\modelsim_ae\Analog
+vAL_DFF
+Z1 INGOgW^CU2`dZAmEBWMQGU0
+Z2 Vz<RFT?n=YDH41M[o??mz51
+Z3 dH:\FPGAPrg\i8080toRGB-AnlogIC-\ModelSim
+Z4 w1557762690
+Z5 8H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/ROM_sim.v
+Z6 FH:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/ROM_sim.v
+Z7 L0 2413
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1557762736.900000
+Z10 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/ROM_sim.v|
+Z11 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/ROM_sim.v|
+Z12 o-work work -O0
+Z13 n@a@l_@d@f@f
+Z14 !s100 7bQ9[_6<83g^K6cLeWS6T2
+!i10b 1
+!s85 0
+!s101 -O0
+vAL_MUX
+Z15 I6nRPckZbjZhB0AZKkWzGZ2
+Z16 V@iI2d_lCa:_9Xghdd1m?30
+R3
+R4
+R5
+R6
+Z17 L0 2397
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z18 n@a@l_@m@u@x
+Z19 !s100 WSGg8aZ^=Yd3SR9j06@_l0
+!i10b 1
+!s85 0
+!s101 -O0
+vCLK_MOD
+Z20 I3ZMz>S4VZ@i@NU5l@25Hk2
+Z21 VzIa`Ch9PZaE7]:e8QE@;22
+R3
+Z22 w1557750578
+Z23 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v
+Z24 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v
+L0 1
+R8
+r1
+31
+R12
+Z25 n@c@l@k_@m@o@d
+Z26 !s100 0o4X647RH4b>ccQ?dkLkM3
+Z27 !s108 1557762549.817000
+Z28 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v|
+Z29 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vCNC_COUNTER_TB
+Z30 !s100 fT]Fg2^4>g@Q_P91GbW3z3
+Z31 IhT`J;Sm6_?Za`;_TAd_Lm3
+Z32 VJl;zU<bQ]2C79n6Q1BDzf1
+R3
+Z33 w1557762511
+Z34 8H:/FPGAPrg/i8080toRGB-AnlogIC-/ModelSim/ModelSim_tb.v
+Z35 FH:/FPGAPrg/i8080toRGB-AnlogIC-/ModelSim/ModelSim_tb.v
+L0 3
+R8
+r1
+31
+Z36 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/ModelSim/ModelSim_tb.v|
+R12
+Z37 n@c@n@c_@c@o@u@n@t@e@r_@t@b
+Z38 !s108 1557762863.169000
+Z39 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/ModelSim/ModelSim_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDisFIFO
+Z40 IWE4PcL26`TI:io5R08XAd1
+Z41 VgSD_5[9Zh`TlfC[EUTXY92
+R3
+Z42 w1557762713
+Z43 8H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/DisFIFO_sim.v
+Z44 FH:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/DisFIFO_sim.v
+L0 5
+R8
+r1
+31
+R12
+Z45 n@dis@f@i@f@o
+Z46 !s100 L6@n?8E;2]Y:d55OO<Fio0
+Z47 !s108 1557762736.682000
+Z48 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/DisFIFO_sim.v|
+Z49 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/DisFIFO_sim.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vImgROM
+Z50 I`38;ahm6VIhfifTN2cV3`1
+Z51 VP`fS=1c8:`ZlKNj=YD[8_0
+R3
+R4
+R5
+R6
+L0 5
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z52 n@img@r@o@m
+Z53 !s100 ihUibAIRz`nGFd1?36gdz3
+!i10b 1
+!s85 0
+!s101 -O0
+vLCD8080Ctrl
+Z54 Ib8dLU12mg>US6jNj;@1S>1
+Z55 V9PBK2XdeTHX9=[g:W2PC13
+R3
+Z56 w1557764485
+Z57 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v
+Z58 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v
+L0 1
+R8
+r1
+31
+Z59 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v|
+R12
+Z60 n@l@c@d8080@ctrl
+!i10b 1
+Z61 !s100 mf8EFLCdgh?Q_dnI<PaX^2
+!s85 0
+Z62 !s108 1557764495.097000
+Z63 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v|
+!s101 -O0
+vLCDCTRL
+Z64 IP88e=N`@IGoAcom:A6JI_3
+Z65 VgN9iV;RTnCICe:OL7ND8U2
+R3
+R22
+Z66 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v
+Z67 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v
+L0 1
+R8
+r1
+31
+R12
+Z68 n@l@c@d@c@t@r@l
+Z69 !s100 enP3Q6;gEWa4VkQG^>Ij`2
+Z70 !s108 1557762549.970000
+Z71 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v|
+Z72 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vLCDPLL
+Z73 I?]QO=PaMM>UV82LQ[YBVD1
+Z74 VDn2Mlb`PWb@[hh;@57j4d1
+R3
+Z75 w1557762717
+Z76 8H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/LCDPLL_sim.v
+Z77 FH:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/LCDPLL_sim.v
+L0 5
+R8
+r1
+31
+R12
+Z78 n@l@c@d@p@l@l
+Z79 !s100 R8BVP7d?dXn6BjejL_VFe0
+Z80 !s108 1557762736.781000
+Z81 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/LCDPLL_sim.v|
+Z82 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/LCDPLL_sim.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vModelSim
+!i10b 1
+!s100 j`ZKX1fV2J2jFH=G17lUQ1
+IjA4P007PXiJiT7jkXgYNf2
+Z83 V@75kC;]mLNdSW[4eE`Va]1
+R3
+w1557764537
+R34
+R35
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1557764546.709000
+!s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/ModelSim/ModelSim_tb.v|
+R36
+!s101 -O0
+R12
+Z84 n@model@sim
+vPWM
+Z85 IGlfF?z1Ym>=12[b5U0QPK0
+Z86 VimM@YKhSc?kOcB7VJIfR[1
+R3
+R22
+Z87 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v
+Z88 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v
+L0 1
+R8
+r1
+31
+R12
+Z89 n@p@w@m
+Z90 !s100 DUTzO974E6UEh^3ZY^EJc3
+Z91 !s108 1557762550.112000
+Z92 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v|
+Z93 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vreg_sr_as_w1
+Z94 IA>h<k;2:WF;[06OWZhFa;1
+Z95 VOOG><TkDBMIN3`FFHh[i31
+R3
+R4
+R5
+R6
+Z96 L0 2355
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z97 !s100 =cOZHnVIjOek]P0?gld;`2
+!i10b 1
+!s85 0
+!s101 -O0
+vTOP
+Z98 IK`6M7QfXbmULbbiUcIK272
+Z99 VTe<W1G^GF2I1?kIcYT_m51
+R3
+Z100 w1557752338
+Z101 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/TOP.v
+Z102 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/TOP.v
+L0 1
+R8
+r1
+31
+R12
+Z103 n@t@o@p
+Z104 !s100 0bORXM^4TCG2]]g^hOHdg0
+Z105 !s108 1557762550.239000
+Z106 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/TOP.v|
+Z107 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/TOP.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vVGAMod
+Z108 Iek[EE>`7UEZiK1;g`<0lo3
+Z109 VGnB_GME[faeA<7M^DLlOA2
+R3
+Z110 w1557753183
+Z111 8H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v
+Z112 FH:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v
+L0 1
+R8
+r1
+31
+R12
+Z113 n@v@g@a@mod
+Z114 !s100 mCXb8lPP9IVAYFNhhPbem0
+Z115 !s108 1557762550.371000
+Z116 !s107 H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v|
+Z117 !s90 -reportprogress|300|-work|work|H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v|
+!i10b 1
+!s85 0
+!s101 -O0

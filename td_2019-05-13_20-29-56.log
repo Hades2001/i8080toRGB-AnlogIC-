@@ -29,3 +29,26 @@ ARC-1001 :           program_b          |          T2          |  dedicated
 ARC-1001 :        tdi/tms/tck/tdo       |   C12/A15/C14/E14    |  dedicated  
 ARC-1001 : ------------------------------------------------------------------
 ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+HDL-1007 : analyze verilog file H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file H:/FPGAPrg/i8080toRGB-AnlogIC-/source/TOP.v
+HDL-1007 : analyze verilog file H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-1007 : analyze verilog file al_ip/ROM.v
+RUN-1002 : start command "import_device ef2_1.db -package EF2L15LG100B"
+ARC-1001 : Device Initialization.
+ARC-1001 : -----------------------------------------------------
+ARC-1001 :       OPTION       |        IO         |   SETTING   
+ARC-1001 : -----------------------------------------------------
+ARC-1001 :        done        |        P76        |    gpio    
+ARC-1001 :        initn       |        P77        |    gpio    
+ARC-1001 :      programn      |        P81        |  dedicated  
+ARC-1001 :   tdi/tms/tck/tdo  |  P94/P90/P91/P95  |  dedicated  
+ARC-1001 : -----------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+HDL-1007 : analyze verilog file H:/FPGAPrg/i8080toRGB-AnlogIC-/al_ip/ROM.v
