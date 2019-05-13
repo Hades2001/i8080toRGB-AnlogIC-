@@ -17532,3 +17532,887 @@ RUN-1003 : finish command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8
 
 RUN-1004 : used memory is 317 MB, reserved memory is 295 MB, peak memory is 386 MB
 GUI-1001 : Download success!
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-8007 ERROR: syntax error near '<<<' in source/CLK_MOD.v(1)
+HDL-1007 : Verilog file 'source/CLK_MOD.v' ignored due to errors
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/PWM.v(1)
+HDL-1007 : Verilog file 'source/PWM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(1)
+HDL-1007 : Verilog file 'al_ip/DisFIFO.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(1)
+HDL-1007 : Verilog file 'al_ip/LCDPLL.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : Verilog file 'source/VGAMod.v' ignored due to errors
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-8007 ERROR: syntax error near '<<<' in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/ROM.v(1)
+HDL-1007 : Verilog file 'al_ip/ROM.v' ignored due to errors
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-1007 : analyze verilog file source/PWM.v
+HDL-1007 : analyze verilog file E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v
+HDL-1007 : analyze verilog file source/CLK_MOD.v
+HDL-1007 : analyze verilog file source/LCD8080Ctrl.v
+HDL-1007 : analyze verilog file source/LCDCTRL.v
+HDL-1007 : analyze verilog file source/TOP.v
+HDL-1007 : analyze verilog file source/VGAMod.v
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : analyze verilog file al_ip/LCDPLL.v
+HDL-1007 : analyze verilog file al_ip/ROM.v
+HDL-1007 : analyze verilog file source/PWM.v
+RUN-1002 : start command "elaborate -top TOP"
+HDL-5007 WARNING: port 'J80_CLK' is not connected on this instance in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(81)
+HDL-5007 WARNING: port 'J80_RS' remains unconnected for this instance in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(81)
+HDL-1007 : elaborate module TOP in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
+HDL-1007 : elaborate module LCDPLL in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(25)
+HDL-1007 : elaborate module EF2_LOGIC_BUFG in C:/Anlogic/TD4.4.433/arch/ef2_macro.v(80)
+HDL-1007 : elaborate module EF2_PHY_PLL(FIN="50.000",REFCLK_DIV=3,FBCLK_DIV=6,CLKC0_DIV=10,CLKC1_DIV=30,CLKC2_DIV=40,CLKC3_DIV=111,CLKC0_ENABLE="ENABLE",CLKC1_ENABLE="ENABLE",CLKC2_ENABLE="ENABLE",CLKC3_ENABLE="ENABLE",FEEDBK_PATH="CLKC0_EXT",STDBY_ENABLE="DISABLE",CLKC0_CPHASE=9,CLKC1_CPHASE=29,CLKC2_CPHASE=39,CLKC3_CPHASE=110,GMC_GAIN=6,ICP_CURRENT=3,KVCO=6,LPF_RESISTOR=2,SYNC_ENABLE="DISABLE",INTPI=3,HIGH_SPEED_EN="ENABLE",OFFSET_MODE="EXT",CLKC0_DUTY=0.5,CLKC1_DUTY=0.5,CLKC0_DUTY_INT=5,CLKC1_DUTY_INT=15) in C:/Anlogic/TD4.4.433/arch/ef2_macro.v(2686)
+HDL-1007 : elaborate module DisFIFO in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(14)
+HDL-1007 : elaborate module EF2_LOGIC_FIFO(DATA_WIDTH_W=8,DATA_WIDTH_R=16,DATA_DEPTH_W=2048,DATA_DEPTH_R=1024,F=2048,ENDIAN="BIG") in C:/Anlogic/TD4.4.433/arch/ef2_macro.v(220)
+HDL-1007 : elaborate module LCD8080Ctrl in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(1)
+HDL-5007 WARNING: net 'OutDataReg[7]' does not have a driver in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+HDL-1007 : elaborate module VGAMod in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
+HDL-1007 : elaborate module CLK_MOD in source/CLK_MOD.v(1)
+HDL-5007 WARNING: input port 'J80_CLK' is not connected on this instance in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67)
+HDL-5007 WARNING: input port 'J80_RS' remains unconnected for this instance in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67)
+HDL-1200 : Current top model is TOP
+HDL-1100 : Inferred 0 RAMs.
+RUN-1002 : start command "optimize_rtl"
+RUN-1001 : Open license file C:/Anlogic/TD4.4.433/license/Anlogic.lic
+SYN-1012 : SanityCheck: Model "TOP"
+SYN-1012 : SanityCheck: Model "VGAMod"
+SYN-1012 : SanityCheck: Model "DisFIFO"
+SYN-1012 : SanityCheck: Model "LCDPLL"
+SYN-1012 : SanityCheck: Model "CLK_MOD"
+SYN-1012 : SanityCheck: Model "LCD8080Ctrl"
+SYN-1043 : Mark LCD8080Ctrl as IO macro for instance u23
+SYN-1043 : Mark LCDPLL as IO macro for instance bufg_feedback
+SYN-5011 WARNING: Undriven pin: model "TOP" / inst "U4" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67) / pin "J80_CLK"
+SYN-5011 WARNING: Undriven pin: model "TOP" / inst "U4" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67) / pin "J80_RS"
+SYN-5011 WARNING: Undriven pin: model "TOP" / inst "U4" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67) / pin "J80_Re"
+SYN-5011 WARNING: Undriven pin: model "TOP" / inst "U4" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67) / pin "J80_We"
+SYN-5025 WARNING: Using 0 for all undriven pins and nets
+SYN-1016 : Merged 6 instances.
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "FIFO_WClk" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(16)
+SYN-5014 WARNING: the net's pin: pin "FIFO_WClk" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(16)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[1]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[2]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[3]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[4]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[5]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[6]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5013 WARNING: Undriven net: model "LCD8080Ctrl" / net "OutDataReg[7]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
+SYN-5014 WARNING: the net's pin: pin "I[0]" in E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+SYN-5025 WARNING: Using 0 for all undriven pins and nets
+SYN-1016 : Merged 40 instances.
+SYN-1011 : Flatten model TOP
+SYN-1011 : Flatten model VGAMod
+SYN-1011 : Flatten model DisFIFO
+SYN-1011 : Flatten model LCDPLL
+SYN-1011 : Flatten model CLK_MOD
+SYN-1011 : Flatten model LCD8080Ctrl
+SYN-1016 : Merged 15 instances.
+SYN-1014 : Optimize round 1
+SYN-1044 : Optimized 1 inv instances.
+SYN-1032 : 526/17 useful/useless nets, 400/13 useful/useless insts
+SYN-1019 : Optimized 2 mux instances.
+SYN-1021 : Optimized 1 onehot mux instances.
+SYN-1020 : Optimized 33 distributor mux.
+SYN-1016 : Merged 97 instances.
+SYN-1015 : Optimize round 1, 184 better
+SYN-1014 : Optimize round 2
+SYN-1044 : Optimized 1 inv instances.
+SYN-1032 : 489/9 useful/useless nets, 363/39 useful/useless insts
+SYN-1019 : Optimized 0 mux instances.
+SYN-1015 : Optimize round 2, 43 better
+SYN-1014 : Optimize round 3
+SYN-1032 : 488/0 useful/useless nets, 362/0 useful/useless insts
+SYN-1019 : Optimized 0 mux instances.
+SYN-1015 : Optimize round 3, 0 better
+RUN-1002 : start command "report_area -file LCD_8080ToRGB_rtl.area"
+RUN-1001 : standard
+***Report Model: TOP***
+
+IO Statistics
+#IO                    33
+  #input                2
+  #output              31
+  #inout                0
+
+Gate Statistics
+#Basic gates          193
+  #and                 30
+  #nand                 0
+  #or                   0
+  #nor                  0
+  #xor                  0
+  #xnor                 0
+  #buf                  0
+  #not                 13
+  #bufif1               0
+  #MX21                36
+  #FADD                 0
+  #DFF                114
+  #LATCH                0
+#MACRO_ADD             22
+#MACRO_EQ               6
+#MACRO_MUX            136
+
+RUN-1001 : 
+Report Hierarchy Area:
++-----------------------------------------+
+|Instance |Module |gates  |seq    |macros |
++-----------------------------------------+
+|top      |TOP    |79     |114    |30     |
++-----------------------------------------+
+
+RUN-1002 : start command "read_adc IO/io.adc"
+RUN-1002 : start command "set_pin_assignment clk  LOCATION = P4; "
+RUN-1002 : start command "set_pin_assignment nRST  LOCATION = P12; "
+RUN-1002 : start command "set_pin_assignment LED[0]  LOCATION = P64; "
+RUN-1002 : start command "set_pin_assignment LED[1]  LOCATION = P63; "
+RUN-1002 : start command "set_pin_assignment LCDBK  LOCATION = P9; "
+RUN-1002 : start command "set_pin_assignment LCD_CLK  LOCATION = P62; "
+RUN-1002 : start command "set_pin_assignment LCD_HYNC  LOCATION = P58; "
+RUN-1002 : start command "set_pin_assignment LCD_SYNC  LOCATION = P59; "
+RUN-1002 : start command "set_pin_assignment LCD_DEN  LOCATION = P60; "
+RUN-1002 : start command "set_pin_assignment LCD_R[0]  LOCATION = P27; "
+RUN-1002 : start command "set_pin_assignment LCD_R[1]  LOCATION = P28; "
+RUN-1002 : start command "set_pin_assignment LCD_R[2]  LOCATION = P29; "
+RUN-1002 : start command "set_pin_assignment LCD_R[3]  LOCATION = P30; "
+RUN-1002 : start command "set_pin_assignment LCD_R[4]  LOCATION = P31; "
+RUN-1002 : start command "set_pin_assignment LCD_R[5]  LOCATION = P32; "
+RUN-1002 : start command "set_pin_assignment LCD_R[6]  LOCATION = P34; "
+RUN-1002 : start command "set_pin_assignment LCD_R[7]  LOCATION = P35; "
+RUN-1002 : start command "set_pin_assignment LCD_G[0]  LOCATION = P36; "
+RUN-1002 : start command "set_pin_assignment LCD_G[1]  LOCATION = P37; "
+RUN-1002 : start command "set_pin_assignment LCD_G[2]  LOCATION = P38; "
+RUN-1002 : start command "set_pin_assignment LCD_G[3]  LOCATION = P39; "
+RUN-1002 : start command "set_pin_assignment LCD_G[4]  LOCATION = P40; "
+RUN-1002 : start command "set_pin_assignment LCD_G[5]  LOCATION = P41; "
+RUN-1002 : start command "set_pin_assignment LCD_G[6]  LOCATION = P42; "
+RUN-1002 : start command "set_pin_assignment LCD_G[7]  LOCATION = P43; "
+RUN-1002 : start command "set_pin_assignment LCD_B[0]  LOCATION = P45; "
+RUN-1002 : start command "set_pin_assignment LCD_B[1]  LOCATION = P47; "
+RUN-1002 : start command "set_pin_assignment LCD_B[2]  LOCATION = P48; "
+RUN-1002 : start command "set_pin_assignment LCD_B[3]  LOCATION = P49; "
+RUN-1002 : start command "set_pin_assignment LCD_B[4]  LOCATION = P51; "
+RUN-1002 : start command "set_pin_assignment LCD_B[5]  LOCATION = P52; "
+RUN-1002 : start command "set_pin_assignment LCD_B[6]  LOCATION = P53; "
+RUN-1002 : start command "set_pin_assignment LCD_B[7]  LOCATION = P54; "
+RUN-1002 : start command "export_db LCD_8080ToRGB_rtl.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "optimize_gate -packarea LCD_8080ToRGB_gate.area"
+RUN-1001 : Open license file C:/Anlogic/TD4.4.433/license/Anlogic.lic
+SYN-2001 : Map 33 IOs to PADs
+SYN-2501 : Processed 0 LOGIC_BUF instances.
+SYN-2501 : 1 BUFG to GCLK
+SYN-2541 : Logic FIFO "FIFO0/logic_fifo"
+SYN-2541 : Write 2048x8, read 1024x16.
+SYN-2571 : Optimize after map_dsp, round 1
+SYN-1032 : 526/7 useful/useless nets, 401/0 useful/useless insts
+SYN-1016 : Merged 1 instances.
+SYN-2571 : Optimize after map_dsp, round 1, 1 better
+SYN-2571 : Optimize after map_dsp, round 2
+SYN-1032 : 525/0 useful/useless nets, 400/0 useful/useless insts
+SYN-2571 : Optimize after map_dsp, round 2, 0 better
+SYN-2501 : Optimize round 1
+SYN-1032 : 646/0 useful/useless nets, 521/0 useful/useless insts
+SYN-1016 : Merged 1 instances.
+SYN-2501 : Optimize round 1, 101 better
+SYN-2501 : Optimize round 2
+SYN-1032 : 645/0 useful/useless nets, 520/0 useful/useless insts
+SYN-2501 : Optimize round 2, 0 better
+SYN-2501 : Map 22 macro adder
+SYN-1032 : 1051/0 useful/useless nets, 926/0 useful/useless insts
+SYN-3001 : Running gate level optimization.
+SYN-2553 : LUT mapping.
+SYN-2551 : Post mapping optimization.
+SYN-3001 : Logic optimization runtime opt =   0.04 sec, map =   0.00 sec
+SYN-2581 : Mapping with K=5, #lut = 166 (2.82), #lev = 5 (3.37)
+SYN-3001 : Mapper mapped 344 instances into 172 LUTs, name keeping = 84%.
+SYN-1001 : Packing model "TOP" ...
+SYN-4010 : Pack lib has 35 rtl pack models with 12 top pack blocks
+SYN-1014 : Optimize round 1
+SYN-1032 : 874/0 useful/useless nets, 749/0 useful/useless insts
+SYN-1015 : Optimize round 1, 0 better
+SYN-4002 : Packing 114 DFF/LATCH to SEQ ...
+SYN-4009 : Pack 5 carry chain into lslice
+SYN-4007 : Packing 306 adder to BLE ...
+SYN-4008 : Packed 306 adder and 0 SEQ to BLE.
+SYN-4007 : Packing 0 gate4 to BLE ...
+SYN-4008 : Packed 0 gate4 and 0 SEQ to BLE.
+SYN-4012 : Packed 0 FxMUX
+SYN-4007 : Packing 0 MUX to BLE ...
+SYN-4008 : Packed 0 MUX and 0 SEQ to BLE.
+SYN-4007 : Packing 172 LUT to BLE ...
+SYN-4008 : Packed 172 LUT and 114 SEQ to BLE.
+SYN-4003 : Packing 0 remaining SEQ's ...
+SYN-4004 : #0: Packed 0 SEQ (0 nodes)...
+SYN-4005 : Packed 0 SEQ with LUT/SLICE
+SYN-4006 : 58 single LUT's are left
+SYN-4006 : 0 single SEQ's are left
+SYN-4011 : Packing model "TOP" (AL_USER_NORMAL) with 172/398 primitive instances ...
+RUN-1002 : start command "report_area -file LCD_8080ToRGB_gate.area"
+RUN-1001 : standard
+***Report Model: TOP***
+
+IO Statistics
+#IO                    33
+  #input                2
+  #output              31
+  #inout                0
+
+Utilization Statistics
+#lut                  544   out of   1520   35.79%
+#reg                  114   out of   1520    7.50%
+#le                   544
+  #lut only           430   out of    544   79.04%
+  #reg only             0   out of    544    0.00%
+  #lut&reg            114   out of    544   20.96%
+#dsp                    0   out of      8    0.00%
+#bram                   2   out of      6   33.33%
+  #bram9k               0
+  #fifo9k               2
+#bram32k                0   out of      3    0.00%
+#pad                   33   out of     75   44.00%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    1   out of      1  100.00%
+#clknet                 0   out of     16    0.00%
+  #gclk                 1
+
+RUN-1001 : 
+Report Hierarchy Area:
++--------------------------------------+
+|Instance |Module |le    |lut   |seq   |
++--------------------------------------+
+|top      |TOP    |544   |544   |114   |
++--------------------------------------+
+
+RUN-1002 : start command "legalize_phy_inst"
+SYN-1011 : Flatten model TOP
+RUN-1002 : start command "legalize_phy_inst"
+SYN-1011 : Flatten model TOP
+RUN-1002 : start command "export_db LCD_8080ToRGB_gate.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "place"
+RUN-1001 : Open license file C:/Anlogic/TD4.4.433/license/Anlogic.lic
+PHY-3001 : Placer runs in 4 thread(s).
+SYN-4016 : Net CLK_100M driven by BUFG (10 clock/control pins, 1 other pins).
+SYN-4027 : Net LCD_CLK_pad is clkc1 of pll PLL1/pll_inst.
+SYN-4019 : Net clk_pad is refclk of pll PLL1/pll_inst.
+SYN-4020 : Net clk_pad is fbclk of pll PLL1/pll_inst.
+SYN-4024 : Net "LCD_CLK_pad" drive clk pins.
+SYN-4024 : Net "clk_pad" drive clk pins.
+SYN-4024 : Net "CLK_100M" drive clk pins.
+SYN-4025 : Tag rtl::Net CLK_100M as clock net
+SYN-4025 : Tag rtl::Net LCD_CLK_pad as clock net
+SYN-4025 : Tag rtl::Net clk_pad as clock net
+SYN-4026 : Tagged 3 rtl::Net as clock net
+RUN-1001 : There are total 313 instances
+RUN-1001 : 153 mslices, 120 lslices, 33 pads, 2 brams, 0 dsps
+RUN-1001 : There are total 523 nets
+RUN-1001 : 375 nets have 2 pins
+RUN-1001 : 86 nets have [3 - 5] pins
+RUN-1001 : 33 nets have [6 - 10] pins
+RUN-1001 : 22 nets have [11 - 20] pins
+RUN-1001 : 5 nets have [21 - 99] pins
+RUN-1001 : 2 nets have 100+ pins
+PHY-3001 : Initial placement ...
+PHY-3001 : design contains 311 instances, 273 slices, 22 macros(186 instances)
+PHY-3001 : Start timing update ...
+RUN-1002 : start command "start_timer"
+TMR-5001 WARNING: No sdc constraints found while initiating timer.
+TMR-2505 : Start building timing graph for model TOP.
+TMR-2506 : Build timing graph completely. Port num: 11, tpin num: 1750, tnet num: 521, tinst num: 311, tnode num: 1996, tedge num: 2897.
+TMR-2507 : Eliminate loop in the timing graph, delete 0 tedges.
+TMR-2508 : Levelizing timing graph completed, there are 28 levels in total.
+TMR-2501 : Timing graph initialized successfully.
+TMR-2503 : Start to update net delay, extr mode = 2.
+TMR-2504 : Update delay of 521 nets completely.
+TMR-2502 : Annotate delay completely, extr mode = 2.
+TMR-3002 : No user constraint, initiate default constraint.
+TMR-1501 : Assign derive clock DeriveClock to 126 clock pins, and constraint 246 relative nodes.
+TMR-3004 : Start mapping sdc constraints, there are 0 constraints in total.
+TMR-3005 : Start mapping report constraints, there are 0 constraints in total.
+TMR-3003 : Constraints initiated successfully.
+TMR-3501 : Forward propagation: start to calculate arrival time...
+TMR-3502 : Backward propagation: start to calculate required time...
+TMR-3503 : Timing propagation completes.
+PHY-3001 : End timing update;  0.056875s wall, 0.093601s user + 0.000000s system = 0.093601s CPU (164.6%)
+
+PHY-3001 : Global placement ...
+PHY-3001 : Initial: Len = 61762
+PHY-3001 : Run with size of 3
+PHY-3001 : Cell area utilization is 12%, beta_incr = 0.926875
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 0
+PHY-3002 : Step(1969): len = 34202.2, overlap = 4.5
+PHY-3002 : Step(1970): len = 23098.2, overlap = 4.5
+PHY-3002 : Step(1971): len = 16386.9, overlap = 8.25
+PHY-3002 : Step(1972): len = 12219.4, overlap = 10.5
+PHY-3002 : Step(1973): len = 10209.5, overlap = 14.25
+PHY-3002 : Step(1974): len = 9010.1, overlap = 14
+PHY-3002 : Step(1975): len = 8401.6, overlap = 14.5
+PHY-3001 : :::1::: Try harder cell spreading with beta_ = 3.4861e-05
+PHY-3002 : Step(1976): len = 8510, overlap = 14.25
+PHY-3002 : Step(1977): len = 8675.5, overlap = 12
+PHY-3002 : Step(1978): len = 8903.1, overlap = 10.75
+PHY-3002 : Step(1979): len = 8353.9, overlap = 13.25
+PHY-3002 : Step(1980): len = 8077.1, overlap = 12.75
+PHY-3002 : Step(1981): len = 8026, overlap = 12.75
+PHY-3002 : Step(1982): len = 8104.5, overlap = 12.75
+PHY-3002 : Step(1983): len = 8091.1, overlap = 13
+PHY-3002 : Step(1984): len = 8100.2, overlap = 13
+PHY-3001 : :::2::: Try harder cell spreading with beta_ = 6.97219e-05
+PHY-3002 : Step(1985): len = 8289, overlap = 9.5
+PHY-3002 : Step(1986): len = 8289, overlap = 9.5
+PHY-3002 : Step(1987): len = 8130.3, overlap = 11.5
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.002595s wall, 0.015600s user + 0.000000s system = 0.015600s CPU (601.3%)
+
+PHY-3001 : Run with size of 3
+PHY-3001 : Cell area utilization is 15%, beta_incr = 0.926875
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 2.65768e-06
+PHY-3002 : Step(1988): len = 8793.6, overlap = 10.25
+PHY-3002 : Step(1989): len = 8774.5, overlap = 10.25
+PHY-3002 : Step(1990): len = 8749.3, overlap = 10.25
+PHY-3001 : :::1::: Try harder cell spreading with beta_ = 5.31537e-06
+PHY-3002 : Step(1991): len = 8714, overlap = 10
+PHY-3002 : Step(1992): len = 8714, overlap = 10
+PHY-3001 : :::2::: Try harder cell spreading with beta_ = 1.06307e-05
+PHY-3002 : Step(1993): len = 8692.1, overlap = 10.25
+PHY-3002 : Step(1994): len = 8692.1, overlap = 10.25
+PHY-3001 : Run with size of 1
+PHY-3001 : Cell area utilization is 15%, beta_incr = 0.926875
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 6.41976e-06
+PHY-3002 : Step(1995): len = 8739.6, overlap = 25
+PHY-3002 : Step(1996): len = 8739.6, overlap = 25
+PHY-3001 : :::1::: Try harder cell spreading with beta_ = 1.28395e-05
+PHY-3002 : Step(1997): len = 8750.9, overlap = 25
+PHY-3002 : Step(1998): len = 8777.1, overlap = 24.75
+PHY-3001 : :::2::: Try harder cell spreading with beta_ = 2.39484e-05
+PHY-3002 : Step(1999): len = 8937.6, overlap = 24.25
+PHY-3002 : Step(2000): len = 9073.2, overlap = 23.75
+PHY-3002 : Step(2001): len = 9877.3, overlap = 24.5
+PHY-3002 : Step(2002): len = 9835.2, overlap = 24.25
+PHY-3002 : Step(2003): len = 9831.6, overlap = 24
+PHY-3002 : Step(2004): len = 9685.4, overlap = 24.25
+PHY-3002 : Step(2005): len = 9609, overlap = 24.25
+PHY-3002 : Step(2006): len = 9609, overlap = 24.25
+PHY-3001 : :::3::: Try harder cell spreading with beta_ = 4.78969e-05
+PHY-3002 : Step(2007): len = 9802, overlap = 23.75
+PHY-3002 : Step(2008): len = 9867.2, overlap = 23
+PHY-3002 : Step(2009): len = 10045.2, overlap = 22.5
+PHY-3001 : :::4::: Try harder cell spreading with beta_ = 9.57937e-05
+PHY-3002 : Step(2010): len = 10762.3, overlap = 20.75
+PHY-3002 : Step(2011): len = 11020.3, overlap = 21.25
+PHY-3002 : Step(2012): len = 11318.9, overlap = 20.25
+PHY-3001 : :::5::: Try harder cell spreading with beta_ = 0.000191587
+PHY-3002 : Step(2013): len = 12076.2, overlap = 20.25
+PHY-3002 : Step(2014): len = 12228.6, overlap = 20
+PHY-3002 : Step(2015): len = 12179.4, overlap = 19.25
+PHY-3002 : Step(2016): len = 12080.7, overlap = 19.25
+PHY-3002 : Step(2017): len = 12053.1, overlap = 17.75
+PHY-3001 : :::6::: Try harder cell spreading with beta_ = 0.000324815
+PHY-3002 : Step(2018): len = 12579.3, overlap = 18.5
+PHY-3002 : Step(2019): len = 12925.5, overlap = 18.75
+PHY-3002 : Step(2020): len = 13010.4, overlap = 19.75
+PHY-3002 : Step(2021): len = 13021.5, overlap = 19
+PHY-3002 : Step(2022): len = 13002.8, overlap = 19.5
+PHY-3002 : Step(2023): len = 12975.8, overlap = 19.75
+PHY-3001 : :::7::: Try harder cell spreading with beta_ = 0.000636896
+PHY-3002 : Step(2024): len = 13437.4, overlap = 21
+PHY-3002 : Step(2025): len = 13737.4, overlap = 19.75
+PHY-3002 : Step(2026): len = 13772.5, overlap = 20.25
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.023793s wall, 0.015600s user + 0.000000s system = 0.015600s CPU (65.6%)
+
+PHY-3001 : Run with size of 1
+PHY-3001 : Cell area utilization is 15%, beta_incr = 0.926875
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 0.000735562
+PHY-3002 : Step(2027): len = 14401.2, overlap = 5.25
+PHY-3002 : Step(2028): len = 14349.4, overlap = 7
+PHY-3002 : Step(2029): len = 14352.3, overlap = 9.25
+PHY-3002 : Step(2030): len = 14296.7, overlap = 10.5
+PHY-3002 : Step(2031): len = 14276, overlap = 10.5
+PHY-3002 : Step(2032): len = 14297.4, overlap = 9.25
+PHY-3001 : :::1::: Try harder cell spreading with beta_ = 0.00147112
+PHY-3002 : Step(2033): len = 14442.3, overlap = 9.75
+PHY-3002 : Step(2034): len = 14486, overlap = 10.75
+PHY-3002 : Step(2035): len = 14486, overlap = 10.75
+PHY-3001 : :::2::: Try harder cell spreading with beta_ = 0.00294225
+PHY-3002 : Step(2036): len = 14585.6, overlap = 10.5
+PHY-3002 : Step(2037): len = 14664.8, overlap = 9.5
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.003077s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+
+PHY-3001 : Legalized: Len = 14761.5, Over = 0
+PHY-3001 : Spreading special nets. 1 overflows in 750 tiles.
+PHY-3001 : 2 instances has been re-located, deltaX = 2, deltaY = 0.
+PHY-3001 : Final: Len = 14801.5, Over = 0
+RUN-1003 : finish command "place" in  1.239510s wall, 1.591210s user + 0.592804s system = 2.184014s CPU (176.2%)
+
+RUN-1004 : used memory is 318 MB, reserved memory is 299 MB, peak memory is 386 MB
+RUN-1002 : start command "route"
+RUN-1001 : Open license file C:/Anlogic/TD4.4.433/license/Anlogic.lic
+PHY-1001 : Pin swapping for better routability
+PHY-1001 : Pin misalignment score is improved from 191 to 178
+PHY-1001 : Pin misalignment score is improved from 178 to 175
+PHY-1001 : Pin misalignment score is improved from 175 to 175
+PHY-1001 : Pin local connectivity score is improved from 7 to 0
+PHY-1001 : Pin misalignment score is improved from 178 to 178
+PHY-1001 : Pin local connectivity score is improved from 0 to 0
+PHY-1001 : End pin swap;  0.211267s wall, 0.249602s user + 0.000000s system = 0.249602s CPU (118.1%)
+
+PHY-1001 : Route runs in 4 thread(s)
+RUN-1001 : There are total 313 instances
+RUN-1001 : 153 mslices, 120 lslices, 33 pads, 2 brams, 0 dsps
+RUN-1001 : There are total 523 nets
+RUN-1001 : 375 nets have 2 pins
+RUN-1001 : 86 nets have [3 - 5] pins
+RUN-1001 : 33 nets have [6 - 10] pins
+RUN-1001 : 22 nets have [11 - 20] pins
+RUN-1001 : 5 nets have [21 - 99] pins
+RUN-1001 : 2 nets have 100+ pins
+PHY-1001 : Start global routing ...
+PHY-1001 : Generate routing grids ...
+PHY-1001 : Initialize routing nets ...
+PHY-1001 : Ripup & Reroute ...
+PHY-1002 : len = 17752, over cnt = 50(0%), over = 68, worst = 3
+PHY-1002 : len = 17976, over cnt = 17(0%), over = 22, worst = 3
+PHY-1002 : len = 18008, over cnt = 12(0%), over = 13, worst = 2
+PHY-1002 : len = 18184, over cnt = 0(0%), over = 0, worst = 0
+RUN-1002 : start command "start_timer"
+TMR-5001 WARNING: No sdc constraints found while initiating timer.
+TMR-2505 : Start building timing graph for model TOP.
+TMR-2506 : Build timing graph completely. Port num: 11, tpin num: 1750, tnet num: 521, tinst num: 311, tnode num: 1996, tedge num: 2897.
+TMR-2507 : Eliminate loop in the timing graph, delete 0 tedges.
+TMR-2508 : Levelizing timing graph completed, there are 28 levels in total.
+TMR-2501 : Timing graph initialized successfully.
+PHY-1001 : Generate timing info.
+TMR-2503 : Start to update net delay, extr mode = 5.
+TMR-2504 : Update delay of 521 nets completely.
+TMR-2502 : Annotate delay completely, extr mode = 5.
+TMR-3002 : No user constraint, initiate default constraint.
+TMR-1501 : Assign derive clock DeriveClock to 126 clock pins, and constraint 246 relative nodes.
+TMR-3004 : Start mapping sdc constraints, there are 0 constraints in total.
+TMR-3005 : Start mapping report constraints, there are 0 constraints in total.
+TMR-3003 : Constraints initiated successfully.
+TMR-3501 : Forward propagation: start to calculate arrival time...
+TMR-3502 : Backward propagation: start to calculate required time...
+TMR-3503 : Timing propagation completes.
+PHY-1001 : Optimize timing.
+PHY-1001 : End global routing;  0.184635s wall, 0.202801s user + 0.000000s system = 0.202801s CPU (109.8%)
+
+PHY-1001 : Start detail routing ...
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : clock net CLK_100M will be merged with clock PLL1/clk0_buf
+PHY-1001 : net LCD_CLK_pad will be routed on clock mesh
+PHY-1001 : net clk_pad will be routed on clock mesh
+PHY-1001 : Detail Route ...
+PHY-1001 : ===== Detail Route Phase 1 =====
+PHY-1001 : Routed 0% nets.
+PHY-1001 :  0.033865s wall, 0.046800s user + 0.000000s system = 0.046800s CPU (138.2%)
+
+PHY-1002 : len = 3032, over cnt = 0(0%), over = 0, worst = 0
+PHY-1001 : ===== Detail Route Phase 2 =====
+PHY-1001 : Routed 15% nets.
+PHY-1001 :  0.604620s wall, 0.577204s user + 0.000000s system = 0.577204s CPU (95.5%)
+
+PHY-1002 : len = 16864, over cnt = 42(0%), over = 42, worst = 1
+PHY-1001 : ===== DR Iter 1 =====
+PHY-1001 :  0.252779s wall, 0.234002s user + 0.000000s system = 0.234002s CPU (92.6%)
+
+PHY-1002 : len = 16544, over cnt = 3(0%), over = 3, worst = 1
+PHY-1001 : ===== DR Iter 2 =====
+PHY-1001 :  0.055030s wall, 0.046800s user + 0.015600s system = 0.062400s CPU (113.4%)
+
+PHY-1002 : len = 16480, over cnt = 0(0%), over = 0, worst = 0
+PHY-1001 : ===== Detail Route Phase 3 =====
+PHY-1001 : Routed 31% nets.
+PHY-1001 : Routed 34% nets.
+PHY-1001 : Routed 41% nets.
+PHY-1001 : Routed 49% nets.
+PHY-1001 : Routed 61% nets.
+PHY-1001 :  0.372289s wall, 0.530403s user + 0.046800s system = 0.577204s CPU (155.0%)
+
+PHY-1002 : len = 33296, over cnt = 2(0%), over = 2, worst = 1
+PHY-1001 : ===== DR Iter 1 =====
+PHY-1001 :  0.006997s wall, 0.031200s user + 0.000000s system = 0.031200s CPU (445.9%)
+
+PHY-1002 : len = 33312, over cnt = 0(0%), over = 0, worst = 0
+PHY-1003 : Routed, final wirelength = 33312
+PHY-1001 : 0 feed throughs used by 0 nets
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : clock net CLK_100M will be merged with clock PLL1/clk0_buf
+PHY-1001 : net LCD_CLK_pad will be routed on clock mesh
+PHY-1001 : net clk_pad will be routed on clock mesh
+PHY-1001 : eco open net = 0
+PHY-1001 : End detail routing;  2.057838s wall, 2.121614s user + 0.218401s system = 2.340015s CPU (113.7%)
+
+PHY-1001 : Routing violations:
+PHY-1001 : End of Routing Violations.
+RUN-1003 : finish command "route" in  2.501880s wall, 2.636417s user + 0.218401s system = 2.854818s CPU (114.1%)
+
+RUN-1004 : used memory is 305 MB, reserved memory is 285 MB, peak memory is 388 MB
+RUN-1002 : start command "report_area -io_info -file LCD_8080ToRGB_phy.area"
+RUN-1001 : standard
+***Report Model: TOP***
+
+IO Statistics
+#IO                    33
+  #input                2
+  #output              31
+  #inout                0
+
+Utilization Statistics
+#lut                  544   out of   1520   35.79%
+#reg                  114   out of   1520    7.50%
+#le                   544
+  #lut only           430   out of    544   79.04%
+  #reg only             0   out of    544    0.00%
+  #lut&reg            114   out of    544   20.96%
+#dsp                    0   out of      8    0.00%
+#bram                   2   out of      6   33.33%
+  #bram9k               0
+  #fifo9k               2
+#bram32k                0   out of      3    0.00%
+#pad                   33   out of     75   44.00%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    1   out of      1  100.00%
+#clknet                 3   out of     16   18.75%
+  #gclk                 1
+
+RUN-1001 : 
+
+RUN-1002 : start command "export_db LCD_8080ToRGB_pr.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "bitgen -bit LCD_8080ToRGB.bit -version 0X00 -g ucode:00000000000000000000000000000000"
+BIT-1003 : Start to generate bitstream. 
+BIT-1002 : Init instances with 4 threads.
+BIT-1002 : Init instances completely, inst num: 313
+BIT-1002 : Init pips with 4 threads.
+BIT-1002 : Init pips completely, net num: 523, pip num: 3443
+BIT-1003 : Multithreading accelaration with 4 threads.
+BIT-1003 : Generate bitstream completely, there are 350 valid insts, and 12871 bits set as '1'.
+BIT-1004 : Generate bits file LCD_8080ToRGB.bit.
+RUN-1003 : finish command "bitgen -bit LCD_8080ToRGB.bit -version 0X00 -g ucode:00000000000000000000000000000000" in  1.018795s wall, 2.901619s user + 0.062400s system = 2.964019s CPU (290.9%)
+
+RUN-1004 : used memory is 310 MB, reserved memory is 290 MB, peak memory is 388 MB
+RUN-1002 : start command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0"
+PRG-2014 : Chip validation success: EF2L15B
+RUN-1002 : start command "bit_to_vec -chip EF2L15B -m jtag -bit E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/LCD_8080ToRGB.bit"
+PRG-3000 : BIT2VEC::JtagBitstream: completed! line_num = 793, frame_num = 765
+RUN-1002 : start command "program -cable 0 -spd 6"
+RUN-1003 : finish command "program -cable 0 -spd 6" in  1.914854s wall, 0.187201s user + 0.015600s system = 0.202801s CPU (10.6%)
+
+RUN-1004 : used memory is 329 MB, reserved memory is 309 MB, peak memory is 388 MB
+RUN-1003 : finish command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0" in  3.080853s wall, 0.702005s user + 0.046800s system = 0.748805s CPU (24.3%)
+
+RUN-1004 : used memory is 319 MB, reserved memory is 299 MB, peak memory is 388 MB
+GUI-1001 : Download success!
+RUN-1002 : start command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0"
+PRG-2014 : Chip validation success: EF2L15B
+RUN-1002 : start command "bit_to_vec -chip EF2L15B -m jtag -bit E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/LCD_8080ToRGB.bit"
+PRG-3000 : BIT2VEC::JtagBitstream: completed! line_num = 793, frame_num = 765
+RUN-1002 : start command "program -cable 0 -spd 6"
+RUN-1003 : finish command "program -cable 0 -spd 6" in  1.954763s wall, 0.218401s user + 0.046800s system = 0.265202s CPU (13.6%)
+
+RUN-1004 : used memory is 329 MB, reserved memory is 308 MB, peak memory is 388 MB
+RUN-1003 : finish command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0" in  3.120316s wall, 0.780005s user + 0.078001s system = 0.858005s CPU (27.5%)
+
+RUN-1004 : used memory is 318 MB, reserved memory is 298 MB, peak memory is 388 MB
+GUI-1001 : Download success!

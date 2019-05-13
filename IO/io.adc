@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 set_pin_assignment {clk}    { LOCATION = P4; }		##50MHZ
 set_pin_assignment {nRST}   { LOCATION = P12; }		##USER_KEY
 
@@ -41,47 +40,3 @@ set_pin_assignment {LCD_B[5]} 	{ LOCATION = P52; }
 set_pin_assignment {LCD_B[6]} 	{ LOCATION = P53; }
 set_pin_assignment {LCD_B[7]} 	{ LOCATION = P54; }
 
-=======
-set_pin_assignment {clk}    { LOCATION = P4; }		##50MHZ
-set_pin_assignment {nRST}   { LOCATION = P12; }		##USER_KEY
-
-##  LED IOs
-set_pin_assignment {LED[0]} { LOCATION = P64; }		## LED 
-set_pin_assignment {LED[1]} { LOCATION = P63; }	    ## LED 
-
-## LCD IOs
-set_pin_assignment {LCDBK} 		{ LOCATION = P9; }	
-
-set_pin_assignment {LCD_CLK} 	{ LOCATION = P62; }	
-set_pin_assignment {LCD_HYNC} 	{ LOCATION = P58; }
-set_pin_assignment {LCD_SYNC} 	{ LOCATION = P59; }
-set_pin_assignment {LCD_DEN} 	{ LOCATION = P60; }
-
-set_pin_assignment {LCD_R[0]} 	{ LOCATION = P27; }
-set_pin_assignment {LCD_R[1]} 	{ LOCATION = P28; }
-set_pin_assignment {LCD_R[2]} 	{ LOCATION = P29; }
-set_pin_assignment {LCD_R[3]} 	{ LOCATION = P30; }
-set_pin_assignment {LCD_R[4]} 	{ LOCATION = P31; }
-set_pin_assignment {LCD_R[5]} 	{ LOCATION = P32; }
-set_pin_assignment {LCD_R[6]} 	{ LOCATION = P34; }
-set_pin_assignment {LCD_R[7]} 	{ LOCATION = P35; }
-
-set_pin_assignment {LCD_G[0]} 	{ LOCATION = P36; }
-set_pin_assignment {LCD_G[1]} 	{ LOCATION = P37; }
-set_pin_assignment {LCD_G[2]} 	{ LOCATION = P38; }
-set_pin_assignment {LCD_G[3]} 	{ LOCATION = P39; }
-set_pin_assignment {LCD_G[4]} 	{ LOCATION = P40; }
-set_pin_assignment {LCD_G[5]} 	{ LOCATION = P41; }
-set_pin_assignment {LCD_G[6]} 	{ LOCATION = P42; }
-set_pin_assignment {LCD_G[7]} 	{ LOCATION = P43; }
-
-set_pin_assignment {LCD_B[0]} 	{ LOCATION = P45; }
-set_pin_assignment {LCD_B[1]} 	{ LOCATION = P47; }
-set_pin_assignment {LCD_B[2]} 	{ LOCATION = P48; }
-set_pin_assignment {LCD_B[3]} 	{ LOCATION = P49; }
-set_pin_assignment {LCD_B[4]} 	{ LOCATION = P51; }
-set_pin_assignment {LCD_B[5]} 	{ LOCATION = P52; }
-set_pin_assignment {LCD_B[6]} 	{ LOCATION = P53; }
-set_pin_assignment {LCD_B[7]} 	{ LOCATION = P54; }
-
->>>>>>> 83143dc14f73979f6f9d35bcd5b4eaf0572fb17e

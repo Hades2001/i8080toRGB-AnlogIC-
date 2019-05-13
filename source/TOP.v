@@ -1,34 +1,21 @@
 module TOP
 (
-	clk,
-	nRST,
+	input			clk,
+	input			nRST,
+	
+	output	[1:0]	LED,
 
-	LED,
-
-	LCDBK,
-	LCD_CLK,
-	LCD_HYNC,
-	LCD_SYNC,
-	LCD_DEN,
-	LCD_R,
-	LCD_G,
-	LCD_B
-
+	output			LCDBK,
+	output			LCD_CLK,
+	output			LCD_HYNC,
+	output			LCD_SYNC,
+	output			LCD_DEN,
+	output	[7:0]	LCD_R,
+	output	[7:0]	LCD_G,
+	output	[7:0]	LCD_B
 );
 
-	input			clk;
-	input			nRST;
-	
-	output	[1:0]	LED;
 
-	output			LCDBK;
-	output			LCD_CLK;
-	output			LCD_HYNC;
-	output			LCD_SYNC;
-	output			LCD_DEN;
-	output	[7:0]	LCD_R;
-	output	[7:0]	LCD_G;
-	output	[7:0]	LCD_B;
 
 	wire 		PixeClk;	
 	wire		CLK_33M;	
