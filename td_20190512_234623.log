@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ============================================================
    Tang Dynasty, V4.4.433
    Copyright:   Shanghai Anlogic Infotech Co., Ltd.
@@ -50,3 +51,57 @@ SYN-2501 : Optimize round 2, 0 better
 SYN-1032 : 35/0 useful/useless nets, 7/0 useful/useless insts
 RUN-1002 : start command "write_verilog al_ip/DisFIFO_sim.v"
 HDL-1201 : write out verilog file al_ip/DisFIFO_sim.v
+=======
+============================================================
+   Tang Dynasty, V4.4.433
+   Copyright:   Shanghai Anlogic Infotech Co., Ltd.
+                2011 - 2021
+   Executable = C:/Anlogic/TD4.4.433/bin/td.exe
+   Built at =   17:57:18 Feb 26 2019
+   Run by =     Administrator
+   Run Date =   Sun May 12 23:46:23 2019
+
+   Run on =     HADES-PC
+============================================================
+RUN-1002 : start command "import_device eagle_s20.db -package BG256 -basic"
+ARC-1001 : Device Initialization.
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :            OPTION            |          IO          |   SETTING   
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :   cso_b/cclk/mosi/miso/dout  |  T3/R11/T10/P10/S11  |    gpio    
+ARC-1001 :             done             |         P13          |    gpio    
+ARC-1001 :           program_b          |          T2          |  dedicated  
+ARC-1001 :        tdi/tms/tck/tdo       |   C12/A15/C14/E14    |  dedicated  
+ARC-1001 : ------------------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+RUN-1002 : start command "read_verilog -file al_ip/DisFIFO.v"
+HDL-1007 : analyze verilog file al_ip/DisFIFO.v
+HDL-1007 : elaborate module DisFIFO in al_ip/DisFIFO.v(14)
+HDL-1007 : elaborate module EG_LOGIC_FIFO(DATA_WIDTH_W=8,DATA_WIDTH_R=16,DATA_DEPTH_W=2048,DATA_DEPTH_R=1024,F=2048,ENDIAN="BIG") in C:/Anlogic/TD4.4.433/arch/eagle_macro.v(214)
+HDL-1200 : Current top model is DisFIFO
+HDL-1100 : Inferred 0 RAMs.
+RUN-1002 : start command "optimize_rtl"
+RUN-1001 : Open license file C:/Anlogic/TD4.4.433/license/Anlogic.lic
+SYN-1012 : SanityCheck: Model "DisFIFO"
+SYN-1011 : Flatten model DisFIFO
+SYN-1014 : Optimize round 1
+SYN-1032 : 33/0 useful/useless nets, 3/0 useful/useless insts
+SYN-1019 : Optimized 0 mux instances.
+SYN-1015 : Optimize round 1, 0 better
+RUN-1002 : start command "map_macro -nopad"
+SYN-2501 : Processed 0 LOGIC_BUF instances.
+SYN-2541 : Logic FIFO "logic_fifo"
+SYN-2541 : Write 2048x8, read 1024x16.
+SYN-2571 : Optimize after map_dsp, round 1
+SYN-1032 : 37/0 useful/useless nets, 9/0 useful/useless insts
+SYN-2571 : Optimize after map_dsp, round 1, 0 better
+SYN-2501 : Optimize round 1
+SYN-1032 : 35/0 useful/useless nets, 7/0 useful/useless insts
+SYN-2501 : Optimize round 1, 2 better
+SYN-2501 : Optimize round 2
+SYN-1032 : 35/0 useful/useless nets, 7/0 useful/useless insts
+SYN-2501 : Optimize round 2, 0 better
+SYN-1032 : 35/0 useful/useless nets, 7/0 useful/useless insts
+RUN-1002 : start command "write_verilog al_ip/DisFIFO_sim.v"
+HDL-1201 : write out verilog file al_ip/DisFIFO_sim.v
+>>>>>>> 83143dc14f73979f6f9d35bcd5b4eaf0572fb17e

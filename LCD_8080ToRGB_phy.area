@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 standard
 ***Report Model: TOP***
 
@@ -65,3 +66,72 @@ LCD_SYNC     OUTPUT        P59          LVCMOS25       16
 LED[1]       OUTPUT        P63          LVCMOS25       16                
 LED[0]       OUTPUT        P64          LVCMOS25       16                
 
+=======
+standard
+***Report Model: TOP***
+
+IO Statistics
+#IO                    33
+  #input                2
+  #output              31
+  #inout                0
+
+Utilization Statistics
+#lut                  544   out of   1520   35.79%
+#reg                  114   out of   1520    7.50%
+#le                   544
+  #lut only           430   out of    544   79.04%
+  #reg only             0   out of    544    0.00%
+  #lut&reg            114   out of    544   20.96%
+#dsp                    0   out of      8    0.00%
+#bram                   2   out of      6   33.33%
+  #bram9k               0
+  #fifo9k               2
+#bram32k                0   out of      3    0.00%
+#pad                   33   out of     75   44.00%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    1   out of      1  100.00%
+#clknet                 3   out of     16   18.75%
+  #gclk                 1
+
+
+Detailed IO Report
+
+Name         Direction     Location     IOStandard     DriveStrength     
+clk          INPUT         P4           LVCMOS25       N/A               
+nRST         INPUT         P12          LVCMOS25       N/A               
+LCDBK        OUTPUT        P9           LVCMOS25       16                
+LCD_B[7]     OUTPUT        P54          LVCMOS25       16                
+LCD_B[6]     OUTPUT        P53          LVCMOS25       16                
+LCD_B[5]     OUTPUT        P52          LVCMOS25       16                
+LCD_B[4]     OUTPUT        P51          LVCMOS25       16                
+LCD_B[3]     OUTPUT        P49          LVCMOS25       8                 
+LCD_B[2]     OUTPUT        P48          LVCMOS25       8                 
+LCD_B[1]     OUTPUT        P47          LVCMOS25       8                 
+LCD_B[0]     OUTPUT        P45          LVCMOS25       8                 
+LCD_CLK      OUTPUT        P62          LVCMOS25       16                
+LCD_DEN      OUTPUT        P60          LVCMOS25       16                
+LCD_G[7]     OUTPUT        P43          LVCMOS25       8                 
+LCD_G[6]     OUTPUT        P42          LVCMOS25       8                 
+LCD_G[5]     OUTPUT        P41          LVCMOS25       8                 
+LCD_G[4]     OUTPUT        P40          LVCMOS25       8                 
+LCD_G[3]     OUTPUT        P39          LVCMOS25       8                 
+LCD_G[2]     OUTPUT        P38          LVCMOS25       8                 
+LCD_G[1]     OUTPUT        P37          LVCMOS25       8                 
+LCD_G[0]     OUTPUT        P36          LVCMOS25       8                 
+LCD_HYNC     OUTPUT        P58          LVCMOS25       16                
+LCD_R[7]     OUTPUT        P35          LVCMOS25       8                 
+LCD_R[6]     OUTPUT        P34          LVCMOS25       8                 
+LCD_R[5]     OUTPUT        P32          LVCMOS25       8                 
+LCD_R[4]     OUTPUT        P31          LVCMOS25       8                 
+LCD_R[3]     OUTPUT        P30          LVCMOS25       8                 
+LCD_R[2]     OUTPUT        P29          LVCMOS25       8                 
+LCD_R[1]     OUTPUT        P28          LVCMOS25       8                 
+LCD_R[0]     OUTPUT        P27          LVCMOS25       8                 
+LCD_SYNC     OUTPUT        P59          LVCMOS25       16                
+LED[1]       OUTPUT        P63          LVCMOS25       16                
+LED[0]       OUTPUT        P64          LVCMOS25       16                
+
+>>>>>>> 83143dc14f73979f6f9d35bcd5b4eaf0572fb17e

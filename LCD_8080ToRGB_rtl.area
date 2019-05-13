@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 standard
 ***Report Model: TOP***
 
@@ -32,3 +33,39 @@ Report Hierarchy Area:
 +-----------------------------------------+
 |top      |TOP    |79     |114    |30     |
 +-----------------------------------------+
+=======
+standard
+***Report Model: TOP***
+
+IO Statistics
+#IO                    33
+  #input                2
+  #output              31
+  #inout                0
+
+Gate Statistics
+#Basic gates          193
+  #and                 30
+  #nand                 0
+  #or                   0
+  #nor                  0
+  #xor                  0
+  #xnor                 0
+  #buf                  0
+  #not                 13
+  #bufif1               0
+  #MX21                36
+  #FADD                 0
+  #DFF                114
+  #LATCH                0
+#MACRO_ADD             22
+#MACRO_EQ               6
+#MACRO_MUX            136
+
+Report Hierarchy Area:
++-----------------------------------------+
+|Instance |Module |gates  |seq    |macros |
++-----------------------------------------+
+|top      |TOP    |79     |114    |30     |
++-----------------------------------------+
+>>>>>>> 83143dc14f73979f6f9d35bcd5b4eaf0572fb17e
