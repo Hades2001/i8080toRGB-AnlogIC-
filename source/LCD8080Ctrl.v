@@ -9,13 +9,14 @@ module LCD8080Ctrl
     input                   J80_CLK,
     input                   J80_RS,
     input                   J80_We,
-    input                   J80_Re,
-    inout       [7:0]       J80_Data,
+    output                  J80_Re,
+    input       [7:0]       J80_Data,
 
     output                  FIFOWe,
     output                  FIFO_WClk,
 
     output                  LCD_BL,
+    output                  FrameCtrl,
 
     output      [7:0]       RGBData
 
@@ -23,8 +24,13 @@ module LCD8080Ctrl
 
 //************************************************************************
 //                  |                   |
-//  LCD_Ctrl_Reg    |   8'b001A_BCDE    |  
-//  LCD_Pix_Reg     |   8'b010n_nnnn    |
+//  LCD_Ctrl_Reg    |   8'b001A_BCDE    |   A=1 : DisPlayON 
+//                                      |   B=1 : Auto Mode
+//                                      |
+//                                      |
+//                                      |
+//                                      |
+//  LCD_Pix_Reg     |   8'b010x_xxxn    |   n=1 : Frame Start
 //  LCD_BL_Reg      |   8'b011x_xxxn    |   n=1 : BL ON , n=0 : BL OFF
 //  LCD_Test_Reg    |   8'b100n_nnnn    |
 //************************************************************************
@@ -42,11 +48,9 @@ module LCD8080Ctrl
 
     reg         [7:0]       OutDataReg;
 
-    assign      J80_Data = ( J80_Re ) && ( !J80_We ) ? OutDataReg : 8'bzzzz_zzzz;
-
-    always @( posedge CLK or negedge nRST ) begin
+    always @( posedge J80_CLK or negedge nRST ) begin
     if( !nRST ) begin
-        LCD_Ctrl_Reg    <=  5'b0_0000;
+        LCD_Ctrl_Reg    <=  5'b0_1000;
         LCD_Pix_Reg     <=  5'b0_0000;
         LCD_BL_Reg      <=  5'b0_0001;
         LCD_Test_Reg    <=  5'b0_0000;
@@ -60,7 +64,16 @@ module LCD8080Ctrl
         endcase
         end
     end
-    
+
+    assign  FIFO_WClk   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? J80_CLK : CLK; 
+    assign  FIFOWe      = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1    : 1'b0;
+    assign  J80_Re      = ( LCD_Ctrl_Reg[3] ) ? ( HSYNC | VSYNC ) : HSYNC ;
+
+
+    assign  FrameCtrl   = LCD_Ctrl_Reg[3] ? 1'b1 : LCD_Pix_Reg[0];
+
+
+
     assign  LCD_BL = LCD_BL_Reg[0];
 
     reg     [15:0]  AddrCtrl;

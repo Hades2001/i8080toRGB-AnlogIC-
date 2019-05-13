@@ -64,6 +64,8 @@ module TOP
 		.full_flag	(	FIFO_FULL	) 
 	);
 	
+	wire			FrameCtrl;		
+
 	LCD8080Ctrl		U4
 	(
 		.CLK		(	CLK_100M	),
@@ -88,6 +90,7 @@ module TOP
 		.nRST		(	nRST		),
 
 		.PixelClk	(	PixeClk		),
+		.FrameCtrl	(	FrameCtrl	),
 
 		.LCD_DE		(	LCD_DEN	 	),
 		.LCD_HSYNC	(	LCD_HYNC 	),

@@ -5,10 +5,11 @@ module VGAMod
 
     input                   PixelClk,
 
+    input                   FrameCtrl,
+
     output                  LCD_DE,
     output                  LCD_HSYNC,
     output                  LCD_VSYNC,
-
 
 	output          [7:0]   LCD_B,
 	output          [7:0]   LCD_G,
@@ -38,6 +39,8 @@ module VGAMod
     localparam      FIFOReStart =   H_BackPorch - 1'b1;
     localparam      FIFOReEnd   =   16'd1056    + 1'b1;
 
+    reg         FrameFlag;
+
     always @(  posedge PixelClk or negedge nRST  )begin
         if( !nRST ) begin
             LineCount       <=  16'b0;    
@@ -51,14 +54,25 @@ module VGAMod
             LineCount       <=  16'b0;
             PixelCount      <=  16'b0;
             end
-        else begin
+        else if( FrameFlag == 1'b1 )begin
             PixelCount      <=  PixelCount + 1'b1;
+            end
+    end
+
+    always @(  posedge PixelClk or negedge nRST  )begin
+        if( !nRST ) begin
+            FrameFlag   <=  1'b0;
+            end
+        else if(  LineCount  == LineForVS  ) begin
+            FrameFlag   <=  1'b0;
+            end
+        else if(( FrameFlag == 1'b0 )&&( FrameCtrl == 1'b1 ))begin
+            FrameFlag   <=  1'b1;
             end
     end
 
     assign  LCD_HSYNC = (( PixelCount >= ( H_BackPorch - 16'd200 ))&&( PixelCount < (PixelForHS - 1))) ? 1'b0 : 1'b1;
     assign  LCD_VSYNC = (( LineCount  >= 0 )&&( LineCount  < V_BackPorch )) ? 1'b1 : 1'b0;
-
 
     /*
     assign  LCD_HSYNC = (( PixelCount >= ( H_BackPorch - 16'd200 ))&&( PixelCount < (PixelForHS - 1))) ? 1'b0 : 1'b1;
