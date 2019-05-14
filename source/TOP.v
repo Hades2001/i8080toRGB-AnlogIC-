@@ -6,7 +6,6 @@ module TOP
 	output	[1:0]	LED,
 
 	input			i8080_CS,	
-	input			i8080_RST,	
 	input			i8080_RS,	
 	input			i8080_WR,	
 	output			i8080_RD,

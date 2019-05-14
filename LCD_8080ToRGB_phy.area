@@ -2,8 +2,8 @@ standard
 ***Report Model: TOP***
 
 IO Statistics
-#IO                    46
-  #input               14
+#IO                    45
+  #input               13
   #output              32
   #inout                0
 
@@ -19,7 +19,7 @@ Utilization Statistics
   #bram9k               0
   #fifo9k               2
 #bram32k                0   out of      3    0.00%
-#pad                   46   out of     75   61.33%
+#pad                   45   out of     75   60.00%
   #ireg                 0
   #oreg                 0
   #treg                 0
@@ -31,21 +31,20 @@ Utilization Statistics
 Detailed IO Report
 
 Name           Direction     Location     IOStandard     DriveStrength     
-clk            INPUT         P4           LVCMOS25       N/A               
-i8080_CS       INPUT         P10          LVCMOS25       N/A               
-i8080_D[7]     INPUT         P16          LVCMOS25       N/A               
-i8080_D[6]     INPUT         P17          LVCMOS25       N/A               
-i8080_D[5]     INPUT         P18          LVCMOS25       N/A               
-i8080_D[4]     INPUT         P19          LVCMOS25       N/A               
-i8080_D[3]     INPUT         P20          LVCMOS25       N/A               
-i8080_D[2]     INPUT         P21          LVCMOS25       N/A               
-i8080_D[1]     INPUT         P24          LVCMOS25       N/A               
-i8080_D[0]     INPUT         P25          LVCMOS25       N/A               
-i8080_RS       INPUT         P13          LVCMOS25       N/A               
-i8080_RST      INPUT         P1           LVCMOS25       N/A               
-i8080_WR       INPUT         P14          LVCMOS25       N/A               
-nRST           INPUT         P12          LVCMOS25       N/A               
-LCDBK          OUTPUT        P9           LVCMOS25       16                
+clk            INPUT         P4           LVCMOS18       N/A               
+i8080_CS       INPUT         P10          LVCMOS18       N/A               
+i8080_D[7]     INPUT         P16          LVCMOS18       N/A               
+i8080_D[6]     INPUT         P17          LVCMOS18       N/A               
+i8080_D[5]     INPUT         P18          LVCMOS18       N/A               
+i8080_D[4]     INPUT         P19          LVCMOS18       N/A               
+i8080_D[3]     INPUT         P20          LVCMOS18       N/A               
+i8080_D[2]     INPUT         P21          LVCMOS18       N/A               
+i8080_D[1]     INPUT         P24          LVCMOS18       N/A               
+i8080_D[0]     INPUT         P25          LVCMOS18       N/A               
+i8080_RS       INPUT         P13          LVCMOS18       N/A               
+i8080_WR       INPUT         P14          LVCMOS18       N/A               
+nRST           INPUT         P12          LVCMOS18       N/A               
+LCDBK          OUTPUT        P9           LVCMOS18       16                
 LCD_B[7]       OUTPUT        P54          LVCMOS25       16                
 LCD_B[6]       OUTPUT        P53          LVCMOS25       16                
 LCD_B[5]       OUTPUT        P52          LVCMOS25       16                
@@ -76,5 +75,5 @@ LCD_R[0]       OUTPUT        P27          LVCMOS25       8
 LCD_SYNC       OUTPUT        P59          LVCMOS25       16                
 LED[1]         OUTPUT        P63          LVCMOS25       16                
 LED[0]         OUTPUT        P64          LVCMOS25       16                
-i8080_RD       OUTPUT        P15          LVCMOS25       16                
+i8080_RD       OUTPUT        P15          LVCMOS18       12                
 

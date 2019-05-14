@@ -2,8 +2,8 @@ standard
 ***Report Model: TOP***
 
 IO Statistics
-#IO                    46
-  #input               14
+#IO                    45
+  #input               13
   #output              32
   #inout                0
 
@@ -19,7 +19,7 @@ Utilization Statistics
   #bram9k               0
   #fifo9k               2
 #bram32k                0   out of      3    0.00%
-#pad                   46   out of     75   61.33%
+#pad                   45   out of     75   60.00%
   #ireg                 0
   #oreg                 0
   #treg                 0
