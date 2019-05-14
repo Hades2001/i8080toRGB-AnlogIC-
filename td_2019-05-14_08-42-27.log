@@ -6432,3 +6432,15 @@ BIT-1004 : Generate bits file LCD_8080ToRGB.bit.
 RUN-1003 : finish command "bitgen -bit LCD_8080ToRGB.bit -version 0X00 -g ucode:00000000000000000000000000000000" in  1.033734s wall, 3.057620s user + 0.000000s system = 3.057620s CPU (295.8%)
 
 RUN-1004 : used memory is 238 MB, reserved memory is 200 MB, peak memory is 318 MB
+RUN-1002 : start command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0"
+PRG-2014 : Chip validation success: EF2L15B
+RUN-1002 : start command "bit_to_vec -chip EF2L15B -m jtag -bit E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/LCD_8080ToRGB.bit"
+PRG-3000 : BIT2VEC::JtagBitstream: completed! line_num = 793, frame_num = 765
+RUN-1002 : start command "program -cable 0 -spd 6"
+RUN-1003 : finish command "program -cable 0 -spd 6" in  1.923007s wall, 0.109201s user + 0.000000s system = 0.109201s CPU (5.7%)
+
+RUN-1004 : used memory is 265 MB, reserved memory is 228 MB, peak memory is 318 MB
+RUN-1003 : finish command "download -bit E:\Fpga_Prj\Anlogic\LCD_8080ToRGB\LCD_8080ToRGB.bit -mode jtag -spd 6 -sec 64 -cable 0" in  3.110127s wall, 0.686404s user + 0.031200s system = 0.717605s CPU (23.1%)
+
+RUN-1004 : used memory is 233 MB, reserved memory is 196 MB, peak memory is 318 MB
+GUI-1001 : Download success!
