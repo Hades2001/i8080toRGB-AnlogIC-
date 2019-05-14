@@ -5,6 +5,8 @@ module ModelSim;
 	reg             CLK_IN;
 	reg             nRST;
 
+    reg             PixClk;
+
     reg             J80_CLK;
     reg             J80_RS;
     reg             J80_We;
@@ -18,12 +20,15 @@ module ModelSim;
     wire            FrameCtrl;
 
     wire    [7:0]   RGBData;
+    wire            HSync;
+    wire            VSync;
 
     integer         i;
 
 	initial
 	begin
 		CLK_IN      = 1'b1;
+        PixClk      = 1'b1;
         nRST        = 1'b0;
         J80_CLK     = 1'b0;
         J80_RS      = 1'b0;
@@ -32,6 +37,24 @@ module ModelSim;
         #100
         nRST        = 1'b1;
         #100
+
+        J80_RS      = 1'b1;
+        J80_We      = 1'b1;
+        J80_CLK     = 1'b0;
+        J80_Data    = 8'b001_00000;
+        #20
+        J80_CLK = 1'b1;
+        #20
+        J80_CLK = 1'b0;   
+
+        J80_RS      = 1'b1;
+        J80_We      = 1'b1;
+        J80_CLK     = 1'b0;
+        J80_Data    = 8'b010_00001;
+        #20
+        J80_CLK = 1'b1;
+        #20
+        J80_CLK = 1'b0; 
 
         for (i = 0;i<20 ;i=i+1 ) begin
             J80_RS      = 1'b0;
@@ -51,6 +74,7 @@ module ModelSim;
 	end
 	  
 	always #10 CLK_IN = ~CLK_IN;
+    always #15 PixClk = ~PixClk;
 
 
     LCD8080Ctrl U0
@@ -58,8 +82,8 @@ module ModelSim;
         .CLK        (   CLK_IN      ),
         .nRST       (   nRST        ),
 
-        //.HSYNC      (),
-        //.VSYNC      (),
+        .HSYNC      (   HSync       ),
+        .VSYNC      (   VSync       ),
 
         .J80_CLK    (   J80_CLK     ),
         .J80_RS     (   J80_RS      ),
@@ -74,6 +98,23 @@ module ModelSim;
         .FrameCtrl  (   FrameCtrl   ),
 
         .RGBData    (   RGBData     )
+
+    );
+
+    VGAMod  U1
+    (
+        .CLK        (   CLK_IN      ),
+        .nRST       (   nRST        ),
+
+        .PixelClk   (   PixClk      ),
+
+        .FrameCtrl  (   FrameCtrl   ),
+
+        .LCD_HSYNC  (   HSync       ),
+        .LCD_VSYNC  (   VSync       ),
+
+        .FIFO_Empty (   1'b0        ),
+        .FIFO_Data  (   16'h1fff    )
 
     );
 

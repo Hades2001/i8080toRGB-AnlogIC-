@@ -1,33 +1,19 @@
-H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v {1 {vlog -work work H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCD8080Ctrl.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/ModelSim/ModelSim_tb.v {1 {vlog -work work -vopt -nocovercells E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/ModelSim/ModelSim_tb.v
+Model Technology ModelSim SE-64 vlog 10.0c Compiler 2011.07 Jul 21 2011
+-- Compiling module ModelSim
+
+Top level modules:
+	ModelSim
+
+} {} {}} E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v {1 {vlog -work work -vopt -nocovercells E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v
+Model Technology ModelSim SE-64 vlog 10.0c Compiler 2011.07 Jul 21 2011
 -- Compiling module LCD8080Ctrl
 
 Top level modules:
 	LCD8080Ctrl
 
-} {} {}} H:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v {1 {vlog -work work H:/FPGAPrg/i8080toRGB-AnlogIC-/source/PWM.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module PWM
-
-Top level modules:
-	PWM
-
-} {} {}} H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v {1 {vlog -work work H:/FPGAPrg/i8080toRGB-AnlogIC-/source/LCDCTRL.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module LCDCTRL
-
-Top level modules:
-	LCDCTRL
-
-} {} {}} H:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v {1 {vlog -work work H:/FPGAPrg/i8080toRGB-AnlogIC-/source/CLK_MOD.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module CLK_MOD
-
-Top level modules:
-	CLK_MOD
-
-} {} {}} H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v {1 {vlog -work work H:/FPGAPrg/i8080toRGB-AnlogIC-/source/VGAMod.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v {1 {vlog -work work -vopt -nocovercells E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v
+Model Technology ModelSim SE-64 vlog 10.0c Compiler 2011.07 Jul 21 2011
 -- Compiling module VGAMod
 
 Top level modules:

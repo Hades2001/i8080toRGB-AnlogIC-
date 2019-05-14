@@ -48,6 +48,11 @@ module LCD8080Ctrl
 
     reg         [7:0]       OutDataReg;
 
+    wire        [7:0]       IDELData;  
+    wire        [7:0]       i8080Data; 
+    wire                    IDELWe; 
+    wire                    i8080We; 
+
     always @( posedge J80_CLK or negedge nRST ) begin
     if( !nRST ) begin
         LCD_Ctrl_Reg    <=  5'b0_1000;
@@ -65,17 +70,22 @@ module LCD8080Ctrl
         end
     end
 
-    assign  FIFO_WClk   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? J80_CLK : CLK; 
-    assign  FIFOWe      = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1 : 1'b0 ;
-    assign  J80_Re      = ( LCD_Ctrl_Reg[3] ) ? ( HSYNC | VSYNC ) : HSYNC ;
 
+    assign  i8080We     = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1   : 1'b0 ;
+    assign  i8080Data   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? J80_Data : 1'b0 ;
+    assign  J80_Re      = ( LCD_Ctrl_Reg[3] ) ? ( HSYNC | VSYNC ) : ( HSYNC & ( ~VSYNC )) ;
 
     assign  FrameCtrl   = LCD_Ctrl_Reg[3] ? 1'b1 : LCD_Pix_Reg[0];
 
+    
+    assign  FIFO_WClk   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )&&( LCD_Ctrl_Reg[4] == 1'b1 )) ? J80_CLK : CLK; 
+    assign  RGBData     = LCD_Ctrl_Reg[4] ? i8080Data : IDELData;     
+    assign  FIFOWe      = LCD_Ctrl_Reg[4] ? i8080We   : IDELWe; 
 
+    assign  LCD_BL      = LCD_BL_Reg[0];     //背光控制
 
-    assign  LCD_BL = LCD_BL_Reg[0];
-
+    //------------------------------------------------------------------------------------
+    //
     reg     [15:0]  AddrCtrl;
 
     always@( posedge CLK or negedge nRST )begin
@@ -93,9 +103,9 @@ module LCD8080Ctrl
         end
     end
 
-    //assign FIFOWe = (( AddrCtrl >= 16'd0 )&&(AddrCtrl < 16'd1600)&&( VSYNC == 1'b0 )&&( HSYNC == 1'b0 )) ? 1'b1 : 1'b0;
+    assign IDELWe  = (( AddrCtrl >= 12'd0 )&&(AddrCtrl < 16'd1600)&&( VSYNC == 1'b0 )&&( HSYNC == 1'b0 )) ? 1'b1 : 1'b0;
 
-    assign RGBData = (( AddrCtrl[0] == 0 )&&( AddrCtrl >= 16'd0    )&&(AddrCtrl < 16'd400  )) ? 8'b0000_0000 : 
+    assign IDELData = (( AddrCtrl[0] == 0 )&&( AddrCtrl >= 16'd0    )&&(AddrCtrl < 16'd400  )) ? 8'b0000_0000 : 
                      (( AddrCtrl[0] == 1 )&&( AddrCtrl >= 16'd0    )&&(AddrCtrl < 16'd400  )) ? 8'b0001_1111 :
                      (( AddrCtrl[0] == 0 )&&( AddrCtrl >= 16'd400  )&&(AddrCtrl < 16'd800  )) ? 8'b0000_0111 : 
                      (( AddrCtrl[0] == 1 )&&( AddrCtrl >= 16'd400  )&&(AddrCtrl < 16'd800  )) ? 8'b1110_0000 :

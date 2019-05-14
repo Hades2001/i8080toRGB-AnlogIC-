@@ -5,6 +5,14 @@ module TOP
 	
 	output	[1:0]	LED,
 
+	input			i8080_CS,	
+	input			i8080_RST,	
+	input			i8080_RS,	
+	input			i8080_WR,	
+	output			i8080_RD,
+
+	input	[7:0]	i8080_D,
+
 	output			LCDBK,
 	output			LCD_CLK,
 	output			LCD_HYNC,
@@ -14,9 +22,6 @@ module TOP
 	output	[7:0]	LCD_G,
 	output	[7:0]	LCD_B
 );
-
-
-
 	wire 		PixeClk;	
 	wire		CLK_33M;	
 	wire		CLK_100M;
@@ -75,6 +80,8 @@ module TOP
 		.VSYNC		(	LCD_SYNC	),
 
 		.FIFOWe		(	FIFO_WE		),
+		.FIFO_WClk	(	FIFO_CLK_W	),
+		.FrameCtrl	(	FrameCtrl	),
 
 		.LCD_BL		(	LCDBK		),
 
@@ -82,7 +89,7 @@ module TOP
 
 	);
 	
-	assign	FIFO_CLK_W 	= CLK_100M;
+	//assign	FIFO_CLK_W 	= CLK_100M;
 
 	VGAMod	D1
 	(

@@ -1,0 +1,8 @@
+E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/ModelSim/ModelSim_tb.v {1 {vlog -work EF2 -vopt -nocovercells E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/ModelSim/ModelSim_tb.v
+Model Technology ModelSim SE-64 vlog 10.0c Compiler 2011.07 Jul 21 2011
+-- Compiling module ModelSim
+
+Top level modules:
+	ModelSim
+
+} {} {}}

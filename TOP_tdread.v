@@ -1,10 +1,15 @@
 // Verilog netlist created by TD v4.4.433
-// Mon May 13 17:46:20 2019
+// Tue May 14 11:24:13 2019
 
 `timescale 1ns / 1ps
 module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   (
   clk,
+  i8080_CS,
+  i8080_D,
+  i8080_RS,
+  i8080_RST,
+  i8080_WR,
   nRST,
   LCDBK,
   LCD_B,
@@ -14,37 +19,46 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   LCD_HYNC,
   LCD_R,
   LCD_SYNC,
-  LED
+  LED,
+  i8080_RD
   );
 
   input clk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
+  input i8080_CS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
+  input [7:0] i8080_D;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(14)
+  input i8080_RS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
+  input i8080_RST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
+  input i8080_WR;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(11)
   input nRST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
-  output LCDBK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
-  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
-  output LCD_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
-  output LCD_DEN;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
-  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(14)
-  output LCD_HYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
-  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(13)
-  output LCD_SYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(11)
+  output LCDBK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
+  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(23)
+  output LCD_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
+  output LCD_DEN;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(22)
+  output LCD_HYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
+  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+  output LCD_SYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   output [1:0] LED;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
+  output i8080_RD;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
 
-  wire [7:0] FIFO_DI;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(52)
-  wire [15:0] FIFO_DO;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(51)
-  wire CLK_100M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(22)
-  wire CLK_33M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
-  wire FIFO_CLK_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(45)
-  wire FIFO_CLK_W;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(46)
-  wire FIFO_EMPTY;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(49)
-  wire FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(47)
-  wire FIFO_WE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(48)
-  wire PixeClk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+  wire [7:0] FIFO_DI;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(57)
+  wire [15:0] FIFO_DO;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(56)
+  wire CLK_100M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(27)
+  wire CLK_33M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(26)
+  wire FIFO_CLK_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(50)
+  wire FIFO_CLK_W;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(51)
+  wire FIFO_EMPTY;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(54)
+  wire FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(52)
+  wire FIFO_WE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(53)
+  wire FrameCtrl;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(72)
+  wire PixeClk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(25)
   wire n0;
 
   VGAMod D1 (
     .CLK(clk),
     .FIFO_Data(FIFO_DO),
     .FIFO_Empty(FIFO_EMPTY),
+    .FrameCtrl(FrameCtrl),
     .PixelClk(PixeClk),
     .nRST(nRST),
     .FIFO_CLK(FIFO_CLK_R),
@@ -54,7 +68,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LCD_G(LCD_G),
     .LCD_HSYNC(LCD_HYNC),
     .LCD_R(LCD_R),
-    .LCD_VSYNC(LCD_SYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(85)
+    .LCD_VSYNC(LCD_SYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(94)
   DisFIFO FIFO0 (
     .clkr(FIFO_CLK_R),
     .clkw(FIFO_CLK_W),
@@ -63,34 +77,35 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .rst(n0),
     .we(FIFO_WE),
     .do(FIFO_DO),
-    .empty_flag(FIFO_EMPTY));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(54)
+    .empty_flag(FIFO_EMPTY));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(59)
   LCDPLL PLL1 (
     .refclk(clk),
     .reset(1'b0),
     .clk0_out(CLK_100M),
-    .clk1_out(CLK_33M));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(32)
+    .clk1_out(CLK_33M));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(37)
   CLK_MOD U1 (
     .CLK(PixeClk),
     .Count_REG(32'b00000001111101111000101001000000),
     .RSTn(nRST),
-    .CLK_OUT(LED[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(110)
+    .CLK_OUT(LED[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(120)
   CLK_MOD U2 (
     .CLK(clk),
     .Count_REG(32'b00000001011011100011011000000000),
     .RSTn(nRST),
-    .CLK_OUT(LED[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(120)
+    .CLK_OUT(LED[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(130)
   LCD8080Ctrl U4 (
     .CLK(CLK_100M),
     .HSYNC(LCD_HYNC),
     .VSYNC(LCD_SYNC),
     .nRST(nRST),
     .FIFOWe(FIFO_WE),
+    .FIFO_WClk(FIFO_CLK_W),
+    .FrameCtrl(FrameCtrl),
     .LCD_BL(LCDBK),
-    .RGBData(FIFO_DI));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(67)
-  buf u2 (PixeClk, CLK_33M);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(42)
-  not u3 (n0, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(56)
-  buf u4 (FIFO_CLK_W, CLK_100M);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(83)
-  buf u5 (LCD_CLK, PixeClk);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(108)
+    .RGBData(FIFO_DI));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(74)
+  buf u2 (PixeClk, CLK_33M);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(47)
+  not u3 (n0, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(61)
+  buf u4 (LCD_CLK, PixeClk);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(118)
 
 endmodule 
 
@@ -99,6 +114,7 @@ module VGAMod  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
   CLK,
   FIFO_Data,
   FIFO_Empty,
+  FrameCtrl,
   PixelClk,
   nRST,
   FIFO_CLK,
@@ -113,19 +129,20 @@ module VGAMod  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
   );
 
   input CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(3)
-  input [15:0] FIFO_Data;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(21)
-  input FIFO_Empty;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(20)
+  input [15:0] FIFO_Data;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(22)
+  input FIFO_Empty;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(21)
+  input FrameCtrl;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(8)
   input PixelClk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(6)
   input nRST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(4)
-  output FIFO_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(18)
-  output FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(19)
-  output FIFO_RST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(17)
-  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(13)
-  output LCD_DE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(8)
-  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(14)
-  output LCD_HSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(9)
-  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(15)
-  output LCD_VSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(10)
+  output FIFO_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(19)
+  output FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(20)
+  output FIFO_RST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(18)
+  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(14)
+  output LCD_DE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(10)
+  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(15)
+  output LCD_HSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(11)
+  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(16)
+  output LCD_VSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(12)
 
   // localparam FIFOReEnd = 16'b0000010000100001;
   // localparam FIFOReStart = 16'b0000000011111111;
@@ -135,14 +152,16 @@ module VGAMod  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
   // localparam PixelForHS = 16'b0000010100100000;
   // localparam V_BackPorch = 16'b0000000000101101;
   // localparam WidthPixel = 16'b0000001100100000;
-  wire [15:0] LineCount;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(26)
-  wire [15:0] PixelCount;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(25)
+  wire [15:0] LineCount;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(27)
+  wire [15:0] PixelCount;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(26)
   wire [15:0] n2;
   wire [15:0] n4;
   wire [15:0] n5;
   wire [15:0] n6;
   wire [15:0] n7;
   wire [15:0] n8;
+  wire [15:0] n9;
+  wire FrameFlag;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(42)
   wire n0;
   wire n1;
   wire n10;
@@ -159,138 +178,165 @@ module VGAMod  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(1)
   wire n21;
   wire n22;
   wire n23;
+  wire n24;
+  wire n25;
+  wire n26;
+  wire n27;
+  wire n28;
   wire n3;
-  wire n9;
 
+  AL_DFF FrameFlag_reg (
+    .clk(PixelClk),
+    .d(n13),
+    .reset(n0),
+    .set(1'b0),
+    .q(FrameFlag));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(71)
   add_pu16_pu16_o16 add0 (
     .i0(LineCount),
     .i1(16'b0000000000000001),
-    .o(n2));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(48)
+    .o(n2));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(51)
   add_pu16_pu16_o16 add1 (
     .i0(PixelCount),
     .i1(16'b0000000000000001),
-    .o(n4));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(55)
+    .o(n4));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(58)
   eq_w16 eq0 (
     .i0(PixelCount),
     .i1(16'b0000010100100000),
-    .o(n1));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(46)
+    .o(n1));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(49)
   eq_w16 eq1 (
     .i0(LineCount),
     .i1(16'b0000001000111010),
-    .o(n3));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(50)
+    .o(n3));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(53)
   lt_u16_u16 lt0 (
     .ci(1'b1),
     .i0(16'b0000000000111000),
     .i1(PixelCount),
-    .o(n9));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+    .o(n14));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(74)
   lt_u16_u16 lt1 (
     .ci(1'b0),
     .i0(PixelCount),
     .i1(16'b0000010100011111),
-    .o(n10));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+    .o(n15));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(74)
   lt_u16_u16 lt2 (
     .ci(1'b0),
     .i0(LineCount),
     .i1(16'b0000000000101101),
-    .o(LCD_VSYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(60)
+    .o(LCD_VSYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
   lt_u16_u16 lt3 (
     .ci(1'b0),
     .i0(PixelCount),
     .i1(16'b0000000000010100),
-    .o(FIFO_RST));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(67)
+    .o(FIFO_RST));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(81)
   lt_u16_u16 lt4 (
     .ci(1'b1),
     .i0(16'b0000000100000000),
     .i1(PixelCount),
-    .o(n12));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(69)
+    .o(n17));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(83)
   lt_u16_u16 lt5 (
     .ci(1'b1),
     .i0(PixelCount),
     .i1(16'b0000010100100000),
-    .o(n13));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(70)
+    .o(n18));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(84)
   lt_u16_u16 lt6 (
     .ci(1'b1),
     .i0(16'b0000000000101101),
     .i1(LineCount),
-    .o(n15));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(71)
+    .o(n20));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(85)
   lt_u16_u16 lt7 (
     .ci(1'b0),
     .i0(LineCount),
     .i1(16'b0000001000111010),
-    .o(n17));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .o(n22));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(86)
   lt_u16_u16 lt8 (
     .ci(1'b1),
     .i0(16'b0000000011111111),
     .i1(PixelCount),
-    .o(n19));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
+    .o(n24));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
   lt_u16_u16 lt9 (
     .ci(1'b1),
     .i0(PixelCount),
     .i1(16'b0000010000100001),
-    .o(n21));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
+    .o(n26));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
   binary_mux_s1_w16 mux0 (
+    .i0(PixelCount),
+    .i1(n4),
+    .sel(FrameFlag),
+    .o(n5));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  binary_mux_s1_w16 mux1 (
     .i0(LineCount),
     .i1(16'b0000000000000000),
     .sel(n3),
-    .o(n5));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  binary_mux_s1_w16 mux1 (
-    .i0(n4),
+    .o(n6));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  binary_mux_s1_w16 mux2 (
+    .i0(n5),
     .i1(16'b0000000000000000),
     .sel(n3),
-    .o(n6));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  binary_mux_s1_w16 mux2 (
-    .i0(n6),
+    .o(n7));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  binary_mux_s1_w16 mux3 (
+    .i0(n7),
     .i1(16'b0000000000000000),
     .sel(n1),
-    .o(n7));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  binary_mux_s1_w16 mux3 (
-    .i0(n5),
+    .o(n8));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  binary_mux_s1_w16 mux4 (
+    .i0(n6),
     .i1(n2),
     .sel(n1),
-    .o(n8));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  binary_mux_s1_w8 mux4 (
+    .o(n9));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  binary_mux_s1_w8 mux5 (
     .i0({FIFO_Data[15:11],3'b111}),
     .i1(8'b11111111),
     .sel(FIFO_Empty),
-    .o(LCD_R));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(77)
-  binary_mux_s1_w8 mux5 (
+    .o(LCD_R));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(91)
+  binary_mux_s1_w8 mux6 (
     .i0({FIFO_Data[10:5],2'b11}),
     .i1(8'b00000000),
     .sel(FIFO_Empty),
-    .o(LCD_G));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(78)
-  binary_mux_s1_w8 mux6 (
+    .o(LCD_G));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(92)
+  binary_mux_s1_w8 mux7 (
     .i0({FIFO_Data[4:0],3'b111}),
     .i1(8'b00000000),
     .sel(FIFO_Empty),
-    .o(LCD_B));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(79)
+    .o(LCD_B));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(93)
   reg_ar_as_w16 reg0 (
-    .clk(PixelClk),
-    .d(n7),
-    .reset({n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0}),
-    .set(16'b0000000000000000),
-    .q(PixelCount));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  reg_ar_as_w16 reg1 (
     .clk(PixelClk),
     .d(n8),
     .reset({n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0}),
     .set(16'b0000000000000000),
-    .q(LineCount));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(56)
-  and u10 (n20, n18, n19);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
-  and u11 (n22, n20, n21);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
-  not u12 (n23, FIFO_Empty);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
-  and u13 (FIFO_RE, n22, n23);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
-  not u2 (n0, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(42)
-  and u3 (n11, n9, n10);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
-  not u4 (LCD_HSYNC, n11);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
-  and u5 (n14, n12, n13);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(70)
-  and u6 (n16, n14, n15);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(71)
-  and u7 (LCD_DE, n16, n17);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  buf u8 (FIFO_CLK, PixelClk);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(74)
-  and u9 (n18, n15, n17);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(75)
+    .q(PixelCount));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  reg_ar_as_w16 reg1 (
+    .clk(PixelClk),
+    .d(n9),
+    .reset({n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0}),
+    .set(16'b0000000000000000),
+    .q(LineCount));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(59)
+  and u10 (n21, n19, n20);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(85)
+  and u11 (LCD_DE, n21, n22);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(86)
+  buf u12 (FIFO_CLK, PixelClk);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(88)
+  and u13 (n23, n20, n22);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
+  and u14 (n25, n23, n24);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
+  and u15 (n27, n25, n26);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
+  not u16 (n28, FIFO_Empty);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
+  and u17 (FIFO_RE, n27, n28);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(89)
+  not u2 (n0, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(45)
+  not u3 (n10, FrameFlag);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(69)
+  and u4 (n11, n10, FrameCtrl);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(69)
+  AL_MUX u5 (
+    .i0(FrameFlag),
+    .i1(1'b1),
+    .sel(n11),
+    .o(n12));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(71)
+  AL_MUX u6 (
+    .i0(n12),
+    .i1(1'b0),
+    .sel(n3),
+    .o(n13));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(71)
+  and u7 (n16, n14, n15);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(74)
+  not u8 (LCD_HSYNC, n16);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(74)
+  and u9 (n19, n17, n18);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(84)
 
 endmodule 
 
-module DisFIFO  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(14)
+module DisFIFO  // al_ip/DisFIFO.v(14)
   (
   clkr,
   clkw,
@@ -303,15 +349,15 @@ module DisFIFO  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(14)
   full_flag
   );
 
-  input clkr;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(25)
-  input clkw;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(24)
-  input [7:0] di;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(23)
-  input re;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(25)
-  input rst;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(22)
-  input we;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(24)
-  output [15:0] do;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(27)
-  output empty_flag;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(28)
-  output full_flag;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(29)
+  input clkr;  // al_ip/DisFIFO.v(25)
+  input clkw;  // al_ip/DisFIFO.v(24)
+  input [7:0] di;  // al_ip/DisFIFO.v(23)
+  input re;  // al_ip/DisFIFO.v(25)
+  input rst;  // al_ip/DisFIFO.v(22)
+  input we;  // al_ip/DisFIFO.v(24)
+  output [15:0] do;  // al_ip/DisFIFO.v(27)
+  output empty_flag;  // al_ip/DisFIFO.v(28)
+  output full_flag;  // al_ip/DisFIFO.v(29)
 
 
   EF2_LOGIC_FIFO #(
@@ -342,11 +388,11 @@ module DisFIFO  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(14)
     .we(we),
     .do(do),
     .empty_flag(empty_flag),
-    .full_flag(full_flag));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/DisFIFO.v(41)
+    .full_flag(full_flag));  // al_ip/DisFIFO.v(41)
 
 endmodule 
 
-module LCDPLL  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(25)
+module LCDPLL  // al_ip/LCDPLL.v(25)
   (
   refclk,
   reset,
@@ -356,18 +402,18 @@ module LCDPLL  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(25)
   clk3_out
   );
 
-  input refclk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(32)
-  input reset;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(33)
-  output clk0_out;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(34)
-  output clk1_out;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(35)
-  output clk2_out;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(36)
-  output clk3_out;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(37)
+  input refclk;  // al_ip/LCDPLL.v(32)
+  input reset;  // al_ip/LCDPLL.v(33)
+  output clk0_out;  // al_ip/LCDPLL.v(34)
+  output clk1_out;  // al_ip/LCDPLL.v(35)
+  output clk2_out;  // al_ip/LCDPLL.v(36)
+  output clk3_out;  // al_ip/LCDPLL.v(37)
 
-  wire clk0_buf;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(39)
+  wire clk0_buf;  // al_ip/LCDPLL.v(39)
 
   EF2_LOGIC_BUFG bufg_feedback (
     .i(clk0_buf),
-    .o(clk0_out));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(41)
+    .o(clk0_out));  // al_ip/LCDPLL.v(41)
   EF2_PHY_PLL #(
     .CLKC0_CPHASE(9),
     .CLKC0_DIV(10),
@@ -478,7 +524,7 @@ module LCDPLL  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(25)
     .reset(reset),
     .ssc_en(1'b0),
     .stdby(1'b0),
-    .clkc({open_n0,open_n1,open_n2,clk3_out,clk2_out,clk1_out,clk0_buf}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/al_ip/LCDPLL.v(93)
+    .clkc({open_n0,open_n1,open_n2,clk3_out,clk2_out,clk1_out,clk0_buf}));  // al_ip/LCDPLL.v(93)
 
 endmodule 
 
@@ -543,64 +589,72 @@ module LCD8080Ctrl  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(1)
   CLK,
   HSYNC,
   J80_CLK,
+  J80_Data,
   J80_RS,
-  J80_Re,
   J80_We,
   VSYNC,
   nRST,
   FIFOWe,
   FIFO_WClk,
+  FrameCtrl,
+  J80_Re,
   LCD_BL,
-  RGBData,
-  J80_Data
+  RGBData
   );
 
   input CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(3)
   input HSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(6)
   input J80_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(9)
+  input [7:0] J80_Data;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(13)
   input J80_RS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(10)
-  input J80_Re;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(12)
   input J80_We;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(11)
   input VSYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(7)
   input nRST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(4)
   output FIFOWe;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(15)
   output FIFO_WClk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(16)
+  output FrameCtrl;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(19)
+  output J80_Re;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(12)
   output LCD_BL;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(18)
-  output [7:0] RGBData;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(20)
-  inout [7:0] J80_Data;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(13)
+  output [7:0] RGBData;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(21)
 
   parameter A_BL = 3'b011;
   parameter A_CTRL = 3'b001;
   parameter A_Pix = 3'b010;
   parameter A_Res = 3'b000;
   parameter A_Test = 3'b100;
-  wire [15:0] AddrCtrl;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(66)
-  wire [4:0] LCD_BL_Reg;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(40)
-  wire [7:0] OutDataReg;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(43)
-  wire [15:0] n12;
-  wire [15:0] n13;
-  wire [15:0] n14;
-  wire [15:0] n15;
-  wire [7:0] n45;
-  wire [7:0] n46;
-  wire [7:0] n47;
-  wire [7:0] n48;
-  wire [7:0] n49;
-  wire [7:0] n50;
+  wire [15:0] AddrCtrl;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(89)
+  wire [7:0] IDELData;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(51)
+  wire [4:0] LCD_BL_Reg;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(46)
+  wire [4:0] LCD_Ctrl_Reg;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(44)
+  wire [4:0] LCD_Pix_Reg;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
+  wire [7:0] i8080Data;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(52)
+  wire [4:0] n10;
+  wire [4:0] n11;
+  wire [4:0] n12;
+  wire [15:0] n19;
+  wire [15:0] n20;
+  wire [15:0] n21;
+  wire [15:0] n22;
+  wire [7:0] n51;
+  wire [7:0] n52;
+  wire [7:0] n53;
+  wire [7:0] n54;
+  wire [7:0] n55;
+  wire [7:0] n56;
+  wire [4:0] n7;
   wire [4:0] n8;
   wire [4:0] n9;
+  wire IDELWe;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(53)
+  wire i8080We;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(54)
   wire n0;
   wire n1;
-  wire n10;
-  wire n11;
+  wire n13;
+  wire n14;
+  wire n15;
   wire n16;
   wire n17;
   wire n18;
-  wire n19;
   wire n2;
-  wire n20;
-  wire n21;
-  wire n22;
   wire n23;
   wire n24;
   wire n25;
@@ -625,188 +679,256 @@ module LCD8080Ctrl  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(1)
   wire n42;
   wire n43;
   wire n44;
+  wire n45;
+  wire n46;
+  wire n47;
+  wire n48;
+  wire n49;
   wire n5;
+  wire n50;
   wire n6;
-  wire n7;
 
   add_pu16_pu16_o16 add0 (
     .i0(AddrCtrl),
     .i1(16'b0000000000000001),
-    .o(n12));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(79)
+    .o(n19));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(102)
   eq_w3 eq0 (
     .i0(J80_Data[7:5]),
     .i1(3'b001),
-    .o(n3));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(56)
+    .o(n2));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(65)
   eq_w3 eq1 (
     .i0(J80_Data[7:5]),
     .i1(3'b010),
-    .o(n4));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(57)
+    .o(n3));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(66)
   eq_w3 eq2 (
     .i0(J80_Data[7:5]),
     .i1(3'b011),
-    .o(n5));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(58)
+    .o(n4));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(67)
   eq_w3 eq3 (
     .i0(J80_Data[7:5]),
     .i1(3'b100),
-    .o(n6));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(59)
+    .o(n5));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(68)
   eq_w1 eq4 (
     .i0(AddrCtrl[0]),
     .i1(1'b0),
-    .o(n20));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(85)
+    .o(n27));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(108)
   eq_w1 eq5 (
     .i0(AddrCtrl[0]),
     .i1(1'b1),
-    .o(n23));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(86)
+    .o(n30));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(109)
   lt_u16_u16 lt0 (
     .ci(1'b0),
     .i0(AddrCtrl),
     .i1(16'b0000011111010000),
-    .o(n11));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(78)
+    .o(n18));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(101)
   lt_u16_u16 lt1 (
     .ci(1'b0),
     .i0(AddrCtrl),
     .i1(16'b0000011001000000),
-    .o(n16));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
+    .o(n24));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(106)
   lt_u16_u16 lt2 (
     .ci(1'b0),
     .i0(AddrCtrl),
     .i1(16'b0000000110010000),
-    .o(n21));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(85)
+    .o(n28));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(108)
   lt_u16_u16 lt3 (
     .ci(1'b1),
     .i0(16'b0000000110010000),
     .i1(AddrCtrl),
-    .o(n25));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(87)
+    .o(n32));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(110)
   lt_u16_u16 lt4 (
     .ci(1'b0),
     .i0(AddrCtrl),
     .i1(16'b0000001100100000),
-    .o(n27));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(87)
+    .o(n34));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(110)
   lt_u16_u16 lt5 (
     .ci(1'b1),
     .i0(16'b0000001100100000),
     .i1(AddrCtrl),
-    .o(n31));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(89)
+    .o(n38));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(112)
   lt_u16_u16 lt6 (
     .ci(1'b0),
     .i0(AddrCtrl),
     .i1(16'b0000010010110000),
-    .o(n33));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(89)
+    .o(n40));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(112)
   lt_u16_u16 lt7 (
     .ci(1'b1),
     .i0(16'b0000010010110000),
     .i1(AddrCtrl),
-    .o(n37));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(91)
+    .o(n44));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(114)
   binary_mux_s1_w5 mux0 (
-    .i0(LCD_BL_Reg),
+    .i0(LCD_Ctrl_Reg),
+    .i1(n7),
+    .sel(n1),
+    .o(n10));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
+  binary_mux_s1_w5 mux1 (
+    .i0(LCD_Pix_Reg),
     .i1(n8),
-    .sel(n2),
-    .o(n9));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(61)
-  binary_mux_s1_w16 mux1 (
-    .i0(AddrCtrl),
-    .i1(n12),
-    .sel(n11),
-    .o(n13));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(80)
+    .sel(n1),
+    .o(n11));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
   binary_mux_s1_w8 mux10 (
-    .i0(n50),
+    .i0(n52),
+    .i1(8'b11111000),
+    .sel(n41),
+    .o(n53));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  binary_mux_s1_w8 mux11 (
+    .i0(n53),
+    .i1(8'b11100000),
+    .sel(n37),
+    .o(n54));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  binary_mux_s1_w8 mux12 (
+    .i0(n54),
+    .i1(8'b00000111),
+    .sel(n35),
+    .o(n55));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  binary_mux_s1_w8 mux13 (
+    .i0(n55),
+    .i1(8'b00011111),
+    .sel(n31),
+    .o(n56));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  binary_mux_s1_w8 mux14 (
+    .i0(n56),
     .i1(8'b00000000),
-    .sel(n22),
-    .o(RGBData));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  binary_mux_s1_w16 mux2 (
-    .i0(n13),
+    .sel(n29),
+    .o(IDELData));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  binary_mux_s1_w5 mux2 (
+    .i0(LCD_BL_Reg),
+    .i1(n9),
+    .sel(n1),
+    .o(n12));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
+  binary_mux_s1_w8 mux3 (
+    .i0(8'b00000000),
+    .i1(J80_Data),
+    .sel(i8080We),
+    .o(i8080Data));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(75)
+  binary_mux_s1_w8 mux4 (
+    .i0(IDELData),
+    .i1(i8080Data),
+    .sel(LCD_Ctrl_Reg[4]),
+    .o(RGBData));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(82)
+  binary_mux_s1_w16 mux5 (
+    .i0(AddrCtrl),
+    .i1(n19),
+    .sel(n18),
+    .o(n20));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(103)
+  binary_mux_s1_w16 mux6 (
+    .i0(n20),
     .i1(16'b0000000000000000),
     .sel(HSYNC),
-    .o(n14));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(80)
-  binary_mux_s1_w16 mux3 (
-    .i0(n14),
+    .o(n21));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(103)
+  binary_mux_s1_w16 mux7 (
+    .i0(n21),
     .i1(16'b0000000000000000),
     .sel(VSYNC),
-    .o(n15));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(80)
-  binary_mux_s1_w8 mux4 (
-    .i0({n44,n44,n44,n44,n44,n44,n44,n44}),
-    .i1(8'b11111111),
-    .sel(n39),
-    .o(n45));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  binary_mux_s1_w8 mux5 (
-    .i0(n45),
-    .i1(8'b00000000),
-    .sel(n36),
-    .o(n46));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  binary_mux_s1_w8 mux6 (
-    .i0(n46),
-    .i1(8'b11111000),
-    .sel(n34),
-    .o(n47));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  binary_mux_s1_w8 mux7 (
-    .i0(n47),
-    .i1(8'b11100000),
-    .sel(n30),
-    .o(n48));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
+    .o(n22));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(103)
   binary_mux_s1_w8 mux8 (
-    .i0(n48),
-    .i1(8'b00000111),
-    .sel(n28),
-    .o(n49));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
+    .i0({n50,n50,n50,n50,n50,n50,n50,n50}),
+    .i1(8'b11111111),
+    .sel(n46),
+    .o(n51));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
   binary_mux_s1_w8 mux9 (
-    .i0(n49),
-    .i1(8'b00011111),
-    .sel(n24),
-    .o(n50));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  reg_ar_as_w16 reg0 (
-    .clk(CLK),
-    .d(n15),
-    .reset({n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10,n10}),
-    .set(16'b0000000000000000),
-    .q(AddrCtrl));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(80)
+    .i0(n51),
+    .i1(8'b00000000),
+    .sel(n43),
+    .o(n52));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  reg_ar_as_w5 reg0 (
+    .clk(J80_CLK),
+    .d(n11),
+    .reset({n0,n0,n0,n0,n0}),
+    .set(5'b00000),
+    .q(LCD_Pix_Reg));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
   reg_ar_as_w5 reg1 (
+    .clk(J80_CLK),
+    .d(n12),
+    .reset({n0,n0,n0,n0,1'b0}),
+    .set({4'b0000,n0}),
+    .q(LCD_BL_Reg));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
+  reg_ar_as_w16 reg2 (
     .clk(CLK),
-    .d(n9),
-    .reset({n10,n10,n10,n10,1'b0}),
-    .set({4'b0000,n10}),
-    .q(LCD_BL_Reg));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(61)
+    .d(n22),
+    .reset({n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0,n0}),
+    .set(16'b0000000000000000),
+    .q(AddrCtrl));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(103)
+  reg_ar_as_w5 reg3 (
+    .clk(J80_CLK),
+    .d(n10),
+    .reset({n0,1'b0,n0,n0,n0}),
+    .set({1'b0,n0,3'b000}),
+    .q(LCD_Ctrl_Reg));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(70)
   onehot_mux_s5_w5 sel0 (
+    .i0(LCD_Ctrl_Reg),
+    .i1(LCD_Ctrl_Reg),
+    .i2(LCD_Ctrl_Reg),
+    .i3(LCD_Ctrl_Reg),
+    .i4(J80_Data[4:0]),
+    .sel({n2,n3,n4,n5,n6}),
+    .o(n7));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  onehot_mux_s5_w5 sel1 (
+    .i0(LCD_Pix_Reg),
+    .i1(LCD_Pix_Reg),
+    .i2(LCD_Pix_Reg),
+    .i3(J80_Data[4:0]),
+    .i4(LCD_Pix_Reg),
+    .sel({n2,n3,n4,n5,n6}),
+    .o(n8));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  onehot_mux_s5_w5 sel2 (
     .i0(LCD_BL_Reg),
     .i1(LCD_BL_Reg),
     .i2(J80_Data[4:0]),
     .i3(LCD_BL_Reg),
     .i4(LCD_BL_Reg),
-    .sel({n3,n4,n5,n6,n7}),
-    .o(n8));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(60)
-  not u10 (n19, HSYNC);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
-  and u11 (FIFOWe, n18, n19);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
-  and u12 (n22, n20, n21);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(85)
-  and u13 (n24, n23, n21);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(86)
-  and u14 (n26, n20, n25);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(87)
-  and u15 (n28, n26, n27);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(87)
-  not u16 (n7, n40);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(60)
-  and u17 (n29, n23, n25);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(88)
-  or u18 (n40, n43, n41);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(60)
-  and u19 (n30, n29, n27);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(88)
-  not u2 (n0, J80_We);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  or u20 (n41, n4, n3);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(60)
-  and u21 (n32, n20, n31);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(89)
-  and u22 (n34, n32, n33);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(89)
-  bufif1 u23 (J80_Data[7], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  bufif1 u24 (J80_Data[6], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u25 (n35, n23, n31);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(90)
-  bufif1 u26 (J80_Data[5], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u27 (n36, n35, n33);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(90)
-  bufif1 u28 (J80_Data[4], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u29 (n38, n20, n37);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(91)
-  and u3 (n1, J80_Re, n0);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  bufif1 u30 (J80_Data[3], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u31 (n39, n38, n16);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(91)
-  bufif1 u32 (J80_Data[2], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  bufif1 u33 (J80_Data[1], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u34 (n42, n23, n37);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  bufif1 u35 (J80_Data[0], 1'bx, n1);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(45)
-  and u36 (n44, n42, n16);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(92)
-  not u4 (n10, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(48)
-  and u5 (n2, J80_RS, J80_We);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(54)
-  buf u6 (LCD_BL, LCD_BL_Reg[0]);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(64)
-  or u7 (n43, n6, n5);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(60)
-  not u8 (n17, VSYNC);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
-  and u9 (n18, n16, n17);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
+    .sel({n2,n3,n4,n5,n6}),
+    .o(n9));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  AL_MUX u10 (
+    .i0(LCD_Pix_Reg[0]),
+    .i1(1'b1),
+    .sel(LCD_Ctrl_Reg[3]),
+    .o(FrameCtrl));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(78)
+  and u11 (n17, i8080We, LCD_Ctrl_Reg[4]);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(81)
+  AL_MUX u12 (
+    .i0(CLK),
+    .i1(J80_CLK),
+    .sel(n17),
+    .o(FIFO_WClk));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(81)
+  AL_MUX u13 (
+    .i0(IDELWe),
+    .i1(i8080We),
+    .sel(LCD_Ctrl_Reg[4]),
+    .o(FIFOWe));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(83)
+  buf u14 (LCD_BL, LCD_BL_Reg[0]);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(85)
+  and u15 (n25, n24, n15);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(106)
+  not u16 (n26, HSYNC);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(106)
+  and u17 (IDELWe, n25, n26);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(106)
+  and u18 (n29, n27, n28);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(108)
+  and u19 (n31, n30, n28);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(109)
+  not u2 (n0, nRST);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(57)
+  and u20 (n33, n27, n32);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(110)
+  and u21 (n35, n33, n34);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(110)
+  and u22 (n36, n30, n32);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(111)
+  and u23 (n37, n36, n34);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(111)
+  and u24 (n39, n27, n38);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(112)
+  and u25 (n41, n39, n40);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(112)
+  and u26 (n42, n30, n38);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(113)
+  and u27 (n43, n42, n40);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(113)
+  and u28 (n45, n27, n44);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(114)
+  and u29 (n46, n45, n24);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(114)
+  and u3 (n1, J80_RS, J80_We);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(63)
+  not u30 (n6, n47);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  or u31 (n47, n23, n49);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  and u32 (n48, n30, n44);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  or u33 (n49, n3, n2);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  and u34 (n50, n48, n24);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(115)
+  or u35 (n23, n5, n4);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(69)
+  not u4 (n13, J80_RS);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(74)
+  and u5 (i8080We, n13, J80_We);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(74)
+  or u6 (n14, HSYNC, VSYNC);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(76)
+  not u7 (n15, VSYNC);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(76)
+  and u8 (n16, HSYNC, n15);  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(76)
+  AL_MUX u9 (
+    .i0(n16),
+    .i1(n14),
+    .sel(LCD_Ctrl_Reg[3]),
+    .o(J80_Re));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/LCD8080Ctrl.v(76)
 
 endmodule 
 

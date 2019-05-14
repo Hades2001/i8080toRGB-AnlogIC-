@@ -40,3 +40,18 @@ set_pin_assignment {LCD_B[5]} 	{ LOCATION = P52; }
 set_pin_assignment {LCD_B[6]} 	{ LOCATION = P53; }
 set_pin_assignment {LCD_B[7]} 	{ LOCATION = P54; }
 
+##i8080
+
+set_pin_assignment {i8080_CS} 	{ LOCATION = P10; }
+set_pin_assignment {i8080_RS} 	{ LOCATION = P13; }
+set_pin_assignment {i8080_WR} 	{ LOCATION = P14; }
+set_pin_assignment {i8080_RD} 	{ LOCATION = P15; }
+
+set_pin_assignment {i8080_D[7]} { LOCATION = P16; }
+set_pin_assignment {i8080_D[6]} { LOCATION = P17; }
+set_pin_assignment {i8080_D[5]} { LOCATION = P18; }
+set_pin_assignment {i8080_D[4]} { LOCATION = P19; }
+set_pin_assignment {i8080_D[3]} { LOCATION = P20; }
+set_pin_assignment {i8080_D[2]} { LOCATION = P21; }
+set_pin_assignment {i8080_D[1]} { LOCATION = P24; }
+set_pin_assignment {i8080_D[0]} { LOCATION = P25; }

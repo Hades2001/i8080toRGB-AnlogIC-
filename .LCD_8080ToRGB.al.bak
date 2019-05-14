@@ -2,7 +2,7 @@
 <Project>
     <Project_Created_Time>2019-05-13 08:48:29</Project_Created_Time>
     <TD_Version>4.4.433</TD_Version>
-    <UCode>00011000</UCode>
+    <UCode>00000000</UCode>
     <Name>LCD_8080ToRGB</Name>
     <HardWare>
         <Family>EF2</Family>
@@ -19,18 +19,18 @@
             <File>al_ip/LCDPLL.v</File>
             <File>al_ip/ROM.v</File>
         </Verilog>
-        <ADC_FILE/>
+        <ADC_FILE>IO/io.adc</ADC_FILE>
         <SDC_FILE/>
         <CWC_FILE/>
     </Source_Files>
     <TOP_MODULE>
-        <LABEL></LABEL>
+        <LABEL/>
         <MODULE>TOP</MODULE>
         <CREATEINDEX>auto</CREATEINDEX>
     </TOP_MODULE>
     <Project_Settings>
-        <Step_Last_Change>2019-05-13 23:51:29</Step_Last_Change>
-        <Current_Step>0</Current_Step>
+        <Step_Last_Change>2019-05-14 11:24:20</Step_Last_Change>
+        <Current_Step>60</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>
 </Project>
