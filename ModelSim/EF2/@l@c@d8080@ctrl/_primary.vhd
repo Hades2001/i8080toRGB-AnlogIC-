@@ -13,7 +13,7 @@ entity LCD8080Ctrl is
         nRST            : in     vl_logic;
         HSYNC           : in     vl_logic;
         VSYNC           : in     vl_logic;
-        J80_CLK         : in     vl_logic;
+        J80_CS          : in     vl_logic;
         J80_RS          : in     vl_logic;
         J80_We          : in     vl_logic;
         J80_Re          : out    vl_logic;

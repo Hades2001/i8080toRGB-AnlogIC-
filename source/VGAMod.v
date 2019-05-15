@@ -26,18 +26,31 @@ module VGAMod
     reg         [15:0]  PixelCount;
     reg         [15:0]  LineCount;
 
+    /*
     localparam      WidthPixel  = 16'd800;
     localparam      HightPixel  = 16'd480;
 
     localparam      H_BackPorch  =  16'd256;
     localparam      V_BackPorch  =  16'd45;     // 800*480@44Hz   
-    //localparam      V_BackPorch  =  16'd760;  // 800*480@20Hz
 
     localparam      PixelForHS  =   16'd1056 + H_BackPorch;
     localparam      LineForVS   =   16'd525  + V_BackPorch;
 
     localparam      FIFOReStart =   H_BackPorch - 1'b1;
     localparam      FIFOReEnd   =   16'd1056    + 1'b1;
+
+    */
+    localparam      WidthPixel  = 16'd480;
+    localparam      HightPixel  = 16'd272;
+
+    localparam      H_BackPorch  =  16'd120;
+    localparam      V_BackPorch  =  16'd10;     
+
+    localparam      PixelForHS  =   WidthPixel + H_BackPorch + H_BackPorch ;
+    localparam      LineForVS   =   HightPixel + V_BackPorch + V_BackPorch;
+
+    localparam      FIFOReStart =   H_BackPorch - 1'b1;
+    localparam      FIFOReEnd   =   WidthPixel + H_BackPorch + 1'b1;
 
     reg         FrameFlag;
 
@@ -71,14 +84,14 @@ module VGAMod
             end
     end
 
-    assign  LCD_HSYNC = (( PixelCount >= ( H_BackPorch - 16'd200 ))&&( PixelCount < (PixelForHS - 1))) ? 1'b0 : 1'b1;
+    assign  LCD_HSYNC = (( PixelCount >= ( H_BackPorch - 16'd100 ))&&( PixelCount < (PixelForHS - 1))) ? 1'b0 : 1'b1;
     assign  LCD_VSYNC = (( LineCount  >= 0 )&&( LineCount  < V_BackPorch )) ? 1'b1 : 1'b0;
 
     /*
     assign  LCD_HSYNC = (( PixelCount >= ( H_BackPorch - 16'd200 ))&&( PixelCount < (PixelForHS - 1))) ? 1'b0 : 1'b1;
     assign  LCD_VSYNC = (( LineCount  >= ( V_BackPorch - 16'd40  ))&&( LineCount  < (LineForVS  - 1))) ? 1'b0 : 1'b1;
     */
-    assign  FIFO_RST  = (( PixelCount >= 0 )&&( PixelCount < 16'd20 )) ? 1'b1 : 1'b0;
+    assign  FIFO_RST  = (( PixelCount >= 0 )&&( PixelCount < 16'd10 )) ? 1'b1 : 1'b0;
 
     assign  LCD_DE = (  ( PixelCount >= H_BackPorch )&&
                         ( PixelCount <= PixelForHS ) &&

@@ -6,10 +6,9 @@ module LCD8080Ctrl
     input                   HSYNC,
     input                   VSYNC,
 
-    input                   J80_CLK,
-    input                   J80_RS,
+    input                   J80_CS,
+    inout                   J80_RS,
     input                   J80_We,
-    output                  J80_Re,
     input       [7:0]       J80_Data,
 
     output                  FIFOWe,
@@ -52,15 +51,16 @@ module LCD8080Ctrl
     wire        [7:0]       i8080Data; 
     wire                    IDELWe; 
     wire                    i8080We; 
+    wire                    FrameSync;
 
-    always @( posedge J80_CLK or negedge nRST ) begin
+    always @( posedge J80_We or negedge nRST ) begin
     if( !nRST ) begin
         LCD_Ctrl_Reg    <=  5'b0_1000;
         LCD_Pix_Reg     <=  5'b0_0000;
         LCD_BL_Reg      <=  5'b0_0001;
         LCD_Test_Reg    <=  5'b0_0000;
         end
-    else if(( J80_RS == 1'b1 )&&( J80_We == 1'b1 ))begin
+    else if(( J80_RS == 1'b1 )&&( J80_CS == 1'b0 ))begin
         case( J80_Data[7:5] )
             A_CTRL  :   LCD_Ctrl_Reg    <=  J80_Data[4:0] ;
             A_Pix   :   LCD_Pix_Reg     <=  J80_Data[4:0] ;
@@ -70,19 +70,20 @@ module LCD8080Ctrl
         end
     end
 
+    assign  J80_RS      = ( LCD_Ctrl_Reg[4] == 1'b0 ) ?  1'bz : FrameSync ;
 
     assign  i8080We     = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? 1'b1   : 1'b0 ;
     assign  i8080Data   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )) ? J80_Data : 1'b0 ;
-    assign  J80_Re      = ( LCD_Ctrl_Reg[3] ) ? ( HSYNC | VSYNC ) : ( HSYNC & ( ~VSYNC )) ;
-
-    assign  FrameCtrl   = LCD_Ctrl_Reg[3] ? 1'b1 : LCD_Pix_Reg[0];
-
     
-    assign  FIFO_WClk   = (( J80_RS == 1'b0 )&&( J80_We == 1'b1 )&&( LCD_Ctrl_Reg[4] == 1'b1 )) ? J80_CLK : CLK; 
-    assign  RGBData     = LCD_Ctrl_Reg[4] ? i8080Data : IDELData;     
-    assign  FIFOWe      = LCD_Ctrl_Reg[4] ? i8080We   : IDELWe; 
+    assign  FrameSync   = ( LCD_Ctrl_Reg[3] == 1'b1 ) ? ( HSYNC | VSYNC ) : ( HSYNC & ( ~VSYNC )) ;
+        
+    assign  RGBData     = ( LCD_Ctrl_Reg[4] == 1'b1 ) ? J80_Data  : IDELData;     
+    assign  FIFOWe      = ( LCD_Ctrl_Reg[4] == 1'b1 ) ? ~J80_CS   : IDELWe; 
+    assign  FIFO_WClk   = ( LCD_Ctrl_Reg[4] == 1'b1 ) ? J80_We    : CLK; 
 
-    assign  LCD_BL      = LCD_BL_Reg[0];     //背光控制
+    assign  FrameCtrl   = ( LCD_Ctrl_Reg[3] == 1'b1 ) ? 1'b1 : LCD_Pix_Reg[0];
+
+    assign  LCD_BL      = ( LCD_BL_Reg[0] == 1'b1 ) ? 1'b1 : 1'b0 ;     //背光控制
 
     //------------------------------------------------------------------------------------
     //

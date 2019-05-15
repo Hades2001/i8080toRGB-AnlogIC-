@@ -2,13 +2,12 @@ module TOP
 (
 	input			clk,
 	input			nRST,
-	
+
 	output	[1:0]	LED,
 
 	input			i8080_CS,	
-	input			i8080_RS,	
+	inout			i8080_RS,	
 	input			i8080_WR,	
-	output			i8080_RD,
 
 	input	[7:0]	i8080_D,
 
@@ -43,7 +42,7 @@ module TOP
 		.clk3_out	(	CLK_9M		)
 	);
 
-	assign	PixeClk = CLK_33M;
+	assign	PixeClk = CLK_9M;
 
 	wire	FIFO_RST;
     wire    FIFO_CLK_R;
@@ -57,7 +56,7 @@ module TOP
 	
 	DisFIFO 	FIFO0
 	(
-		.rst		(	~nRST		),
+		.rst		(	FIFO_RST	),
 		.di			(	FIFO_DI		), 
 		.clkw		(	FIFO_CLK_W	), 
 		.we			(	FIFO_WE		),
@@ -81,6 +80,11 @@ module TOP
 		.FIFOWe		(	FIFO_WE		),
 		.FIFO_WClk	(	FIFO_CLK_W	),
 		.FrameCtrl	(	FrameCtrl	),
+
+		.J80_CS		(	i8080_CS	),
+		.J80_RS		(	i8080_RS	),
+		.J80_We		(	i8080_WR	),
+		.J80_Data	(	i8080_D		),
 
 		.LCD_BL		(	LCDBK		),
 
@@ -133,7 +137,7 @@ module TOP
 		
 		.CLK_OUT	(	LED[1]	),
 
-		.Count_REG	(	32'd24000000)	
+		.Count_REG	(	32'd25000000)	
 	);
 
 endmodule

@@ -37,7 +37,6 @@ set_pin_assignment {LCD_B[7]} { LOCATION = P54;  }
 set_pin_assignment {i8080_CS}   { LOCATION = P10; IOSTANDARD = LVCMOS18; }
 set_pin_assignment {i8080_RS}   { LOCATION = P13; IOSTANDARD = LVCMOS18; }
 set_pin_assignment {i8080_WR}   { LOCATION = P14; IOSTANDARD = LVCMOS18; }
-set_pin_assignment {i8080_RD}   { LOCATION = P15; IOSTANDARD = LVCMOS18; }
 set_pin_assignment {i8080_D[7]} { LOCATION = P16; IOSTANDARD = LVCMOS18; }
 set_pin_assignment {i8080_D[6]} { LOCATION = P17; IOSTANDARD = LVCMOS18; }
 set_pin_assignment {i8080_D[5]} { LOCATION = P18; IOSTANDARD = LVCMOS18; }

@@ -1,13 +1,12 @@
 // Verilog netlist created by TD v4.4.433
-// Tue May 14 13:46:04 2019
+// Wed May 15 17:41:28 2019
 
 `timescale 1ns / 1ps
-module TOP  // source/TOP.v(1)
+module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   (
   clk,
   i8080_CS,
   i8080_D,
-  i8080_RS,
   i8080_WR,
   nRST,
   LCDBK,
@@ -19,49 +18,51 @@ module TOP  // source/TOP.v(1)
   LCD_R,
   LCD_SYNC,
   LED,
-  i8080_RD
+  i8080_RS
   );
 
-  input clk;  // source/TOP.v(3)
-  input i8080_CS;  // source/TOP.v(8)
-  input [7:0] i8080_D;  // source/TOP.v(13)
-  input i8080_RS;  // source/TOP.v(9)
-  input i8080_WR;  // source/TOP.v(10)
-  input nRST;  // source/TOP.v(4)
-  output LCDBK;  // source/TOP.v(15)
-  output [7:0] LCD_B;  // source/TOP.v(22)
-  output LCD_CLK;  // source/TOP.v(16)
-  output LCD_DEN;  // source/TOP.v(19)
-  output [7:0] LCD_G;  // source/TOP.v(21)
-  output LCD_HYNC;  // source/TOP.v(17)
-  output [7:0] LCD_R;  // source/TOP.v(20)
-  output LCD_SYNC;  // source/TOP.v(18)
-  output [1:0] LED;  // source/TOP.v(6)
-  output i8080_RD;  // source/TOP.v(11)
+  input clk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
+  input i8080_CS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
+  input [7:0] i8080_D;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+  input i8080_WR;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
+  input nRST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
+  output LCDBK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(14)
+  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+  output LCD_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
+  output LCD_DEN;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
+  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+  output LCD_HYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
+  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+  output LCD_SYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
+  output [1:0] LED;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
+  inout i8080_RS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
 
-  wire [15:0] \D1/LineCount ;  // source/VGAMod.v(27)
-  wire [15:0] \D1/PixelCount ;  // source/VGAMod.v(26)
+  wire [15:0] \D1/LineCount ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(27)
+  wire [15:0] \D1/PixelCount ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(26)
   wire [15:0] \D1/n2 ;
   wire [15:0] \D1/n4 ;
   wire [15:0] \D1/n8 ;
   wire [15:0] \D1/n9 ;
-  wire [7:0] FIFO_DI;  // source/TOP.v(56)
-  wire [15:0] FIFO_DO;  // source/TOP.v(55)
-  wire [7:0] LCD_B_pad;  // source/TOP.v(22)
-  wire [7:0] LCD_G_pad;  // source/TOP.v(21)
-  wire [7:0] LCD_R_pad;  // source/TOP.v(20)
-  wire [1:0] LED_pad;  // source/TOP.v(6)
+  wire [7:0] FIFO_DI;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(55)
+  wire [15:0] FIFO_DO;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(54)
+  wire [7:0] LCD_B_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+  wire [7:0] LCD_G_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+  wire [7:0] LCD_R_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+  wire [1:0] LED_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
   wire [31:0] \U1/Count ;  // source/CLK_MOD.v(15)
   wire [31:0] \U1/n3 ;
   wire [31:0] \U1/n5 ;
   wire [31:0] \U2/Count ;  // source/CLK_MOD.v(15)
   wire [31:0] \U2/n3 ;
   wire [31:0] \U2/n5 ;
-  wire [15:0] \U4/AddrCtrl ;  // source/LCD8080Ctrl.v(89)
-  wire [15:0] \U4/n19 ;
-  wire [15:0] \U4/n22 ;
-  wire CLK_100M;  // source/TOP.v(26)
-  wire \D1/FrameFlag ;  // source/VGAMod.v(42)
+  wire [15:0] \U4/AddrCtrl ;  // source/LCD8080Ctrl.v(90)
+  wire [4:0] \U4/LCD_Ctrl_Reg ;  // source/LCD8080Ctrl.v(43)
+  wire [4:0] \U4/LCD_Pix_Reg ;  // source/LCD8080Ctrl.v(44)
+  wire [15:0] \U4/n18 ;
+  wire [15:0] \U4/n21 ;
+  wire [7:0] i8080_D_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+  wire CLK_100M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(25)
+  wire \D1/FrameFlag ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(55)
   wire \D1/add0/c0 ;
   wire \D1/add0/c1 ;
   wire \D1/add0/c10 ;
@@ -145,6 +146,23 @@ module TOP  // source/TOP.v(1)
   wire \D1/lt2_c7 ;
   wire \D1/lt2_c8 ;
   wire \D1/lt2_c9 ;
+  wire \D1/lt3_c0 ;
+  wire \D1/lt3_c1 ;
+  wire \D1/lt3_c10 ;
+  wire \D1/lt3_c11 ;
+  wire \D1/lt3_c12 ;
+  wire \D1/lt3_c13 ;
+  wire \D1/lt3_c14 ;
+  wire \D1/lt3_c15 ;
+  wire \D1/lt3_c16 ;
+  wire \D1/lt3_c2 ;
+  wire \D1/lt3_c3 ;
+  wire \D1/lt3_c4 ;
+  wire \D1/lt3_c5 ;
+  wire \D1/lt3_c6 ;
+  wire \D1/lt3_c7 ;
+  wire \D1/lt3_c8 ;
+  wire \D1/lt3_c9 ;
   wire \D1/lt4_c0 ;
   wire \D1/lt4_c1 ;
   wire \D1/lt4_c10 ;
@@ -248,7 +266,6 @@ module TOP  // source/TOP.v(1)
   wire \D1/lt9_c8 ;
   wire \D1/lt9_c9 ;
   wire \D1/mux3_b0_sel_is_0_o ;
-  wire \D1/n0 ;
   wire \D1/n13 ;
   wire \D1/n14 ;
   wire \D1/n15 ;
@@ -261,12 +278,15 @@ module TOP  // source/TOP.v(1)
   wire \D1/n28 ;
   wire \FIFO0/logic_fifo_full ;
   wire \FIFO0/logic_fifo_full_neg ;
-  wire FIFO_EMPTY;  // source/TOP.v(53)
-  wire FIFO_RE;  // source/TOP.v(51)
-  wire LCD_CLK_pad;  // source/TOP.v(16)
-  wire LCD_DEN_pad;  // source/TOP.v(19)
-  wire LCD_HYNC_pad;  // source/TOP.v(17)
-  wire LCD_SYNC_pad;  // source/TOP.v(18)
+  wire FIFO_CLK_W;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(49)
+  wire FIFO_EMPTY;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(52)
+  wire FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(50)
+  wire FIFO_RST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(47)
+  wire FIFO_WE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(51)
+  wire LCD_CLK_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
+  wire LCD_DEN_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
+  wire LCD_HYNC_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
+  wire LCD_SYNC_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
   wire \PLL1/clk0_buf ;  // al_ip/LCDPLL.v(39)
   wire \U1/add0/c0 ;
   wire \U1/add0/c1 ;
@@ -336,7 +356,7 @@ module TOP  // source/TOP.v(1)
   wire \U2/add0/c9 ;
   wire \U2/n1 ;
   wire \U2/n2 ;
-  wire \U4/IDELWe ;  // source/LCD8080Ctrl.v(53)
+  wire \U4/FrameSync ;  // source/LCD8080Ctrl.v(54)
   wire \U4/add0/c0 ;
   wire \U4/add0/c1 ;
   wire \U4/add0/c10 ;
@@ -489,15 +509,20 @@ module TOP  // source/TOP.v(1)
   wire \U4/lt7_c7 ;
   wire \U4/lt7_c8 ;
   wire \U4/lt7_c9 ;
-  wire \U4/mux7_b0_sel_is_0_o ;
-  wire \U4/n18 ;
-  wire \U4/n24 ;
-  wire \U4/n28 ;
-  wire \U4/n32 ;
-  wire \U4/n34 ;
-  wire \U4/n38 ;
-  wire \U4/n40 ;
-  wire \U4/n44 ;
+  wire \U4/mux0_b3_sel_is_3_o ;
+  wire \U4/mux10_b0_sel_is_0_o ;
+  wire \U4/mux1_b0_sel_is_3_o ;
+  wire \U4/mux2_b0_sel_is_3_o ;
+  wire \U4/n17 ;
+  wire \U4/n23 ;
+  wire \U4/n27 ;
+  wire \U4/n31 ;
+  wire \U4/n33 ;
+  wire \U4/n37 ;
+  wire \U4/n39 ;
+  wire \U4/n43 ;
+  wire _al_u125_o;
+  wire _al_u149_o;
   wire _al_u150_o;
   wire _al_u151_o;
   wire _al_u152_o;
@@ -523,10 +548,18 @@ module TOP  // source/TOP.v(1)
   wire _al_u175_o;
   wire _al_u176_o;
   wire _al_u177_o;
-  wire _al_u275_o;
   wire _al_u276_o;
-  wire clk_pad;  // source/TOP.v(3)
-  wire nRST_pad;  // source/TOP.v(4)
+  wire _al_u277_o;
+  wire _al_u278_o;
+  wire _al_u279_o;
+  wire _al_u283_o;
+  wire _al_u287_o;
+  wire _al_u288_o;
+  wire clk_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
+  wire i8080_CS_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
+  wire i8080_RS_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
+  wire i8080_WR_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
+  wire nRST_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
 
   reg_ar_as_w1 \D1/FrameFlag_reg  (
     .clk(LCD_CLK_pad),
@@ -534,7 +567,7 @@ module TOP  // source/TOP.v(1)
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/FrameFlag ));  // source/VGAMod.v(71)
+    .q(\D1/FrameFlag ));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(84)
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \D1/add0/u0  (
@@ -828,14 +861,14 @@ module TOP  // source/TOP.v(1)
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt0_2  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/PixelCount [2]),
     .c(\D1/lt0_c2 ),
     .o({\D1/lt0_c3 ,open_n16}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt0_3  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/PixelCount [3]),
     .c(\D1/lt0_c3 ),
     .o({\D1/lt0_c4 ,open_n17}));
@@ -849,7 +882,7 @@ module TOP  // source/TOP.v(1)
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt0_5  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/PixelCount [5]),
     .c(\D1/lt0_c5 ),
     .o({\D1/lt0_c6 ,open_n19}));
@@ -911,7 +944,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt1_10  (
     .a(\D1/PixelCount [10]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt1_c10 ),
     .o({\D1/lt1_c11 ,open_n30}));
   AL_MAP_ADDER #(
@@ -967,7 +1000,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt1_4  (
     .a(\D1/PixelCount [4]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt1_c4 ),
     .o({\D1/lt1_c5 ,open_n38}));
   AL_MAP_ADDER #(
@@ -981,28 +1014,28 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt1_6  (
     .a(\D1/PixelCount [6]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt1_c6 ),
     .o({\D1/lt1_c7 ,open_n40}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt1_7  (
     .a(\D1/PixelCount [7]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt1_c7 ),
     .o({\D1/lt1_c8 ,open_n41}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt1_8  (
     .a(\D1/PixelCount [8]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt1_c8 ),
     .o({\D1/lt1_c9 ,open_n42}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt1_9  (
     .a(\D1/PixelCount [9]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt1_c9 ),
     .o({\D1/lt1_c10 ,open_n43}));
   AL_MAP_ADDER #(
@@ -1021,14 +1054,14 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt2_0  (
     .a(\D1/LineCount [0]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt2_c0 ),
     .o({\D1/lt2_c1 ,open_n48}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt2_1  (
     .a(\D1/LineCount [1]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt2_c1 ),
     .o({\D1/lt2_c2 ,open_n49}));
   AL_MAP_ADDER #(
@@ -1077,7 +1110,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt2_2  (
     .a(\D1/LineCount [2]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt2_c2 ),
     .o({\D1/lt2_c3 ,open_n56}));
   AL_MAP_ADDER #(
@@ -1098,7 +1131,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("A_LE_B"))
     \D1/lt2_5  (
     .a(\D1/LineCount [5]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt2_c5 ),
     .o({\D1/lt2_c6 ,open_n59}));
   AL_MAP_ADDER #(
@@ -1143,972 +1176,1096 @@ module TOP  // source/TOP.v(1)
     .o({open_n67,LCD_SYNC_pad}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
+    \D1/lt3_0  (
+    .a(\D1/PixelCount [0]),
+    .b(1'b0),
+    .c(\D1/lt3_c0 ),
+    .o({\D1/lt3_c1 ,open_n68}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_1  (
+    .a(\D1/PixelCount [1]),
+    .b(1'b1),
+    .c(\D1/lt3_c1 ),
+    .o({\D1/lt3_c2 ,open_n69}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_10  (
+    .a(\D1/PixelCount [10]),
+    .b(1'b0),
+    .c(\D1/lt3_c10 ),
+    .o({\D1/lt3_c11 ,open_n70}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_11  (
+    .a(\D1/PixelCount [11]),
+    .b(1'b0),
+    .c(\D1/lt3_c11 ),
+    .o({\D1/lt3_c12 ,open_n71}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_12  (
+    .a(\D1/PixelCount [12]),
+    .b(1'b0),
+    .c(\D1/lt3_c12 ),
+    .o({\D1/lt3_c13 ,open_n72}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_13  (
+    .a(\D1/PixelCount [13]),
+    .b(1'b0),
+    .c(\D1/lt3_c13 ),
+    .o({\D1/lt3_c14 ,open_n73}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_14  (
+    .a(\D1/PixelCount [14]),
+    .b(1'b0),
+    .c(\D1/lt3_c14 ),
+    .o({\D1/lt3_c15 ,open_n74}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_15  (
+    .a(\D1/PixelCount [15]),
+    .b(1'b0),
+    .c(\D1/lt3_c15 ),
+    .o({\D1/lt3_c16 ,open_n75}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_2  (
+    .a(\D1/PixelCount [2]),
+    .b(1'b0),
+    .c(\D1/lt3_c2 ),
+    .o({\D1/lt3_c3 ,open_n76}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_3  (
+    .a(\D1/PixelCount [3]),
+    .b(1'b1),
+    .c(\D1/lt3_c3 ),
+    .o({\D1/lt3_c4 ,open_n77}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_4  (
+    .a(\D1/PixelCount [4]),
+    .b(1'b0),
+    .c(\D1/lt3_c4 ),
+    .o({\D1/lt3_c5 ,open_n78}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_5  (
+    .a(\D1/PixelCount [5]),
+    .b(1'b0),
+    .c(\D1/lt3_c5 ),
+    .o({\D1/lt3_c6 ,open_n79}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_6  (
+    .a(\D1/PixelCount [6]),
+    .b(1'b0),
+    .c(\D1/lt3_c6 ),
+    .o({\D1/lt3_c7 ,open_n80}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_7  (
+    .a(\D1/PixelCount [7]),
+    .b(1'b0),
+    .c(\D1/lt3_c7 ),
+    .o({\D1/lt3_c8 ,open_n81}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_8  (
+    .a(\D1/PixelCount [8]),
+    .b(1'b0),
+    .c(\D1/lt3_c8 ),
+    .o({\D1/lt3_c9 ,open_n82}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_9  (
+    .a(\D1/PixelCount [9]),
+    .b(1'b0),
+    .c(\D1/lt3_c9 ),
+    .o({\D1/lt3_c10 ,open_n83}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B_CARRY"))
+    \D1/lt3_cin  (
+    .a(1'b0),
+    .o({\D1/lt3_c0 ,open_n86}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
+    \D1/lt3_cout  (
+    .a(1'b0),
+    .b(1'b1),
+    .c(\D1/lt3_c16 ),
+    .o({open_n87,FIFO_RST}));
+  AL_MAP_ADDER #(
+    .ALUTYPE("A_LE_B"))
     \D1/lt4_0  (
     .a(1'b0),
     .b(\D1/PixelCount [0]),
     .c(\D1/lt4_c0 ),
-    .o({\D1/lt4_c1 ,open_n68}));
+    .o({\D1/lt4_c1 ,open_n88}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_1  (
     .a(1'b0),
     .b(\D1/PixelCount [1]),
     .c(\D1/lt4_c1 ),
-    .o({\D1/lt4_c2 ,open_n69}));
+    .o({\D1/lt4_c2 ,open_n89}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_10  (
     .a(1'b0),
     .b(\D1/PixelCount [10]),
     .c(\D1/lt4_c10 ),
-    .o({\D1/lt4_c11 ,open_n70}));
+    .o({\D1/lt4_c11 ,open_n90}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_11  (
     .a(1'b0),
     .b(\D1/PixelCount [11]),
     .c(\D1/lt4_c11 ),
-    .o({\D1/lt4_c12 ,open_n71}));
+    .o({\D1/lt4_c12 ,open_n91}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_12  (
     .a(1'b0),
     .b(\D1/PixelCount [12]),
     .c(\D1/lt4_c12 ),
-    .o({\D1/lt4_c13 ,open_n72}));
+    .o({\D1/lt4_c13 ,open_n92}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_13  (
     .a(1'b0),
     .b(\D1/PixelCount [13]),
     .c(\D1/lt4_c13 ),
-    .o({\D1/lt4_c14 ,open_n73}));
+    .o({\D1/lt4_c14 ,open_n93}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_14  (
     .a(1'b0),
     .b(\D1/PixelCount [14]),
     .c(\D1/lt4_c14 ),
-    .o({\D1/lt4_c15 ,open_n74}));
+    .o({\D1/lt4_c15 ,open_n94}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_15  (
     .a(1'b0),
     .b(\D1/PixelCount [15]),
     .c(\D1/lt4_c15 ),
-    .o({\D1/lt4_c16 ,open_n75}));
+    .o({\D1/lt4_c16 ,open_n95}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_2  (
     .a(1'b0),
     .b(\D1/PixelCount [2]),
     .c(\D1/lt4_c2 ),
-    .o({\D1/lt4_c3 ,open_n76}));
+    .o({\D1/lt4_c3 ,open_n96}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_3  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/PixelCount [3]),
     .c(\D1/lt4_c3 ),
-    .o({\D1/lt4_c4 ,open_n77}));
+    .o({\D1/lt4_c4 ,open_n97}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_4  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/PixelCount [4]),
     .c(\D1/lt4_c4 ),
-    .o({\D1/lt4_c5 ,open_n78}));
+    .o({\D1/lt4_c5 ,open_n98}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_5  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/PixelCount [5]),
     .c(\D1/lt4_c5 ),
-    .o({\D1/lt4_c6 ,open_n79}));
+    .o({\D1/lt4_c6 ,open_n99}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_6  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/PixelCount [6]),
     .c(\D1/lt4_c6 ),
-    .o({\D1/lt4_c7 ,open_n80}));
+    .o({\D1/lt4_c7 ,open_n100}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_7  (
     .a(1'b0),
     .b(\D1/PixelCount [7]),
     .c(\D1/lt4_c7 ),
-    .o({\D1/lt4_c8 ,open_n81}));
+    .o({\D1/lt4_c8 ,open_n101}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_8  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/PixelCount [8]),
     .c(\D1/lt4_c8 ),
-    .o({\D1/lt4_c9 ,open_n82}));
+    .o({\D1/lt4_c9 ,open_n102}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_9  (
     .a(1'b0),
     .b(\D1/PixelCount [9]),
     .c(\D1/lt4_c9 ),
-    .o({\D1/lt4_c10 ,open_n83}));
+    .o({\D1/lt4_c10 ,open_n103}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt4_cin  (
     .a(1'b1),
-    .o({\D1/lt4_c0 ,open_n86}));
+    .o({\D1/lt4_c0 ,open_n106}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt4_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt4_c16 ),
-    .o({open_n87,\D1/n17 }));
+    .o({open_n107,\D1/n17 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_0  (
     .a(\D1/PixelCount [0]),
     .b(1'b0),
     .c(\D1/lt5_c0 ),
-    .o({\D1/lt5_c1 ,open_n88}));
+    .o({\D1/lt5_c1 ,open_n108}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_1  (
     .a(\D1/PixelCount [1]),
     .b(1'b0),
     .c(\D1/lt5_c1 ),
-    .o({\D1/lt5_c2 ,open_n89}));
+    .o({\D1/lt5_c2 ,open_n109}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_10  (
     .a(\D1/PixelCount [10]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt5_c10 ),
-    .o({\D1/lt5_c11 ,open_n90}));
+    .o({\D1/lt5_c11 ,open_n110}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_11  (
     .a(\D1/PixelCount [11]),
     .b(1'b0),
     .c(\D1/lt5_c11 ),
-    .o({\D1/lt5_c12 ,open_n91}));
+    .o({\D1/lt5_c12 ,open_n111}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_12  (
     .a(\D1/PixelCount [12]),
     .b(1'b0),
     .c(\D1/lt5_c12 ),
-    .o({\D1/lt5_c13 ,open_n92}));
+    .o({\D1/lt5_c13 ,open_n112}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_13  (
     .a(\D1/PixelCount [13]),
     .b(1'b0),
     .c(\D1/lt5_c13 ),
-    .o({\D1/lt5_c14 ,open_n93}));
+    .o({\D1/lt5_c14 ,open_n113}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_14  (
     .a(\D1/PixelCount [14]),
     .b(1'b0),
     .c(\D1/lt5_c14 ),
-    .o({\D1/lt5_c15 ,open_n94}));
+    .o({\D1/lt5_c15 ,open_n114}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_15  (
     .a(\D1/PixelCount [15]),
     .b(1'b0),
     .c(\D1/lt5_c15 ),
-    .o({\D1/lt5_c16 ,open_n95}));
+    .o({\D1/lt5_c16 ,open_n115}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_2  (
     .a(\D1/PixelCount [2]),
     .b(1'b0),
     .c(\D1/lt5_c2 ),
-    .o({\D1/lt5_c3 ,open_n96}));
+    .o({\D1/lt5_c3 ,open_n116}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_3  (
     .a(\D1/PixelCount [3]),
     .b(1'b0),
     .c(\D1/lt5_c3 ),
-    .o({\D1/lt5_c4 ,open_n97}));
+    .o({\D1/lt5_c4 ,open_n117}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_4  (
     .a(\D1/PixelCount [4]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt5_c4 ),
-    .o({\D1/lt5_c5 ,open_n98}));
+    .o({\D1/lt5_c5 ,open_n118}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_5  (
     .a(\D1/PixelCount [5]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt5_c5 ),
-    .o({\D1/lt5_c6 ,open_n99}));
+    .o({\D1/lt5_c6 ,open_n119}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_6  (
     .a(\D1/PixelCount [6]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt5_c6 ),
-    .o({\D1/lt5_c7 ,open_n100}));
+    .o({\D1/lt5_c7 ,open_n120}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_7  (
     .a(\D1/PixelCount [7]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt5_c7 ),
-    .o({\D1/lt5_c8 ,open_n101}));
+    .o({\D1/lt5_c8 ,open_n121}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_8  (
     .a(\D1/PixelCount [8]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt5_c8 ),
-    .o({\D1/lt5_c9 ,open_n102}));
+    .o({\D1/lt5_c9 ,open_n122}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_9  (
     .a(\D1/PixelCount [9]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt5_c9 ),
-    .o({\D1/lt5_c10 ,open_n103}));
+    .o({\D1/lt5_c10 ,open_n123}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt5_cin  (
     .a(1'b1),
-    .o({\D1/lt5_c0 ,open_n106}));
+    .o({\D1/lt5_c0 ,open_n126}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt5_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt5_c16 ),
-    .o({open_n107,\D1/n18 }));
+    .o({open_n127,\D1/n18 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_0  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/LineCount [0]),
     .c(\D1/lt6_c0 ),
-    .o({\D1/lt6_c1 ,open_n108}));
+    .o({\D1/lt6_c1 ,open_n128}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_1  (
-    .a(1'b0),
+    .a(1'b1),
     .b(\D1/LineCount [1]),
     .c(\D1/lt6_c1 ),
-    .o({\D1/lt6_c2 ,open_n109}));
+    .o({\D1/lt6_c2 ,open_n129}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_10  (
     .a(1'b0),
     .b(\D1/LineCount [10]),
     .c(\D1/lt6_c10 ),
-    .o({\D1/lt6_c11 ,open_n110}));
+    .o({\D1/lt6_c11 ,open_n130}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_11  (
     .a(1'b0),
     .b(\D1/LineCount [11]),
     .c(\D1/lt6_c11 ),
-    .o({\D1/lt6_c12 ,open_n111}));
+    .o({\D1/lt6_c12 ,open_n131}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_12  (
     .a(1'b0),
     .b(\D1/LineCount [12]),
     .c(\D1/lt6_c12 ),
-    .o({\D1/lt6_c13 ,open_n112}));
+    .o({\D1/lt6_c13 ,open_n132}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_13  (
     .a(1'b0),
     .b(\D1/LineCount [13]),
     .c(\D1/lt6_c13 ),
-    .o({\D1/lt6_c14 ,open_n113}));
+    .o({\D1/lt6_c14 ,open_n133}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_14  (
     .a(1'b0),
     .b(\D1/LineCount [14]),
     .c(\D1/lt6_c14 ),
-    .o({\D1/lt6_c15 ,open_n114}));
+    .o({\D1/lt6_c15 ,open_n134}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_15  (
     .a(1'b0),
     .b(\D1/LineCount [15]),
     .c(\D1/lt6_c15 ),
-    .o({\D1/lt6_c16 ,open_n115}));
+    .o({\D1/lt6_c16 ,open_n135}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_2  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/LineCount [2]),
     .c(\D1/lt6_c2 ),
-    .o({\D1/lt6_c3 ,open_n116}));
+    .o({\D1/lt6_c3 ,open_n136}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_3  (
     .a(1'b1),
     .b(\D1/LineCount [3]),
     .c(\D1/lt6_c3 ),
-    .o({\D1/lt6_c4 ,open_n117}));
+    .o({\D1/lt6_c4 ,open_n137}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_4  (
     .a(1'b0),
     .b(\D1/LineCount [4]),
     .c(\D1/lt6_c4 ),
-    .o({\D1/lt6_c5 ,open_n118}));
+    .o({\D1/lt6_c5 ,open_n138}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_5  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/LineCount [5]),
     .c(\D1/lt6_c5 ),
-    .o({\D1/lt6_c6 ,open_n119}));
+    .o({\D1/lt6_c6 ,open_n139}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_6  (
     .a(1'b0),
     .b(\D1/LineCount [6]),
     .c(\D1/lt6_c6 ),
-    .o({\D1/lt6_c7 ,open_n120}));
+    .o({\D1/lt6_c7 ,open_n140}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_7  (
     .a(1'b0),
     .b(\D1/LineCount [7]),
     .c(\D1/lt6_c7 ),
-    .o({\D1/lt6_c8 ,open_n121}));
+    .o({\D1/lt6_c8 ,open_n141}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_8  (
     .a(1'b0),
     .b(\D1/LineCount [8]),
     .c(\D1/lt6_c8 ),
-    .o({\D1/lt6_c9 ,open_n122}));
+    .o({\D1/lt6_c9 ,open_n142}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_9  (
     .a(1'b0),
     .b(\D1/LineCount [9]),
     .c(\D1/lt6_c9 ),
-    .o({\D1/lt6_c10 ,open_n123}));
+    .o({\D1/lt6_c10 ,open_n143}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt6_cin  (
     .a(1'b1),
-    .o({\D1/lt6_c0 ,open_n126}));
+    .o({\D1/lt6_c0 ,open_n146}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt6_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt6_c16 ),
-    .o({open_n127,\D1/n20 }));
+    .o({open_n147,\D1/n20 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_0  (
     .a(\D1/LineCount [0]),
     .b(1'b0),
     .c(\D1/lt7_c0 ),
-    .o({\D1/lt7_c1 ,open_n128}));
+    .o({\D1/lt7_c1 ,open_n148}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_1  (
     .a(\D1/LineCount [1]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt7_c1 ),
-    .o({\D1/lt7_c2 ,open_n129}));
+    .o({\D1/lt7_c2 ,open_n149}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_10  (
     .a(\D1/LineCount [10]),
     .b(1'b0),
     .c(\D1/lt7_c10 ),
-    .o({\D1/lt7_c11 ,open_n130}));
+    .o({\D1/lt7_c11 ,open_n150}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_11  (
     .a(\D1/LineCount [11]),
     .b(1'b0),
     .c(\D1/lt7_c11 ),
-    .o({\D1/lt7_c12 ,open_n131}));
+    .o({\D1/lt7_c12 ,open_n151}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_12  (
     .a(\D1/LineCount [12]),
     .b(1'b0),
     .c(\D1/lt7_c12 ),
-    .o({\D1/lt7_c13 ,open_n132}));
+    .o({\D1/lt7_c13 ,open_n152}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_13  (
     .a(\D1/LineCount [13]),
     .b(1'b0),
     .c(\D1/lt7_c13 ),
-    .o({\D1/lt7_c14 ,open_n133}));
+    .o({\D1/lt7_c14 ,open_n153}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_14  (
     .a(\D1/LineCount [14]),
     .b(1'b0),
     .c(\D1/lt7_c14 ),
-    .o({\D1/lt7_c15 ,open_n134}));
+    .o({\D1/lt7_c15 ,open_n154}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_15  (
     .a(\D1/LineCount [15]),
     .b(1'b0),
     .c(\D1/lt7_c15 ),
-    .o({\D1/lt7_c16 ,open_n135}));
+    .o({\D1/lt7_c16 ,open_n155}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_2  (
     .a(\D1/LineCount [2]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt7_c2 ),
-    .o({\D1/lt7_c3 ,open_n136}));
+    .o({\D1/lt7_c3 ,open_n156}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_3  (
     .a(\D1/LineCount [3]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt7_c3 ),
-    .o({\D1/lt7_c4 ,open_n137}));
+    .o({\D1/lt7_c4 ,open_n157}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_4  (
     .a(\D1/LineCount [4]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt7_c4 ),
-    .o({\D1/lt7_c5 ,open_n138}));
+    .o({\D1/lt7_c5 ,open_n158}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_5  (
     .a(\D1/LineCount [5]),
     .b(1'b1),
     .c(\D1/lt7_c5 ),
-    .o({\D1/lt7_c6 ,open_n139}));
+    .o({\D1/lt7_c6 ,open_n159}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_6  (
     .a(\D1/LineCount [6]),
     .b(1'b0),
     .c(\D1/lt7_c6 ),
-    .o({\D1/lt7_c7 ,open_n140}));
+    .o({\D1/lt7_c7 ,open_n160}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_7  (
     .a(\D1/LineCount [7]),
     .b(1'b0),
     .c(\D1/lt7_c7 ),
-    .o({\D1/lt7_c8 ,open_n141}));
+    .o({\D1/lt7_c8 ,open_n161}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_8  (
     .a(\D1/LineCount [8]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt7_c8 ),
-    .o({\D1/lt7_c9 ,open_n142}));
+    .o({\D1/lt7_c9 ,open_n162}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_9  (
     .a(\D1/LineCount [9]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt7_c9 ),
-    .o({\D1/lt7_c10 ,open_n143}));
+    .o({\D1/lt7_c10 ,open_n163}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt7_cin  (
     .a(1'b0),
-    .o({\D1/lt7_c0 ,open_n146}));
+    .o({\D1/lt7_c0 ,open_n166}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt7_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt7_c16 ),
-    .o({open_n147,\D1/n22 }));
+    .o({open_n167,\D1/n22 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_0  (
     .a(1'b1),
     .b(\D1/PixelCount [0]),
     .c(\D1/lt8_c0 ),
-    .o({\D1/lt8_c1 ,open_n148}));
+    .o({\D1/lt8_c1 ,open_n168}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_1  (
     .a(1'b1),
     .b(\D1/PixelCount [1]),
     .c(\D1/lt8_c1 ),
-    .o({\D1/lt8_c2 ,open_n149}));
+    .o({\D1/lt8_c2 ,open_n169}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_10  (
     .a(1'b0),
     .b(\D1/PixelCount [10]),
     .c(\D1/lt8_c10 ),
-    .o({\D1/lt8_c11 ,open_n150}));
+    .o({\D1/lt8_c11 ,open_n170}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_11  (
     .a(1'b0),
     .b(\D1/PixelCount [11]),
     .c(\D1/lt8_c11 ),
-    .o({\D1/lt8_c12 ,open_n151}));
+    .o({\D1/lt8_c12 ,open_n171}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_12  (
     .a(1'b0),
     .b(\D1/PixelCount [12]),
     .c(\D1/lt8_c12 ),
-    .o({\D1/lt8_c13 ,open_n152}));
+    .o({\D1/lt8_c13 ,open_n172}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_13  (
     .a(1'b0),
     .b(\D1/PixelCount [13]),
     .c(\D1/lt8_c13 ),
-    .o({\D1/lt8_c14 ,open_n153}));
+    .o({\D1/lt8_c14 ,open_n173}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_14  (
     .a(1'b0),
     .b(\D1/PixelCount [14]),
     .c(\D1/lt8_c14 ),
-    .o({\D1/lt8_c15 ,open_n154}));
+    .o({\D1/lt8_c15 ,open_n174}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_15  (
     .a(1'b0),
     .b(\D1/PixelCount [15]),
     .c(\D1/lt8_c15 ),
-    .o({\D1/lt8_c16 ,open_n155}));
+    .o({\D1/lt8_c16 ,open_n175}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_2  (
     .a(1'b1),
     .b(\D1/PixelCount [2]),
     .c(\D1/lt8_c2 ),
-    .o({\D1/lt8_c3 ,open_n156}));
+    .o({\D1/lt8_c3 ,open_n176}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_3  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/PixelCount [3]),
     .c(\D1/lt8_c3 ),
-    .o({\D1/lt8_c4 ,open_n157}));
+    .o({\D1/lt8_c4 ,open_n177}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_4  (
     .a(1'b1),
     .b(\D1/PixelCount [4]),
     .c(\D1/lt8_c4 ),
-    .o({\D1/lt8_c5 ,open_n158}));
+    .o({\D1/lt8_c5 ,open_n178}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_5  (
     .a(1'b1),
     .b(\D1/PixelCount [5]),
     .c(\D1/lt8_c5 ),
-    .o({\D1/lt8_c6 ,open_n159}));
+    .o({\D1/lt8_c6 ,open_n179}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_6  (
     .a(1'b1),
     .b(\D1/PixelCount [6]),
     .c(\D1/lt8_c6 ),
-    .o({\D1/lt8_c7 ,open_n160}));
+    .o({\D1/lt8_c7 ,open_n180}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_7  (
-    .a(1'b1),
+    .a(1'b0),
     .b(\D1/PixelCount [7]),
     .c(\D1/lt8_c7 ),
-    .o({\D1/lt8_c8 ,open_n161}));
+    .o({\D1/lt8_c8 ,open_n181}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_8  (
     .a(1'b0),
     .b(\D1/PixelCount [8]),
     .c(\D1/lt8_c8 ),
-    .o({\D1/lt8_c9 ,open_n162}));
+    .o({\D1/lt8_c9 ,open_n182}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_9  (
     .a(1'b0),
     .b(\D1/PixelCount [9]),
     .c(\D1/lt8_c9 ),
-    .o({\D1/lt8_c10 ,open_n163}));
+    .o({\D1/lt8_c10 ,open_n183}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt8_cin  (
     .a(1'b1),
-    .o({\D1/lt8_c0 ,open_n166}));
+    .o({\D1/lt8_c0 ,open_n186}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt8_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt8_c16 ),
-    .o({open_n167,\D1/n24 }));
+    .o({open_n187,\D1/n24 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_0  (
     .a(\D1/PixelCount [0]),
     .b(1'b1),
     .c(\D1/lt9_c0 ),
-    .o({\D1/lt9_c1 ,open_n168}));
+    .o({\D1/lt9_c1 ,open_n188}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_1  (
     .a(\D1/PixelCount [1]),
     .b(1'b0),
     .c(\D1/lt9_c1 ),
-    .o({\D1/lt9_c2 ,open_n169}));
+    .o({\D1/lt9_c2 ,open_n189}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_10  (
     .a(\D1/PixelCount [10]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt9_c10 ),
-    .o({\D1/lt9_c11 ,open_n170}));
+    .o({\D1/lt9_c11 ,open_n190}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_11  (
     .a(\D1/PixelCount [11]),
     .b(1'b0),
     .c(\D1/lt9_c11 ),
-    .o({\D1/lt9_c12 ,open_n171}));
+    .o({\D1/lt9_c12 ,open_n191}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_12  (
     .a(\D1/PixelCount [12]),
     .b(1'b0),
     .c(\D1/lt9_c12 ),
-    .o({\D1/lt9_c13 ,open_n172}));
+    .o({\D1/lt9_c13 ,open_n192}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_13  (
     .a(\D1/PixelCount [13]),
     .b(1'b0),
     .c(\D1/lt9_c13 ),
-    .o({\D1/lt9_c14 ,open_n173}));
+    .o({\D1/lt9_c14 ,open_n193}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_14  (
     .a(\D1/PixelCount [14]),
     .b(1'b0),
     .c(\D1/lt9_c14 ),
-    .o({\D1/lt9_c15 ,open_n174}));
+    .o({\D1/lt9_c15 ,open_n194}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_15  (
     .a(\D1/PixelCount [15]),
     .b(1'b0),
     .c(\D1/lt9_c15 ),
-    .o({\D1/lt9_c16 ,open_n175}));
+    .o({\D1/lt9_c16 ,open_n195}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_2  (
     .a(\D1/PixelCount [2]),
     .b(1'b0),
     .c(\D1/lt9_c2 ),
-    .o({\D1/lt9_c3 ,open_n176}));
+    .o({\D1/lt9_c3 ,open_n196}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_3  (
     .a(\D1/PixelCount [3]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt9_c3 ),
-    .o({\D1/lt9_c4 ,open_n177}));
+    .o({\D1/lt9_c4 ,open_n197}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_4  (
     .a(\D1/PixelCount [4]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt9_c4 ),
-    .o({\D1/lt9_c5 ,open_n178}));
+    .o({\D1/lt9_c5 ,open_n198}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_5  (
     .a(\D1/PixelCount [5]),
-    .b(1'b1),
+    .b(1'b0),
     .c(\D1/lt9_c5 ),
-    .o({\D1/lt9_c6 ,open_n179}));
+    .o({\D1/lt9_c6 ,open_n199}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_6  (
     .a(\D1/PixelCount [6]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt9_c6 ),
-    .o({\D1/lt9_c7 ,open_n180}));
+    .o({\D1/lt9_c7 ,open_n200}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_7  (
     .a(\D1/PixelCount [7]),
     .b(1'b0),
     .c(\D1/lt9_c7 ),
-    .o({\D1/lt9_c8 ,open_n181}));
+    .o({\D1/lt9_c8 ,open_n201}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_8  (
     .a(\D1/PixelCount [8]),
     .b(1'b0),
     .c(\D1/lt9_c8 ),
-    .o({\D1/lt9_c9 ,open_n182}));
+    .o({\D1/lt9_c9 ,open_n202}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_9  (
     .a(\D1/PixelCount [9]),
-    .b(1'b0),
+    .b(1'b1),
     .c(\D1/lt9_c9 ),
-    .o({\D1/lt9_c10 ,open_n183}));
+    .o({\D1/lt9_c10 ,open_n203}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \D1/lt9_cin  (
     .a(1'b1),
-    .o({\D1/lt9_c0 ,open_n186}));
+    .o({\D1/lt9_c0 ,open_n206}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \D1/lt9_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\D1/lt9_c16 ),
-    .o({open_n187,\D1/n26 }));
+    .o({open_n207,\D1/n26 }));
   reg_ar_as_w1 \D1/reg0_b0  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [0]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [0]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b1  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [1]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [1]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b10  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [10]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [10]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [10]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b11  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [11]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [11]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [11]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b12  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [12]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [12]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [12]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b13  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [13]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [13]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [13]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b14  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [14]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [14]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [14]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b15  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [15]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [15]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [15]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b2  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [2]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [2]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b3  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [3]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [3]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b4  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [4]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [4]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b5  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [5]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [5]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b6  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [6]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [6]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b7  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [7]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [7]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b8  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [8]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [8]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [8]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg0_b9  (
     .clk(LCD_CLK_pad),
     .d(\D1/n8 [9]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/PixelCount [9]));  // source/VGAMod.v(59)
+    .q(\D1/PixelCount [9]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b0  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [0]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [0]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b1  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [1]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [1]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b10  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [10]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [10]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [10]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b11  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [11]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [11]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [11]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b12  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [12]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [12]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [12]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b13  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [13]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [13]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [13]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b14  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [14]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [14]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [14]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b15  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [15]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [15]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [15]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b2  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [2]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [2]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b3  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [3]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [3]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b4  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [4]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [4]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b5  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [5]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [5]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b6  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [6]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [6]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b7  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [7]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [7]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b8  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [8]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [8]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [8]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   reg_ar_as_w1 \D1/reg1_b9  (
     .clk(LCD_CLK_pad),
     .d(\D1/n9 [9]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\D1/LineCount [9]));  // source/VGAMod.v(59)
+    .q(\D1/LineCount [9]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
   EF2_PHY_FIFO #(
     .AE(32'b00000000000000000000000000110100),
     .AEP1(32'b00000000000000000000000000111100),
@@ -2128,17 +2285,17 @@ module TOP  // source/TOP.v(1)
     .RESETMODE("ASYNC"))
     \FIFO0/logic_fifo_0  (
     .clkr(LCD_CLK_pad),
-    .clkw(CLK_100M),
+    .clkw(FIFO_CLK_W),
     .csr({2'b11,\D1/n28 }),
     .csw({2'b11,\FIFO0/logic_fifo_full_neg }),
-    .dia({open_n188,open_n189,open_n190,open_n191,open_n192,FIFO_DI[3],FIFO_DI[0],FIFO_DI[0],FIFO_DI[0]}),
+    .dia({open_n208,open_n209,open_n210,open_n211,open_n212,FIFO_DI[3:0]}),
     .orea(1'b0),
     .oreb(1'b0),
     .re(FIFO_RE),
-    .rprst(\D1/n0 ),
-    .rst(\D1/n0 ),
-    .we(\U4/IDELWe ),
-    .dob({open_n213,FIFO_DO[3:0],FIFO_DO[11:8]}),
+    .rprst(FIFO_RST),
+    .rst(FIFO_RST),
+    .we(FIFO_WE),
+    .dob({open_n233,FIFO_DO[3:0],FIFO_DO[11:8]}),
     .empty_flag(FIFO_EMPTY),
     .full_flag(\FIFO0/logic_fifo_full ));
   EF2_PHY_FIFO #(
@@ -2160,17 +2317,17 @@ module TOP  // source/TOP.v(1)
     .RESETMODE("ASYNC"))
     \FIFO0/logic_fifo_1  (
     .clkr(LCD_CLK_pad),
-    .clkw(CLK_100M),
+    .clkw(FIFO_CLK_W),
     .csr({2'b11,\D1/n28 }),
     .csw({2'b11,\FIFO0/logic_fifo_full_neg }),
-    .dia({open_n214,open_n215,open_n216,open_n217,open_n218,FIFO_DI[5],FIFO_DI[5],FIFO_DI[5],FIFO_DI[3]}),
+    .dia({open_n234,open_n235,open_n236,open_n237,open_n238,FIFO_DI[7:4]}),
     .orea(1'b0),
     .oreb(1'b0),
     .re(FIFO_RE),
-    .rprst(\D1/n0 ),
-    .rst(\D1/n0 ),
-    .we(\U4/IDELWe ),
-    .dob({open_n239,FIFO_DO[7:4],FIFO_DO[15:12]}));
+    .rprst(FIFO_RST),
+    .rst(FIFO_RST),
+    .we(FIFO_WE),
+    .dob({open_n259,FIFO_DO[7:4],FIFO_DO[15:12]}));
   EF2_PHY_GCLK \PLL1/bufg_feedback  (
     .clki(\PLL1/clk0_buf ),
     .clko(CLK_100M));  // al_ip/LCDPLL.v(41)
@@ -2284,7 +2441,7 @@ module TOP  // source/TOP.v(1)
     .reset(1'b0),
     .ssc_en(1'b0),
     .stdby(1'b0),
-    .clkc({open_n242,open_n243,open_n244,open_n245,open_n246,LCD_CLK_pad,\PLL1/clk0_buf }));  // al_ip/LCDPLL.v(93)
+    .clkc({open_n262,open_n263,open_n264,LCD_CLK_pad,open_n265,open_n266,\PLL1/clk0_buf }));  // al_ip/LCDPLL.v(93)
   reg_ar_as_w1 \U1/CLK_OUT_reg  (
     .clk(LCD_CLK_pad),
     .d(\U1/n2 ),
@@ -2473,7 +2630,7 @@ module TOP  // source/TOP.v(1)
     .a(\U1/Count [31]),
     .b(1'b0),
     .c(\U1/add0/c31 ),
-    .o({open_n257,\U1/n3 [31]}));
+    .o({open_n277,\U1/n3 [31]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U1/add0/u4  (
@@ -2520,7 +2677,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("ADD_CARRY"))
     \U1/add0/ucin  (
     .a(1'b0),
-    .o({\U1/add0/c0 ,open_n260}));
+    .o({\U1/add0/c0 ,open_n280}));
   reg_ar_as_w1 \U1/reg0_b0  (
     .clk(LCD_CLK_pad),
     .d(\U1/n5 [0]),
@@ -2933,7 +3090,7 @@ module TOP  // source/TOP.v(1)
     .a(\U2/Count [31]),
     .b(1'b0),
     .c(\U2/add0/c31 ),
-    .o({open_n261,\U2/n3 [31]}));
+    .o({open_n281,\U2/n3 [31]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U2/add0/u4  (
@@ -2980,7 +3137,7 @@ module TOP  // source/TOP.v(1)
     .ALUTYPE("ADD_CARRY"))
     \U2/add0/ucin  (
     .a(1'b0),
-    .o({\U2/add0/c0 ,open_n264}));
+    .o({\U2/add0/c0 ,open_n284}));
   reg_ar_as_w1 \U2/reg0_b0  (
     .clk(clk_pad),
     .d(\U2/n5 [0]),
@@ -3211,1682 +3368,1743 @@ module TOP  // source/TOP.v(1)
     .a(\U4/AddrCtrl [0]),
     .b(1'b1),
     .c(\U4/add0/c0 ),
-    .o({\U4/add0/c1 ,\U4/n19 [0]}));
+    .o({\U4/add0/c1 ,\U4/n18 [0]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/add0/c1 ),
-    .o({\U4/add0/c2 ,\U4/n19 [1]}));
+    .o({\U4/add0/c2 ,\U4/n18 [1]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b0),
     .c(\U4/add0/c10 ),
-    .o({\U4/add0/c11 ,\U4/n19 [10]}));
+    .o({\U4/add0/c11 ,\U4/n18 [10]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/add0/c11 ),
-    .o({\U4/add0/c12 ,\U4/n19 [11]}));
+    .o({\U4/add0/c12 ,\U4/n18 [11]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/add0/c12 ),
-    .o({\U4/add0/c13 ,\U4/n19 [12]}));
+    .o({\U4/add0/c13 ,\U4/n18 [12]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/add0/c13 ),
-    .o({\U4/add0/c14 ,\U4/n19 [13]}));
+    .o({\U4/add0/c14 ,\U4/n18 [13]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/add0/c14 ),
-    .o({\U4/add0/c15 ,\U4/n19 [14]}));
+    .o({\U4/add0/c15 ,\U4/n18 [14]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/add0/c15 ),
-    .o({open_n265,\U4/n19 [15]}));
+    .o({open_n285,\U4/n18 [15]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/add0/c2 ),
-    .o({\U4/add0/c3 ,\U4/n19 [2]}));
+    .o({\U4/add0/c3 ,\U4/n18 [2]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/add0/c3 ),
-    .o({\U4/add0/c4 ,\U4/n19 [3]}));
+    .o({\U4/add0/c4 ,\U4/n18 [3]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b0),
     .c(\U4/add0/c4 ),
-    .o({\U4/add0/c5 ,\U4/n19 [4]}));
+    .o({\U4/add0/c5 ,\U4/n18 [4]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b0),
     .c(\U4/add0/c5 ),
-    .o({\U4/add0/c6 ,\U4/n19 [5]}));
+    .o({\U4/add0/c6 ,\U4/n18 [5]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b0),
     .c(\U4/add0/c6 ),
-    .o({\U4/add0/c7 ,\U4/n19 [6]}));
+    .o({\U4/add0/c7 ,\U4/n18 [6]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b0),
     .c(\U4/add0/c7 ),
-    .o({\U4/add0/c8 ,\U4/n19 [7]}));
+    .o({\U4/add0/c8 ,\U4/n18 [7]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b0),
     .c(\U4/add0/c8 ),
-    .o({\U4/add0/c9 ,\U4/n19 [8]}));
+    .o({\U4/add0/c9 ,\U4/n18 [8]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD"))
     \U4/add0/u9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b0),
     .c(\U4/add0/c9 ),
-    .o({\U4/add0/c10 ,\U4/n19 [9]}));
+    .o({\U4/add0/c10 ,\U4/n18 [9]}));
   AL_MAP_ADDER #(
     .ALUTYPE("ADD_CARRY"))
     \U4/add0/ucin  (
     .a(1'b0),
-    .o({\U4/add0/c0 ,open_n268}));
+    .o({\U4/add0/c0 ,open_n288}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_0  (
     .a(\U4/AddrCtrl [0]),
     .b(1'b0),
     .c(\U4/lt0_c0 ),
-    .o({\U4/lt0_c1 ,open_n269}));
+    .o({\U4/lt0_c1 ,open_n289}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/lt0_c1 ),
-    .o({\U4/lt0_c2 ,open_n270}));
+    .o({\U4/lt0_c2 ,open_n290}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b1),
     .c(\U4/lt0_c10 ),
-    .o({\U4/lt0_c11 ,open_n271}));
+    .o({\U4/lt0_c11 ,open_n291}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/lt0_c11 ),
-    .o({\U4/lt0_c12 ,open_n272}));
+    .o({\U4/lt0_c12 ,open_n292}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/lt0_c12 ),
-    .o({\U4/lt0_c13 ,open_n273}));
+    .o({\U4/lt0_c13 ,open_n293}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/lt0_c13 ),
-    .o({\U4/lt0_c14 ,open_n274}));
+    .o({\U4/lt0_c14 ,open_n294}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/lt0_c14 ),
-    .o({\U4/lt0_c15 ,open_n275}));
+    .o({\U4/lt0_c15 ,open_n295}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/lt0_c15 ),
-    .o({\U4/lt0_c16 ,open_n276}));
+    .o({\U4/lt0_c16 ,open_n296}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/lt0_c2 ),
-    .o({\U4/lt0_c3 ,open_n277}));
+    .o({\U4/lt0_c3 ,open_n297}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/lt0_c3 ),
-    .o({\U4/lt0_c4 ,open_n278}));
+    .o({\U4/lt0_c4 ,open_n298}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b1),
     .c(\U4/lt0_c4 ),
-    .o({\U4/lt0_c5 ,open_n279}));
+    .o({\U4/lt0_c5 ,open_n299}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b0),
     .c(\U4/lt0_c5 ),
-    .o({\U4/lt0_c6 ,open_n280}));
+    .o({\U4/lt0_c6 ,open_n300}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b1),
     .c(\U4/lt0_c6 ),
-    .o({\U4/lt0_c7 ,open_n281}));
+    .o({\U4/lt0_c7 ,open_n301}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b1),
     .c(\U4/lt0_c7 ),
-    .o({\U4/lt0_c8 ,open_n282}));
+    .o({\U4/lt0_c8 ,open_n302}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b1),
     .c(\U4/lt0_c8 ),
-    .o({\U4/lt0_c9 ,open_n283}));
+    .o({\U4/lt0_c9 ,open_n303}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b1),
     .c(\U4/lt0_c9 ),
-    .o({\U4/lt0_c10 ,open_n284}));
+    .o({\U4/lt0_c10 ,open_n304}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt0_cin  (
     .a(1'b0),
-    .o({\U4/lt0_c0 ,open_n287}));
+    .o({\U4/lt0_c0 ,open_n307}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt0_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt0_c16 ),
-    .o({open_n288,\U4/n18 }));
+    .o({open_n308,\U4/n17 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_0  (
     .a(\U4/AddrCtrl [0]),
     .b(1'b0),
     .c(\U4/lt1_c0 ),
-    .o({\U4/lt1_c1 ,open_n289}));
+    .o({\U4/lt1_c1 ,open_n309}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/lt1_c1 ),
-    .o({\U4/lt1_c2 ,open_n290}));
+    .o({\U4/lt1_c2 ,open_n310}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b1),
     .c(\U4/lt1_c10 ),
-    .o({\U4/lt1_c11 ,open_n291}));
+    .o({\U4/lt1_c11 ,open_n311}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/lt1_c11 ),
-    .o({\U4/lt1_c12 ,open_n292}));
+    .o({\U4/lt1_c12 ,open_n312}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/lt1_c12 ),
-    .o({\U4/lt1_c13 ,open_n293}));
+    .o({\U4/lt1_c13 ,open_n313}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/lt1_c13 ),
-    .o({\U4/lt1_c14 ,open_n294}));
+    .o({\U4/lt1_c14 ,open_n314}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/lt1_c14 ),
-    .o({\U4/lt1_c15 ,open_n295}));
+    .o({\U4/lt1_c15 ,open_n315}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/lt1_c15 ),
-    .o({\U4/lt1_c16 ,open_n296}));
+    .o({\U4/lt1_c16 ,open_n316}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/lt1_c2 ),
-    .o({\U4/lt1_c3 ,open_n297}));
+    .o({\U4/lt1_c3 ,open_n317}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/lt1_c3 ),
-    .o({\U4/lt1_c4 ,open_n298}));
+    .o({\U4/lt1_c4 ,open_n318}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b0),
     .c(\U4/lt1_c4 ),
-    .o({\U4/lt1_c5 ,open_n299}));
+    .o({\U4/lt1_c5 ,open_n319}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b0),
     .c(\U4/lt1_c5 ),
-    .o({\U4/lt1_c6 ,open_n300}));
+    .o({\U4/lt1_c6 ,open_n320}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b1),
     .c(\U4/lt1_c6 ),
-    .o({\U4/lt1_c7 ,open_n301}));
+    .o({\U4/lt1_c7 ,open_n321}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b0),
     .c(\U4/lt1_c7 ),
-    .o({\U4/lt1_c8 ,open_n302}));
+    .o({\U4/lt1_c8 ,open_n322}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b0),
     .c(\U4/lt1_c8 ),
-    .o({\U4/lt1_c9 ,open_n303}));
+    .o({\U4/lt1_c9 ,open_n323}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b1),
     .c(\U4/lt1_c9 ),
-    .o({\U4/lt1_c10 ,open_n304}));
+    .o({\U4/lt1_c10 ,open_n324}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt1_cin  (
     .a(1'b0),
-    .o({\U4/lt1_c0 ,open_n307}));
+    .o({\U4/lt1_c0 ,open_n327}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt1_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt1_c16 ),
-    .o({open_n308,\U4/n24 }));
+    .o({open_n328,\U4/n23 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_0  (
     .a(\U4/AddrCtrl [0]),
     .b(1'b0),
     .c(\U4/lt2_c0 ),
-    .o({\U4/lt2_c1 ,open_n309}));
+    .o({\U4/lt2_c1 ,open_n329}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/lt2_c1 ),
-    .o({\U4/lt2_c2 ,open_n310}));
+    .o({\U4/lt2_c2 ,open_n330}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b0),
     .c(\U4/lt2_c10 ),
-    .o({\U4/lt2_c11 ,open_n311}));
+    .o({\U4/lt2_c11 ,open_n331}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/lt2_c11 ),
-    .o({\U4/lt2_c12 ,open_n312}));
+    .o({\U4/lt2_c12 ,open_n332}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/lt2_c12 ),
-    .o({\U4/lt2_c13 ,open_n313}));
+    .o({\U4/lt2_c13 ,open_n333}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/lt2_c13 ),
-    .o({\U4/lt2_c14 ,open_n314}));
+    .o({\U4/lt2_c14 ,open_n334}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/lt2_c14 ),
-    .o({\U4/lt2_c15 ,open_n315}));
+    .o({\U4/lt2_c15 ,open_n335}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/lt2_c15 ),
-    .o({\U4/lt2_c16 ,open_n316}));
+    .o({\U4/lt2_c16 ,open_n336}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/lt2_c2 ),
-    .o({\U4/lt2_c3 ,open_n317}));
+    .o({\U4/lt2_c3 ,open_n337}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/lt2_c3 ),
-    .o({\U4/lt2_c4 ,open_n318}));
+    .o({\U4/lt2_c4 ,open_n338}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b1),
     .c(\U4/lt2_c4 ),
-    .o({\U4/lt2_c5 ,open_n319}));
+    .o({\U4/lt2_c5 ,open_n339}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b0),
     .c(\U4/lt2_c5 ),
-    .o({\U4/lt2_c6 ,open_n320}));
+    .o({\U4/lt2_c6 ,open_n340}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b0),
     .c(\U4/lt2_c6 ),
-    .o({\U4/lt2_c7 ,open_n321}));
+    .o({\U4/lt2_c7 ,open_n341}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b1),
     .c(\U4/lt2_c7 ),
-    .o({\U4/lt2_c8 ,open_n322}));
+    .o({\U4/lt2_c8 ,open_n342}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b1),
     .c(\U4/lt2_c8 ),
-    .o({\U4/lt2_c9 ,open_n323}));
+    .o({\U4/lt2_c9 ,open_n343}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b0),
     .c(\U4/lt2_c9 ),
-    .o({\U4/lt2_c10 ,open_n324}));
+    .o({\U4/lt2_c10 ,open_n344}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt2_cin  (
     .a(1'b0),
-    .o({\U4/lt2_c0 ,open_n327}));
+    .o({\U4/lt2_c0 ,open_n347}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt2_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt2_c16 ),
-    .o({open_n328,\U4/n28 }));
+    .o({open_n348,\U4/n27 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_0  (
     .a(1'b0),
     .b(\U4/AddrCtrl [0]),
     .c(\U4/lt3_c0 ),
-    .o({\U4/lt3_c1 ,open_n329}));
+    .o({\U4/lt3_c1 ,open_n349}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_1  (
     .a(1'b0),
     .b(\U4/AddrCtrl [1]),
     .c(\U4/lt3_c1 ),
-    .o({\U4/lt3_c2 ,open_n330}));
+    .o({\U4/lt3_c2 ,open_n350}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_10  (
     .a(1'b0),
     .b(\U4/AddrCtrl [10]),
     .c(\U4/lt3_c10 ),
-    .o({\U4/lt3_c11 ,open_n331}));
+    .o({\U4/lt3_c11 ,open_n351}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_11  (
     .a(1'b0),
     .b(\U4/AddrCtrl [11]),
     .c(\U4/lt3_c11 ),
-    .o({\U4/lt3_c12 ,open_n332}));
+    .o({\U4/lt3_c12 ,open_n352}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_12  (
     .a(1'b0),
     .b(\U4/AddrCtrl [12]),
     .c(\U4/lt3_c12 ),
-    .o({\U4/lt3_c13 ,open_n333}));
+    .o({\U4/lt3_c13 ,open_n353}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_13  (
     .a(1'b0),
     .b(\U4/AddrCtrl [13]),
     .c(\U4/lt3_c13 ),
-    .o({\U4/lt3_c14 ,open_n334}));
+    .o({\U4/lt3_c14 ,open_n354}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_14  (
     .a(1'b0),
     .b(\U4/AddrCtrl [14]),
     .c(\U4/lt3_c14 ),
-    .o({\U4/lt3_c15 ,open_n335}));
+    .o({\U4/lt3_c15 ,open_n355}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_15  (
     .a(1'b0),
     .b(\U4/AddrCtrl [15]),
     .c(\U4/lt3_c15 ),
-    .o({\U4/lt3_c16 ,open_n336}));
+    .o({\U4/lt3_c16 ,open_n356}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_2  (
     .a(1'b0),
     .b(\U4/AddrCtrl [2]),
     .c(\U4/lt3_c2 ),
-    .o({\U4/lt3_c3 ,open_n337}));
+    .o({\U4/lt3_c3 ,open_n357}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_3  (
     .a(1'b0),
     .b(\U4/AddrCtrl [3]),
     .c(\U4/lt3_c3 ),
-    .o({\U4/lt3_c4 ,open_n338}));
+    .o({\U4/lt3_c4 ,open_n358}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_4  (
     .a(1'b1),
     .b(\U4/AddrCtrl [4]),
     .c(\U4/lt3_c4 ),
-    .o({\U4/lt3_c5 ,open_n339}));
+    .o({\U4/lt3_c5 ,open_n359}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_5  (
     .a(1'b0),
     .b(\U4/AddrCtrl [5]),
     .c(\U4/lt3_c5 ),
-    .o({\U4/lt3_c6 ,open_n340}));
+    .o({\U4/lt3_c6 ,open_n360}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_6  (
     .a(1'b0),
     .b(\U4/AddrCtrl [6]),
     .c(\U4/lt3_c6 ),
-    .o({\U4/lt3_c7 ,open_n341}));
+    .o({\U4/lt3_c7 ,open_n361}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_7  (
     .a(1'b1),
     .b(\U4/AddrCtrl [7]),
     .c(\U4/lt3_c7 ),
-    .o({\U4/lt3_c8 ,open_n342}));
+    .o({\U4/lt3_c8 ,open_n362}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_8  (
     .a(1'b1),
     .b(\U4/AddrCtrl [8]),
     .c(\U4/lt3_c8 ),
-    .o({\U4/lt3_c9 ,open_n343}));
+    .o({\U4/lt3_c9 ,open_n363}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_9  (
     .a(1'b0),
     .b(\U4/AddrCtrl [9]),
     .c(\U4/lt3_c9 ),
-    .o({\U4/lt3_c10 ,open_n344}));
+    .o({\U4/lt3_c10 ,open_n364}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt3_cin  (
     .a(1'b1),
-    .o({\U4/lt3_c0 ,open_n347}));
+    .o({\U4/lt3_c0 ,open_n367}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt3_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt3_c16 ),
-    .o({open_n348,\U4/n32 }));
+    .o({open_n368,\U4/n31 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_0  (
     .a(\U4/AddrCtrl [0]),
     .b(1'b0),
     .c(\U4/lt4_c0 ),
-    .o({\U4/lt4_c1 ,open_n349}));
+    .o({\U4/lt4_c1 ,open_n369}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/lt4_c1 ),
-    .o({\U4/lt4_c2 ,open_n350}));
+    .o({\U4/lt4_c2 ,open_n370}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b0),
     .c(\U4/lt4_c10 ),
-    .o({\U4/lt4_c11 ,open_n351}));
+    .o({\U4/lt4_c11 ,open_n371}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/lt4_c11 ),
-    .o({\U4/lt4_c12 ,open_n352}));
+    .o({\U4/lt4_c12 ,open_n372}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/lt4_c12 ),
-    .o({\U4/lt4_c13 ,open_n353}));
+    .o({\U4/lt4_c13 ,open_n373}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/lt4_c13 ),
-    .o({\U4/lt4_c14 ,open_n354}));
+    .o({\U4/lt4_c14 ,open_n374}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/lt4_c14 ),
-    .o({\U4/lt4_c15 ,open_n355}));
+    .o({\U4/lt4_c15 ,open_n375}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/lt4_c15 ),
-    .o({\U4/lt4_c16 ,open_n356}));
+    .o({\U4/lt4_c16 ,open_n376}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/lt4_c2 ),
-    .o({\U4/lt4_c3 ,open_n357}));
+    .o({\U4/lt4_c3 ,open_n377}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/lt4_c3 ),
-    .o({\U4/lt4_c4 ,open_n358}));
+    .o({\U4/lt4_c4 ,open_n378}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b0),
     .c(\U4/lt4_c4 ),
-    .o({\U4/lt4_c5 ,open_n359}));
+    .o({\U4/lt4_c5 ,open_n379}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b1),
     .c(\U4/lt4_c5 ),
-    .o({\U4/lt4_c6 ,open_n360}));
+    .o({\U4/lt4_c6 ,open_n380}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b0),
     .c(\U4/lt4_c6 ),
-    .o({\U4/lt4_c7 ,open_n361}));
+    .o({\U4/lt4_c7 ,open_n381}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b0),
     .c(\U4/lt4_c7 ),
-    .o({\U4/lt4_c8 ,open_n362}));
+    .o({\U4/lt4_c8 ,open_n382}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b1),
     .c(\U4/lt4_c8 ),
-    .o({\U4/lt4_c9 ,open_n363}));
+    .o({\U4/lt4_c9 ,open_n383}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b1),
     .c(\U4/lt4_c9 ),
-    .o({\U4/lt4_c10 ,open_n364}));
+    .o({\U4/lt4_c10 ,open_n384}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt4_cin  (
     .a(1'b0),
-    .o({\U4/lt4_c0 ,open_n367}));
+    .o({\U4/lt4_c0 ,open_n387}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt4_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt4_c16 ),
-    .o({open_n368,\U4/n34 }));
+    .o({open_n388,\U4/n33 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_0  (
     .a(1'b0),
     .b(\U4/AddrCtrl [0]),
     .c(\U4/lt5_c0 ),
-    .o({\U4/lt5_c1 ,open_n369}));
+    .o({\U4/lt5_c1 ,open_n389}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_1  (
     .a(1'b0),
     .b(\U4/AddrCtrl [1]),
     .c(\U4/lt5_c1 ),
-    .o({\U4/lt5_c2 ,open_n370}));
+    .o({\U4/lt5_c2 ,open_n390}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_10  (
     .a(1'b0),
     .b(\U4/AddrCtrl [10]),
     .c(\U4/lt5_c10 ),
-    .o({\U4/lt5_c11 ,open_n371}));
+    .o({\U4/lt5_c11 ,open_n391}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_11  (
     .a(1'b0),
     .b(\U4/AddrCtrl [11]),
     .c(\U4/lt5_c11 ),
-    .o({\U4/lt5_c12 ,open_n372}));
+    .o({\U4/lt5_c12 ,open_n392}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_12  (
     .a(1'b0),
     .b(\U4/AddrCtrl [12]),
     .c(\U4/lt5_c12 ),
-    .o({\U4/lt5_c13 ,open_n373}));
+    .o({\U4/lt5_c13 ,open_n393}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_13  (
     .a(1'b0),
     .b(\U4/AddrCtrl [13]),
     .c(\U4/lt5_c13 ),
-    .o({\U4/lt5_c14 ,open_n374}));
+    .o({\U4/lt5_c14 ,open_n394}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_14  (
     .a(1'b0),
     .b(\U4/AddrCtrl [14]),
     .c(\U4/lt5_c14 ),
-    .o({\U4/lt5_c15 ,open_n375}));
+    .o({\U4/lt5_c15 ,open_n395}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_15  (
     .a(1'b0),
     .b(\U4/AddrCtrl [15]),
     .c(\U4/lt5_c15 ),
-    .o({\U4/lt5_c16 ,open_n376}));
+    .o({\U4/lt5_c16 ,open_n396}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_2  (
     .a(1'b0),
     .b(\U4/AddrCtrl [2]),
     .c(\U4/lt5_c2 ),
-    .o({\U4/lt5_c3 ,open_n377}));
+    .o({\U4/lt5_c3 ,open_n397}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_3  (
     .a(1'b0),
     .b(\U4/AddrCtrl [3]),
     .c(\U4/lt5_c3 ),
-    .o({\U4/lt5_c4 ,open_n378}));
+    .o({\U4/lt5_c4 ,open_n398}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_4  (
     .a(1'b0),
     .b(\U4/AddrCtrl [4]),
     .c(\U4/lt5_c4 ),
-    .o({\U4/lt5_c5 ,open_n379}));
+    .o({\U4/lt5_c5 ,open_n399}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_5  (
     .a(1'b1),
     .b(\U4/AddrCtrl [5]),
     .c(\U4/lt5_c5 ),
-    .o({\U4/lt5_c6 ,open_n380}));
+    .o({\U4/lt5_c6 ,open_n400}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_6  (
     .a(1'b0),
     .b(\U4/AddrCtrl [6]),
     .c(\U4/lt5_c6 ),
-    .o({\U4/lt5_c7 ,open_n381}));
+    .o({\U4/lt5_c7 ,open_n401}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_7  (
     .a(1'b0),
     .b(\U4/AddrCtrl [7]),
     .c(\U4/lt5_c7 ),
-    .o({\U4/lt5_c8 ,open_n382}));
+    .o({\U4/lt5_c8 ,open_n402}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_8  (
     .a(1'b1),
     .b(\U4/AddrCtrl [8]),
     .c(\U4/lt5_c8 ),
-    .o({\U4/lt5_c9 ,open_n383}));
+    .o({\U4/lt5_c9 ,open_n403}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_9  (
     .a(1'b1),
     .b(\U4/AddrCtrl [9]),
     .c(\U4/lt5_c9 ),
-    .o({\U4/lt5_c10 ,open_n384}));
+    .o({\U4/lt5_c10 ,open_n404}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt5_cin  (
     .a(1'b1),
-    .o({\U4/lt5_c0 ,open_n387}));
+    .o({\U4/lt5_c0 ,open_n407}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt5_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt5_c16 ),
-    .o({open_n388,\U4/n38 }));
+    .o({open_n408,\U4/n37 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_0  (
     .a(\U4/AddrCtrl [0]),
     .b(1'b0),
     .c(\U4/lt6_c0 ),
-    .o({\U4/lt6_c1 ,open_n389}));
+    .o({\U4/lt6_c1 ,open_n409}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_1  (
     .a(\U4/AddrCtrl [1]),
     .b(1'b0),
     .c(\U4/lt6_c1 ),
-    .o({\U4/lt6_c2 ,open_n390}));
+    .o({\U4/lt6_c2 ,open_n410}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_10  (
     .a(\U4/AddrCtrl [10]),
     .b(1'b1),
     .c(\U4/lt6_c10 ),
-    .o({\U4/lt6_c11 ,open_n391}));
+    .o({\U4/lt6_c11 ,open_n411}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_11  (
     .a(\U4/AddrCtrl [11]),
     .b(1'b0),
     .c(\U4/lt6_c11 ),
-    .o({\U4/lt6_c12 ,open_n392}));
+    .o({\U4/lt6_c12 ,open_n412}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_12  (
     .a(\U4/AddrCtrl [12]),
     .b(1'b0),
     .c(\U4/lt6_c12 ),
-    .o({\U4/lt6_c13 ,open_n393}));
+    .o({\U4/lt6_c13 ,open_n413}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_13  (
     .a(\U4/AddrCtrl [13]),
     .b(1'b0),
     .c(\U4/lt6_c13 ),
-    .o({\U4/lt6_c14 ,open_n394}));
+    .o({\U4/lt6_c14 ,open_n414}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_14  (
     .a(\U4/AddrCtrl [14]),
     .b(1'b0),
     .c(\U4/lt6_c14 ),
-    .o({\U4/lt6_c15 ,open_n395}));
+    .o({\U4/lt6_c15 ,open_n415}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_15  (
     .a(\U4/AddrCtrl [15]),
     .b(1'b0),
     .c(\U4/lt6_c15 ),
-    .o({\U4/lt6_c16 ,open_n396}));
+    .o({\U4/lt6_c16 ,open_n416}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_2  (
     .a(\U4/AddrCtrl [2]),
     .b(1'b0),
     .c(\U4/lt6_c2 ),
-    .o({\U4/lt6_c3 ,open_n397}));
+    .o({\U4/lt6_c3 ,open_n417}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_3  (
     .a(\U4/AddrCtrl [3]),
     .b(1'b0),
     .c(\U4/lt6_c3 ),
-    .o({\U4/lt6_c4 ,open_n398}));
+    .o({\U4/lt6_c4 ,open_n418}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_4  (
     .a(\U4/AddrCtrl [4]),
     .b(1'b1),
     .c(\U4/lt6_c4 ),
-    .o({\U4/lt6_c5 ,open_n399}));
+    .o({\U4/lt6_c5 ,open_n419}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_5  (
     .a(\U4/AddrCtrl [5]),
     .b(1'b1),
     .c(\U4/lt6_c5 ),
-    .o({\U4/lt6_c6 ,open_n400}));
+    .o({\U4/lt6_c6 ,open_n420}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_6  (
     .a(\U4/AddrCtrl [6]),
     .b(1'b0),
     .c(\U4/lt6_c6 ),
-    .o({\U4/lt6_c7 ,open_n401}));
+    .o({\U4/lt6_c7 ,open_n421}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_7  (
     .a(\U4/AddrCtrl [7]),
     .b(1'b1),
     .c(\U4/lt6_c7 ),
-    .o({\U4/lt6_c8 ,open_n402}));
+    .o({\U4/lt6_c8 ,open_n422}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_8  (
     .a(\U4/AddrCtrl [8]),
     .b(1'b0),
     .c(\U4/lt6_c8 ),
-    .o({\U4/lt6_c9 ,open_n403}));
+    .o({\U4/lt6_c9 ,open_n423}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_9  (
     .a(\U4/AddrCtrl [9]),
     .b(1'b0),
     .c(\U4/lt6_c9 ),
-    .o({\U4/lt6_c10 ,open_n404}));
+    .o({\U4/lt6_c10 ,open_n424}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt6_cin  (
     .a(1'b0),
-    .o({\U4/lt6_c0 ,open_n407}));
+    .o({\U4/lt6_c0 ,open_n427}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt6_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt6_c16 ),
-    .o({open_n408,\U4/n40 }));
+    .o({open_n428,\U4/n39 }));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_0  (
     .a(1'b0),
     .b(\U4/AddrCtrl [0]),
     .c(\U4/lt7_c0 ),
-    .o({\U4/lt7_c1 ,open_n409}));
+    .o({\U4/lt7_c1 ,open_n429}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_1  (
     .a(1'b0),
     .b(\U4/AddrCtrl [1]),
     .c(\U4/lt7_c1 ),
-    .o({\U4/lt7_c2 ,open_n410}));
+    .o({\U4/lt7_c2 ,open_n430}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_10  (
     .a(1'b1),
     .b(\U4/AddrCtrl [10]),
     .c(\U4/lt7_c10 ),
-    .o({\U4/lt7_c11 ,open_n411}));
+    .o({\U4/lt7_c11 ,open_n431}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_11  (
     .a(1'b0),
     .b(\U4/AddrCtrl [11]),
     .c(\U4/lt7_c11 ),
-    .o({\U4/lt7_c12 ,open_n412}));
+    .o({\U4/lt7_c12 ,open_n432}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_12  (
     .a(1'b0),
     .b(\U4/AddrCtrl [12]),
     .c(\U4/lt7_c12 ),
-    .o({\U4/lt7_c13 ,open_n413}));
+    .o({\U4/lt7_c13 ,open_n433}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_13  (
     .a(1'b0),
     .b(\U4/AddrCtrl [13]),
     .c(\U4/lt7_c13 ),
-    .o({\U4/lt7_c14 ,open_n414}));
+    .o({\U4/lt7_c14 ,open_n434}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_14  (
     .a(1'b0),
     .b(\U4/AddrCtrl [14]),
     .c(\U4/lt7_c14 ),
-    .o({\U4/lt7_c15 ,open_n415}));
+    .o({\U4/lt7_c15 ,open_n435}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_15  (
     .a(1'b0),
     .b(\U4/AddrCtrl [15]),
     .c(\U4/lt7_c15 ),
-    .o({\U4/lt7_c16 ,open_n416}));
+    .o({\U4/lt7_c16 ,open_n436}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_2  (
     .a(1'b0),
     .b(\U4/AddrCtrl [2]),
     .c(\U4/lt7_c2 ),
-    .o({\U4/lt7_c3 ,open_n417}));
+    .o({\U4/lt7_c3 ,open_n437}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_3  (
     .a(1'b0),
     .b(\U4/AddrCtrl [3]),
     .c(\U4/lt7_c3 ),
-    .o({\U4/lt7_c4 ,open_n418}));
+    .o({\U4/lt7_c4 ,open_n438}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_4  (
     .a(1'b1),
     .b(\U4/AddrCtrl [4]),
     .c(\U4/lt7_c4 ),
-    .o({\U4/lt7_c5 ,open_n419}));
+    .o({\U4/lt7_c5 ,open_n439}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_5  (
     .a(1'b1),
     .b(\U4/AddrCtrl [5]),
     .c(\U4/lt7_c5 ),
-    .o({\U4/lt7_c6 ,open_n420}));
+    .o({\U4/lt7_c6 ,open_n440}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_6  (
     .a(1'b0),
     .b(\U4/AddrCtrl [6]),
     .c(\U4/lt7_c6 ),
-    .o({\U4/lt7_c7 ,open_n421}));
+    .o({\U4/lt7_c7 ,open_n441}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_7  (
     .a(1'b1),
     .b(\U4/AddrCtrl [7]),
     .c(\U4/lt7_c7 ),
-    .o({\U4/lt7_c8 ,open_n422}));
+    .o({\U4/lt7_c8 ,open_n442}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_8  (
     .a(1'b0),
     .b(\U4/AddrCtrl [8]),
     .c(\U4/lt7_c8 ),
-    .o({\U4/lt7_c9 ,open_n423}));
+    .o({\U4/lt7_c9 ,open_n443}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_9  (
     .a(1'b0),
     .b(\U4/AddrCtrl [9]),
     .c(\U4/lt7_c9 ),
-    .o({\U4/lt7_c10 ,open_n424}));
+    .o({\U4/lt7_c10 ,open_n444}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B_CARRY"))
     \U4/lt7_cin  (
     .a(1'b1),
-    .o({\U4/lt7_c0 ,open_n427}));
+    .o({\U4/lt7_c0 ,open_n447}));
   AL_MAP_ADDER #(
     .ALUTYPE("A_LE_B"))
     \U4/lt7_cout  (
     .a(1'b0),
     .b(1'b1),
     .c(\U4/lt7_c16 ),
-    .o({open_n428,\U4/n44 }));
+    .o({open_n448,\U4/n43 }));
+  reg_ar_as_w1 \U4/reg0_b0  (
+    .clk(i8080_WR_pad),
+    .d(i8080_D_pad[0]),
+    .en(\U4/mux1_b0_sel_is_3_o ),
+    .reset(~nRST_pad),
+    .set(1'b0),
+    .q(\U4/LCD_Pix_Reg [0]));  // source/LCD8080Ctrl.v(70)
+  EF2_PHY_SPAD #(
+    //.CLKSRC("CLK"),
+    //.LOCATION("P9"),
+    //.PULLMODE("NONE"),
+    //.SLEWRATE("FAST"),
+    .DO_DFFMODE("FF"),
+    .DO_REGSET("SET"),
+    .DRIVE("16"),
+    .IOTYPE("LVCMOS25"),
+    .MODE("OUT"),
+    .OUTCEMUX("CE"),
+    .OUTCLKMUX("CLK"),
+    .OUTRSTMUX("INV"),
+    .SRMODE("ASYNC"),
+    .TSMUX("INV"))
+    \U4/reg1_b0_DO  (
+    .ce(\U4/mux2_b0_sel_is_3_o ),
+    .clk(i8080_WR_pad),
+    .do({open_n449,i8080_D_pad[0]}),
+    .rst(nRST_pad),
+    .ts(1'b1),
+    .opad(LCDBK));  // source/LCD8080Ctrl.v(70)
   reg_ar_as_w1 \U4/reg2_b0  (
     .clk(CLK_100M),
-    .d(\U4/n22 [0]),
+    .d(\U4/n21 [0]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [0]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [0]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b1  (
     .clk(CLK_100M),
-    .d(\U4/n22 [1]),
+    .d(\U4/n21 [1]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [1]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [1]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b10  (
     .clk(CLK_100M),
-    .d(\U4/n22 [10]),
+    .d(\U4/n21 [10]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [10]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [10]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b11  (
     .clk(CLK_100M),
-    .d(\U4/n22 [11]),
+    .d(\U4/n21 [11]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [11]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [11]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b12  (
     .clk(CLK_100M),
-    .d(\U4/n22 [12]),
+    .d(\U4/n21 [12]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [12]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [12]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b13  (
     .clk(CLK_100M),
-    .d(\U4/n22 [13]),
+    .d(\U4/n21 [13]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [13]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [13]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b14  (
     .clk(CLK_100M),
-    .d(\U4/n22 [14]),
+    .d(\U4/n21 [14]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [14]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [14]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b15  (
     .clk(CLK_100M),
-    .d(\U4/n22 [15]),
+    .d(\U4/n21 [15]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [15]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [15]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b2  (
     .clk(CLK_100M),
-    .d(\U4/n22 [2]),
+    .d(\U4/n21 [2]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [2]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [2]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b3  (
     .clk(CLK_100M),
-    .d(\U4/n22 [3]),
+    .d(\U4/n21 [3]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [3]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [3]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b4  (
     .clk(CLK_100M),
-    .d(\U4/n22 [4]),
+    .d(\U4/n21 [4]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [4]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [4]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b5  (
     .clk(CLK_100M),
-    .d(\U4/n22 [5]),
+    .d(\U4/n21 [5]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [5]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [5]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b6  (
     .clk(CLK_100M),
-    .d(\U4/n22 [6]),
+    .d(\U4/n21 [6]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [6]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [6]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b7  (
     .clk(CLK_100M),
-    .d(\U4/n22 [7]),
+    .d(\U4/n21 [7]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [7]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [7]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b8  (
     .clk(CLK_100M),
-    .d(\U4/n22 [8]),
+    .d(\U4/n21 [8]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [8]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [8]));  // source/LCD8080Ctrl.v(104)
   reg_ar_as_w1 \U4/reg2_b9  (
     .clk(CLK_100M),
-    .d(\U4/n22 [9]),
+    .d(\U4/n21 [9]),
     .en(1'b1),
     .reset(~nRST_pad),
     .set(1'b0),
-    .q(\U4/AddrCtrl [9]));  // source/LCD8080Ctrl.v(103)
+    .q(\U4/AddrCtrl [9]));  // source/LCD8080Ctrl.v(104)
   EF2_PHY_SPAD #(
-    //.LOCATION("P10"),
-    //.PULLMODE("PULLUP"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u100 (
-    .ipad(i8080_CS),
-    .ts(1'b1));  // source/TOP.v(8)
-  EF2_PHY_SPAD #(
-    //.LOCATION("P16"),
-    //.PULLMODE("PULLUP"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u101 (
-    .ipad(i8080_D[7]),
-    .ts(1'b1));  // source/TOP.v(13)
-  EF2_PHY_SPAD #(
-    //.LOCATION("P17"),
-    //.PULLMODE("PULLUP"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u102 (
-    .ipad(i8080_D[6]),
-    .ts(1'b1));  // source/TOP.v(13)
-  EF2_PHY_SPAD #(
-    //.LOCATION("P18"),
-    //.PULLMODE("PULLUP"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u103 (
-    .ipad(i8080_D[5]),
-    .ts(1'b1));  // source/TOP.v(13)
-  EF2_PHY_SPAD #(
-    //.LOCATION("P19"),
-    //.PULLMODE("PULLUP"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u104 (
-    .ipad(i8080_D[4]),
-    .ts(1'b1));  // source/TOP.v(13)
-  EF2_PHY_SPAD #(
+    //.CLKSRC("CLK"),
     //.LOCATION("P20"),
     //.PULLMODE("PULLUP"),
+    .INCEMUX("CE"),
+    .INCLKMUX("CLK"),
+    .INRSTMUX("INV"),
+    .IN_DFFMODE("FF"),
+    .IN_REGSET("SET"),
     .IOTYPE("LVCMOS18"),
     .MODE("IN"),
+    .SRMODE("ASYNC"),
     .TSMUX("TS"))
-    _al_u105 (
+    \U4/reg3_b3_IN  (
+    .ce(\U4/mux0_b3_sel_is_3_o ),
+    .clk(i8080_WR_pad),
     .ipad(i8080_D[3]),
-    .ts(1'b1));  // source/TOP.v(13)
+    .rst(nRST_pad),
+    .ts(1'b1),
+    .di(i8080_D_pad[3]),
+    .diq({open_n457,\U4/LCD_Ctrl_Reg [3]}));  // source/LCD8080Ctrl.v(70)
   EF2_PHY_SPAD #(
-    //.LOCATION("P21"),
+    //.CLKSRC("CLK"),
+    //.LOCATION("P19"),
     //.PULLMODE("PULLUP"),
+    .INCEMUX("CE"),
+    .INCLKMUX("CLK"),
+    .INRSTMUX("INV"),
+    .IN_DFFMODE("FF"),
+    .IN_REGSET("RESET"),
     .IOTYPE("LVCMOS18"),
     .MODE("IN"),
+    .SRMODE("ASYNC"),
     .TSMUX("TS"))
-    _al_u106 (
-    .ipad(i8080_D[2]),
-    .ts(1'b1));  // source/TOP.v(13)
+    \U4/reg3_b4_IN  (
+    .ce(\U4/mux0_b3_sel_is_3_o ),
+    .clk(i8080_WR_pad),
+    .ipad(i8080_D[4]),
+    .rst(nRST_pad),
+    .ts(1'b1),
+    .di(i8080_D_pad[4]),
+    .diq({open_n462,\U4/LCD_Ctrl_Reg [4]}));  // source/LCD8080Ctrl.v(70)
   EF2_PHY_SPAD #(
     //.LOCATION("P24"),
     //.PULLMODE("PULLUP"),
     .IOTYPE("LVCMOS18"),
     .MODE("IN"),
     .TSMUX("TS"))
-    _al_u107 (
+    _al_u100 (
     .ipad(i8080_D[1]),
-    .ts(1'b1));  // source/TOP.v(13)
+    .ts(1'b1),
+    .di(i8080_D_pad[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P25"),
     //.PULLMODE("PULLUP"),
     .IOTYPE("LVCMOS18"),
     .MODE("IN"),
     .TSMUX("TS"))
-    _al_u108 (
+    _al_u101 (
     .ipad(i8080_D[0]),
-    .ts(1'b1));  // source/TOP.v(13)
-  EF2_PHY_SPAD #(
-    //.LOCATION("P15"),
-    //.PULLMODE("NONE"),
-    //.SLEWRATE("MED"),
-    .DRIVE("12"),
-    .IOTYPE("LVCMOS18"),
-    .MODE("OUT"),
-    .TSMUX("INV"))
-    _al_u109 (
-    .do({open_n521,1'b0}),
     .ts(1'b1),
-    .opad(i8080_RD));  // source/TOP.v(11)
+    .di(i8080_D_pad[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P13"),
     //.PULLMODE("PULLUP"),
+    //.SLEWRATE("MED"),
+    .DRIVE("12"),
     .IOTYPE("LVCMOS18"),
-    .MODE("IN"),
-    .TSMUX("TS"))
-    _al_u110 (
-    .ipad(i8080_RS),
-    .ts(1'b1));  // source/TOP.v(9)
+    .MODE("BI"),
+    .TO_DFFMODE("NONE"),
+    .TSMUX("INV"))
+    _al_u102 (
+    .do({open_n485,\U4/FrameSync }),
+    .ts(\U4/LCD_Ctrl_Reg [4]),
+    .di(i8080_RS_pad),
+    .bpad(i8080_RS));  // source/LCD8080Ctrl.v(73)
   EF2_PHY_SPAD #(
     //.LOCATION("P14"),
     //.PULLMODE("PULLUP"),
     .IOTYPE("LVCMOS18"),
     .MODE("IN"),
     .TSMUX("TS"))
-    _al_u111 (
+    _al_u103 (
     .ipad(i8080_WR),
-    .ts(1'b1));  // source/TOP.v(10)
+    .ts(1'b1),
+    .di(i8080_WR_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
   EF2_PHY_SPAD #(
     //.LOCATION("P12"),
     //.PULLMODE("PULLUP"),
     .IOTYPE("LVCMOS25"),
     .MODE("IN"),
     .TSMUX("TS"))
-    _al_u112 (
+    _al_u104 (
     .ipad(nRST),
     .ts(1'b1),
-    .di(nRST_pad));  // source/TOP.v(4)
+    .di(nRST_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u113 (
+    _al_u107 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[3]),
     .o(LCD_B_pad[6]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u114 (
+    _al_u108 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[2]),
     .o(LCD_B_pad[5]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u115 (
+    _al_u109 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[1]),
     .o(LCD_B_pad[4]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u116 (
+    _al_u110 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[0]),
     .o(LCD_B_pad[3]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u117 (
+    _al_u111 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[10]),
     .o(LCD_G_pad[7]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u118 (
+    _al_u112 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[9]),
     .o(LCD_G_pad[6]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u119 (
+    _al_u113 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[8]),
     .o(LCD_G_pad[5]));
   AL_MAP_LUT2 #(
     .EQN("~(~B*~A)"),
     .INIT(4'he))
-    _al_u120 (
+    _al_u114 (
     .a(FIFO_DO[11]),
     .b(FIFO_EMPTY),
     .o(LCD_R_pad[3]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u121 (
+    _al_u115 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[7]),
     .o(LCD_G_pad[4]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u122 (
+    _al_u116 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[6]),
     .o(LCD_G_pad[3]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u123 (
+    _al_u117 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[5]),
     .o(LCD_G_pad[2]));
   AL_MAP_LUT2 #(
     .EQN("(B*~A)"),
     .INIT(4'h4))
-    _al_u124 (
+    _al_u118 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[4]),
     .o(LCD_B_pad[7]));
   AL_MAP_LUT2 #(
     .EQN("~(~B*~A)"),
     .INIT(4'he))
-    _al_u125 (
+    _al_u119 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[15]),
     .o(LCD_R_pad[7]));
   AL_MAP_LUT2 #(
     .EQN("~(~B*~A)"),
     .INIT(4'he))
-    _al_u126 (
+    _al_u120 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[14]),
     .o(LCD_R_pad[6]));
   AL_MAP_LUT2 #(
     .EQN("~(~B*~A)"),
     .INIT(4'he))
-    _al_u127 (
+    _al_u121 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[13]),
     .o(LCD_R_pad[5]));
   AL_MAP_LUT2 #(
     .EQN("~(~B*~A)"),
     .INIT(4'he))
-    _al_u128 (
+    _al_u122 (
     .a(FIFO_EMPTY),
     .b(FIFO_DO[12]),
     .o(LCD_R_pad[4]));
+  AL_MAP_LUT3 #(
+    .EQN("(A*~(B)*~(C)+A*B*~(C)+~(A)*B*C+A*B*C)"),
+    .INIT(8'hca))
+    _al_u123 (
+    .a(CLK_100M),
+    .b(i8080_WR_pad),
+    .c(\U4/LCD_Ctrl_Reg [4]),
+    .o(FIFO_CLK_W));
   AL_MAP_LUT2 #(
     .EQN("~(B*A)"),
     .INIT(4'h7))
-    _al_u129 (
+    _al_u124 (
     .a(\D1/n14 ),
     .b(\D1/n15 ),
     .o(LCD_HYNC_pad));
   AL_MAP_LUT2 #(
     .EQN("(~B*~A)"),
     .INIT(4'h1))
-    _al_u130 (
+    _al_u125 (
     .a(LCD_HYNC_pad),
     .b(LCD_SYNC_pad),
-    .o(\U4/mux7_b0_sel_is_0_o ));
-  AL_MAP_LUT2 #(
-    .EQN("(B*A)"),
-    .INIT(4'h8))
+    .o(_al_u125_o));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
+    _al_u126 (
+    .a(\U4/n18 [9]),
+    .b(\U4/AddrCtrl [9]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [9]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
+    _al_u127 (
+    .a(\U4/n18 [8]),
+    .b(\U4/AddrCtrl [8]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [8]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
+    _al_u128 (
+    .a(\U4/n18 [7]),
+    .b(\U4/AddrCtrl [7]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [7]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
+    _al_u129 (
+    .a(\U4/n18 [6]),
+    .b(\U4/AddrCtrl [6]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [6]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
+    _al_u130 (
+    .a(\U4/n18 [5]),
+    .b(\U4/AddrCtrl [5]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [5]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
+    .INIT(16'hac00))
     _al_u131 (
-    .a(\U4/mux7_b0_sel_is_0_o ),
-    .b(\U4/n24 ),
-    .o(\U4/IDELWe ));
+    .a(\U4/n18 [4]),
+    .b(\U4/AddrCtrl [4]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [4]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u132 (
-    .a(\U4/n19 [9]),
-    .b(\U4/AddrCtrl [9]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [9]));
+    .a(\U4/n18 [3]),
+    .b(\U4/AddrCtrl [3]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [3]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u133 (
-    .a(\U4/n19 [8]),
-    .b(\U4/AddrCtrl [8]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [8]));
+    .a(\U4/n18 [2]),
+    .b(\U4/AddrCtrl [2]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [2]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u134 (
-    .a(\U4/n19 [7]),
-    .b(\U4/AddrCtrl [7]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [7]));
+    .a(\U4/n18 [1]),
+    .b(\U4/AddrCtrl [1]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [1]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u135 (
-    .a(\U4/n19 [6]),
-    .b(\U4/AddrCtrl [6]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [6]));
+    .a(\U4/n18 [15]),
+    .b(\U4/AddrCtrl [15]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [15]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u136 (
-    .a(\U4/n19 [5]),
-    .b(\U4/AddrCtrl [5]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [5]));
+    .a(\U4/n18 [14]),
+    .b(\U4/AddrCtrl [14]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [14]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u137 (
-    .a(\U4/n19 [4]),
-    .b(\U4/AddrCtrl [4]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [4]));
+    .a(\U4/n18 [13]),
+    .b(\U4/AddrCtrl [13]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [13]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u138 (
-    .a(\U4/n19 [3]),
-    .b(\U4/AddrCtrl [3]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [3]));
+    .a(\U4/n18 [12]),
+    .b(\U4/AddrCtrl [12]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [12]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u139 (
-    .a(\U4/n19 [2]),
-    .b(\U4/AddrCtrl [2]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [2]));
+    .a(\U4/n18 [11]),
+    .b(\U4/AddrCtrl [11]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [11]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u140 (
-    .a(\U4/n19 [1]),
-    .b(\U4/AddrCtrl [1]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [1]));
+    .a(\U4/n18 [10]),
+    .b(\U4/AddrCtrl [10]),
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [10]));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     .INIT(16'hac00))
     _al_u141 (
-    .a(\U4/n19 [15]),
-    .b(\U4/AddrCtrl [15]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [15]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u142 (
-    .a(\U4/n19 [14]),
-    .b(\U4/AddrCtrl [14]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [14]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u143 (
-    .a(\U4/n19 [13]),
-    .b(\U4/AddrCtrl [13]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [13]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u144 (
-    .a(\U4/n19 [12]),
-    .b(\U4/AddrCtrl [12]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [12]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u145 (
-    .a(\U4/n19 [11]),
-    .b(\U4/AddrCtrl [11]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [11]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u146 (
-    .a(\U4/n19 [10]),
-    .b(\U4/AddrCtrl [10]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [10]));
-  AL_MAP_LUT4 #(
-    .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
-    .INIT(16'hac00))
-    _al_u147 (
-    .a(\U4/n19 [0]),
+    .a(\U4/n18 [0]),
     .b(\U4/AddrCtrl [0]),
-    .c(\U4/n18 ),
-    .d(\U4/mux7_b0_sel_is_0_o ),
-    .o(\U4/n22 [0]));
+    .c(\U4/n17 ),
+    .d(_al_u125_o),
+    .o(\U4/n21 [0]));
   AL_MAP_LUT4 #(
     .EQN("(D*C*B*A)"),
     .INIT(16'h8000))
-    _al_u148 (
+    _al_u142 (
     .a(\D1/n17 ),
     .b(\D1/n18 ),
     .c(\D1/n20 ),
     .d(\D1/n22 ),
     .o(LCD_DEN_pad));
+  AL_MAP_LUT3 #(
+    .EQN("(A*~(B)*~(C)+A*B*~(C)+~(A)*B*C+A*B*C)"),
+    .INIT(8'hca))
+    _al_u143 (
+    .a(LCD_HYNC_pad),
+    .b(\U4/LCD_Ctrl_Reg [3]),
+    .c(LCD_SYNC_pad),
+    .o(\U4/FrameSync ));
+  AL_MAP_LUT4 #(
+    .EQN("~(~(B*A)*~(C)*~(D)+~(B*A)*C*~(D)+~(~(B*A))*C*D+~(B*A)*C*D)"),
+    .INIT(16'h0f88))
+    _al_u144 (
+    .a(_al_u125_o),
+    .b(\U4/n23 ),
+    .c(i8080_CS_pad),
+    .d(\U4/LCD_Ctrl_Reg [4]),
+    .o(FIFO_WE));
   AL_MAP_LUT5 #(
     .EQN("(E*D*C*B*~A)"),
     .INIT(32'h40000000))
-    _al_u149 (
+    _al_u145 (
     .a(FIFO_EMPTY),
     .b(\D1/n22 ),
     .c(\D1/n24 ),
     .d(\D1/n26 ),
     .e(\D1/n20 ),
     .o(FIFO_RE));
+  AL_MAP_LUT5 #(
+    .EQN("(E*D*~C*~B*~A)"),
+    .INIT(32'h01000000))
+    _al_u146 (
+    .a(i8080_CS_pad),
+    .b(i8080_D_pad[7]),
+    .c(i8080_D_pad[6]),
+    .d(i8080_RS_pad),
+    .e(i8080_D_pad[5]),
+    .o(\U4/mux0_b3_sel_is_3_o ));
+  AL_MAP_LUT5 #(
+    .EQN("(E*D*C*~B*~A)"),
+    .INIT(32'h10000000))
+    _al_u147 (
+    .a(i8080_CS_pad),
+    .b(i8080_D_pad[7]),
+    .c(i8080_RS_pad),
+    .d(i8080_D_pad[6]),
+    .e(i8080_D_pad[5]),
+    .o(\U4/mux2_b0_sel_is_3_o ));
+  AL_MAP_LUT5 #(
+    .EQN("(E*D*~C*~B*~A)"),
+    .INIT(32'h01000000))
+    _al_u148 (
+    .a(i8080_CS_pad),
+    .b(i8080_D_pad[7]),
+    .c(i8080_D_pad[5]),
+    .d(i8080_D_pad[6]),
+    .e(i8080_RS_pad),
+    .o(\U4/mux1_b0_sel_is_3_o ));
   AL_MAP_LUT4 #(
-    .EQN("(D*~C*~B*~A)"),
-    .INIT(16'h0100))
-    _al_u150 (
+    .EQN("(~D*~C*~B*~A)"),
+    .INIT(16'h0001))
+    _al_u149 (
     .a(\D1/LineCount [0]),
-    .b(\D1/LineCount [10]),
-    .c(\D1/LineCount [11]),
-    .d(\D1/LineCount [1]),
-    .o(_al_u150_o));
+    .b(\D1/LineCount [1]),
+    .c(\D1/LineCount [10]),
+    .d(\D1/LineCount [11]),
+    .o(_al_u149_o));
   AL_MAP_LUT5 #(
     .EQN("(E*~D*~C*~B*~A)"),
     .INIT(32'h00010000))
-    _al_u151 (
+    _al_u150 (
     .a(\D1/LineCount [12]),
     .b(\D1/LineCount [13]),
     .c(\D1/LineCount [14]),
     .d(\D1/LineCount [15]),
-    .e(_al_u150_o),
-    .o(_al_u151_o));
+    .e(_al_u149_o),
+    .o(_al_u150_o));
   AL_MAP_LUT4 #(
-    .EQN("(D*C*B*~A)"),
-    .INIT(16'h4000))
-    _al_u152 (
-    .a(\D1/LineCount [2]),
-    .b(\D1/LineCount [3]),
-    .c(\D1/LineCount [4]),
+    .EQN("(D*C*~B*~A)"),
+    .INIT(16'h1000))
+    _al_u151 (
+    .a(\D1/LineCount [3]),
+    .b(\D1/LineCount [4]),
+    .c(\D1/LineCount [2]),
     .d(\D1/LineCount [5]),
-    .o(_al_u152_o));
+    .o(_al_u151_o));
   AL_MAP_LUT5 #(
     .EQN("(E*D*~C*~B*~A)"),
     .INIT(32'h01000000))
-    _al_u153 (
+    _al_u152 (
     .a(\D1/LineCount [6]),
     .b(\D1/LineCount [7]),
-    .c(\D1/LineCount [8]),
-    .d(_al_u152_o),
-    .e(\D1/LineCount [9]),
-    .o(_al_u153_o));
+    .c(\D1/LineCount [9]),
+    .d(\D1/LineCount [8]),
+    .e(_al_u151_o),
+    .o(_al_u152_o));
   AL_MAP_LUT2 #(
-    .EQN("~(B*A)"),
-    .INIT(4'h7))
+    .EQN("(B*A)"),
+    .INIT(4'h8))
+    _al_u153 (
+    .a(_al_u150_o),
+    .b(_al_u152_o),
+    .o(_al_u153_o));
+  AL_MAP_LUT4 #(
+    .EQN("(~D*~(~C*~B*~A))"),
+    .INIT(16'h00fe))
     _al_u154 (
-    .a(_al_u151_o),
-    .b(_al_u153_o),
+    .a(\U4/LCD_Pix_Reg [0]),
+    .b(\U4/LCD_Ctrl_Reg [3]),
+    .c(\D1/FrameFlag ),
+    .d(_al_u153_o),
     .o(\D1/n13 ));
   AL_MAP_LUT4 #(
     .EQN("(D*C*~B*~A)"),
@@ -5005,11 +5223,11 @@ module TOP  // source/TOP.v(1)
     .EQN("(E*D*~C*~B*~A)"),
     .INIT(32'h01000000))
     _al_u167 (
-    .a(\U2/Count [6]),
-    .b(\U2/Count [7]),
-    .c(\U2/Count [8]),
-    .d(_al_u166_o),
-    .e(\U2/Count [9]),
+    .a(\U2/Count [7]),
+    .b(\U2/Count [8]),
+    .c(\U2/Count [9]),
+    .d(\U2/Count [6]),
+    .e(_al_u166_o),
     .o(_al_u167_o));
   AL_MAP_LUT4 #(
     .EQN("(D*~C*~B*~A)"),
@@ -5017,35 +5235,35 @@ module TOP  // source/TOP.v(1)
     _al_u168 (
     .a(\U2/Count [0]),
     .b(\U2/Count [1]),
-    .c(\U2/Count [11]),
-    .d(\U2/Count [10]),
+    .c(\U2/Count [10]),
+    .d(\U2/Count [11]),
     .o(_al_u168_o));
   AL_MAP_LUT5 #(
-    .EQN("(E*D*C*~B*~A)"),
-    .INIT(32'h10000000))
+    .EQN("(E*D*C*B*~A)"),
+    .INIT(32'h40000000))
     _al_u169 (
-    .a(\U2/Count [14]),
-    .b(\U2/Count [15]),
+    .a(\U2/Count [15]),
+    .b(\U2/Count [12]),
     .c(\U2/Count [13]),
-    .d(_al_u168_o),
-    .e(\U2/Count [12]),
+    .d(\U2/Count [14]),
+    .e(_al_u168_o),
     .o(_al_u169_o));
   AL_MAP_LUT4 #(
     .EQN("(D*C*B*~A)"),
     .INIT(16'h4000))
     _al_u170 (
-    .a(\U2/Count [16]),
-    .b(\U2/Count [17]),
+    .a(\U2/Count [17]),
+    .b(\U2/Count [16]),
     .c(\U2/Count [18]),
     .d(\U2/Count [19]),
     .o(_al_u170_o));
   AL_MAP_LUT5 #(
-    .EQN("(E*D*C*~B*~A)"),
-    .INIT(32'h10000000))
+    .EQN("(E*D*C*B*~A)"),
+    .INIT(32'h40000000))
     _al_u171 (
     .a(\U2/Count [2]),
-    .b(\U2/Count [20]),
-    .c(_al_u170_o),
+    .b(_al_u170_o),
+    .c(\U2/Count [20]),
     .d(\U2/Count [21]),
     .e(\U2/Count [22]),
     .o(_al_u171_o));
@@ -5059,13 +5277,13 @@ module TOP  // source/TOP.v(1)
     .d(_al_u171_o),
     .o(\U2/n1 ));
   AL_MAP_LUT4 #(
-    .EQN("(D*~C*~B*~A)"),
-    .INIT(16'h0100))
+    .EQN("(~D*~C*~B*~A)"),
+    .INIT(16'h0001))
     _al_u173 (
     .a(\D1/PixelCount [0]),
     .b(\D1/PixelCount [1]),
-    .c(\D1/PixelCount [11]),
-    .d(\D1/PixelCount [10]),
+    .c(\D1/PixelCount [10]),
+    .d(\D1/PixelCount [11]),
     .o(_al_u173_o));
   AL_MAP_LUT5 #(
     .EQN("(E*~D*~C*~B*~A)"),
@@ -5083,18 +5301,18 @@ module TOP  // source/TOP.v(1)
     _al_u175 (
     .a(\D1/PixelCount [2]),
     .b(\D1/PixelCount [3]),
-    .c(\D1/PixelCount [4]),
-    .d(\D1/PixelCount [5]),
+    .c(\D1/PixelCount [5]),
+    .d(\D1/PixelCount [4]),
     .o(_al_u175_o));
   AL_MAP_LUT5 #(
-    .EQN("(E*D*~C*~B*~A)"),
-    .INIT(32'h01000000))
+    .EQN("(E*D*C*B*~A)"),
+    .INIT(32'h40000000))
     _al_u176 (
-    .a(\D1/PixelCount [6]),
-    .b(\D1/PixelCount [7]),
-    .c(\D1/PixelCount [9]),
-    .d(\D1/PixelCount [8]),
-    .e(_al_u175_o),
+    .a(\D1/PixelCount [8]),
+    .b(\D1/PixelCount [6]),
+    .c(\D1/PixelCount [7]),
+    .d(_al_u175_o),
+    .e(\D1/PixelCount [9]),
     .o(_al_u176_o));
   AL_MAP_LUT2 #(
     .EQN("(B*A)"),
@@ -5103,22 +5321,22 @@ module TOP  // source/TOP.v(1)
     .a(_al_u174_o),
     .b(_al_u176_o),
     .o(_al_u177_o));
-  AL_MAP_LUT4 #(
-    .EQN("((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
-    .INIT(16'hf088))
-    _al_u178 (
-    .a(\D1/LineCount [9]),
-    .b(\D1/n13 ),
-    .c(\D1/n2 [9]),
-    .d(_al_u177_o),
-    .o(\D1/n9 [9]));
   AL_MAP_LUT3 #(
     .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
     .INIT(8'hac))
-    _al_u179 (
-    .a(\D1/n2 [8]),
-    .b(\D1/LineCount [8]),
+    _al_u178 (
+    .a(\D1/n2 [9]),
+    .b(\D1/LineCount [9]),
     .c(_al_u177_o),
+    .o(\D1/n9 [9]));
+  AL_MAP_LUT4 #(
+    .EQN("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
+    .INIT(16'hf044))
+    _al_u179 (
+    .a(_al_u153_o),
+    .b(\D1/LineCount [8]),
+    .c(\D1/n2 [8]),
+    .d(_al_u177_o),
     .o(\D1/n9 [8]));
   AL_MAP_LUT3 #(
     .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
@@ -5137,39 +5355,38 @@ module TOP  // source/TOP.v(1)
     .c(_al_u177_o),
     .o(\D1/n9 [6]));
   AL_MAP_LUT4 #(
-    .EQN("((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
-    .INIT(16'hf088))
+    .EQN("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
+    .INIT(16'hf044))
     _al_u182 (
-    .a(\D1/LineCount [5]),
-    .b(\D1/n13 ),
+    .a(_al_u153_o),
+    .b(\D1/LineCount [5]),
     .c(\D1/n2 [5]),
     .d(_al_u177_o),
     .o(\D1/n9 [5]));
-  AL_MAP_LUT4 #(
-    .EQN("((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
-    .INIT(16'hf088))
-    _al_u183 (
-    .a(\D1/LineCount [4]),
-    .b(\D1/n13 ),
-    .c(\D1/n2 [4]),
-    .d(_al_u177_o),
-    .o(\D1/n9 [4]));
-  AL_MAP_LUT4 #(
-    .EQN("((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
-    .INIT(16'hf088))
-    _al_u184 (
-    .a(\D1/LineCount [3]),
-    .b(\D1/n13 ),
-    .c(\D1/n2 [3]),
-    .d(_al_u177_o),
-    .o(\D1/n9 [3]));
   AL_MAP_LUT3 #(
     .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
     .INIT(8'hac))
-    _al_u185 (
-    .a(\D1/n2 [2]),
-    .b(\D1/LineCount [2]),
+    _al_u183 (
+    .a(\D1/n2 [4]),
+    .b(\D1/LineCount [4]),
     .c(_al_u177_o),
+    .o(\D1/n9 [4]));
+  AL_MAP_LUT3 #(
+    .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
+    .INIT(8'hac))
+    _al_u184 (
+    .a(\D1/n2 [3]),
+    .b(\D1/LineCount [3]),
+    .c(_al_u177_o),
+    .o(\D1/n9 [3]));
+  AL_MAP_LUT4 #(
+    .EQN("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
+    .INIT(16'hf044))
+    _al_u185 (
+    .a(_al_u153_o),
+    .b(\D1/LineCount [2]),
+    .c(\D1/n2 [2]),
+    .d(_al_u177_o),
     .o(\D1/n9 [2]));
   AL_MAP_LUT3 #(
     .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
@@ -5219,14 +5436,13 @@ module TOP  // source/TOP.v(1)
     .b(\D1/LineCount [10]),
     .c(_al_u177_o),
     .o(\D1/n9 [10]));
-  AL_MAP_LUT4 #(
-    .EQN("((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
-    .INIT(16'hf088))
+  AL_MAP_LUT3 #(
+    .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
+    .INIT(8'hac))
     _al_u192 (
-    .a(\D1/LineCount [1]),
-    .b(\D1/n13 ),
-    .c(\D1/n2 [1]),
-    .d(_al_u177_o),
+    .a(\D1/n2 [1]),
+    .b(\D1/LineCount [1]),
+    .c(_al_u177_o),
     .o(\D1/n9 [1]));
   AL_MAP_LUT3 #(
     .EQN("(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C)"),
@@ -5685,11 +5901,11 @@ module TOP  // source/TOP.v(1)
     .b(\U2/n3 [0]),
     .o(\U2/n5 [0]));
   AL_MAP_LUT2 #(
-    .EQN("(B*~A)"),
-    .INIT(4'h4))
+    .EQN("(~B*~A)"),
+    .INIT(4'h1))
     _al_u258 (
-    .a(_al_u177_o),
-    .b(\D1/n13 ),
+    .a(_al_u153_o),
+    .b(_al_u177_o),
     .o(\D1/mux3_b0_sel_is_0_o ));
   AL_MAP_LUT4 #(
     .EQN("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -5835,102 +6051,173 @@ module TOP  // source/TOP.v(1)
     .c(\D1/FrameFlag ),
     .d(\D1/mux3_b0_sel_is_0_o ),
     .o(\D1/n8 [0]));
+  AL_MAP_LUT5 #(
+    .EQN("~((D*C)*~((B*A))*~(E)+(D*C)*(B*A)*~(E)+~((D*C))*(B*A)*E+(D*C)*(B*A)*E)"),
+    .INIT(32'h77770fff))
+    _al_u275 (
+    .a(\U4/n31 ),
+    .b(\U4/n33 ),
+    .c(\U4/n37 ),
+    .d(\U4/n39 ),
+    .e(\U4/AddrCtrl [0]),
+    .o(\U4/mux10_b0_sel_is_0_o ));
   AL_MAP_LUT4 #(
     .EQN("(D*C*~(B*A))"),
     .INIT(16'h7000))
-    _al_u275 (
-    .a(\U4/n38 ),
-    .b(\U4/n40 ),
-    .c(\U4/n24 ),
-    .d(\U4/n44 ),
-    .o(_al_u275_o));
+    _al_u276 (
+    .a(\U4/n37 ),
+    .b(\U4/n39 ),
+    .c(\U4/n23 ),
+    .d(\U4/n43 ),
+    .o(_al_u276_o));
+  AL_MAP_LUT4 #(
+    .EQN("~((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
+    .INIT(16'h0f77))
+    _al_u277 (
+    .a(\U4/n33 ),
+    .b(\U4/n31 ),
+    .c(\U4/n27 ),
+    .d(\U4/AddrCtrl [0]),
+    .o(_al_u277_o));
+  AL_MAP_LUT3 #(
+    .EQN("(~C*~(~B*A))"),
+    .INIT(8'h0d))
+    _al_u278 (
+    .a(\U4/n27 ),
+    .b(\U4/AddrCtrl [0]),
+    .c(\U4/LCD_Ctrl_Reg [4]),
+    .o(_al_u278_o));
+  AL_MAP_LUT4 #(
+    .EQN("(D*C*~(~B*A))"),
+    .INIT(16'hd000))
+    _al_u279 (
+    .a(\U4/mux10_b0_sel_is_0_o ),
+    .b(_al_u276_o),
+    .c(_al_u277_o),
+    .d(_al_u278_o),
+    .o(_al_u279_o));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u280 (
+    .a(i8080_D_pad[7]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u279_o),
+    .o(FIFO_DI[7]));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u281 (
+    .a(i8080_D_pad[6]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u279_o),
+    .o(FIFO_DI[6]));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u282 (
+    .a(i8080_D_pad[5]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u279_o),
+    .o(FIFO_DI[5]));
+  AL_MAP_LUT4 #(
+    .EQN("(D*~(C*~(B*A)))"),
+    .INIT(16'h8f00))
+    _al_u283 (
+    .a(\U4/mux10_b0_sel_is_0_o ),
+    .b(_al_u276_o),
+    .c(_al_u277_o),
+    .d(_al_u278_o),
+    .o(_al_u283_o));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u284 (
+    .a(i8080_D_pad[2]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u283_o),
+    .o(FIFO_DI[2]));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u285 (
+    .a(i8080_D_pad[1]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u283_o),
+    .o(FIFO_DI[1]));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u286 (
+    .a(i8080_D_pad[0]),
+    .b(\U4/LCD_Ctrl_Reg [4]),
+    .c(_al_u283_o),
+    .o(FIFO_DI[0]));
   AL_MAP_LUT4 #(
     .EQN("(~D*~(C*B*~A))"),
     .INIT(16'h00bf))
-    _al_u276 (
+    _al_u287 (
     .a(\U4/AddrCtrl [0]),
-    .b(\U4/n38 ),
-    .c(\U4/n40 ),
-    .d(_al_u275_o),
-    .o(_al_u276_o));
-  AL_MAP_LUT5 #(
-    .EQN("(~E*(~B*~(A)*~((D*C))+~B*A*~((D*C))+~(~B)*A*(D*C)+~B*A*(D*C)))"),
-    .INIT(32'h0000a333))
-    _al_u277 (
-    .a(\U4/AddrCtrl [0]),
-    .b(_al_u276_o),
-    .c(\U4/n32 ),
-    .d(\U4/n34 ),
-    .e(\U4/n28 ),
-    .o(FIFO_DI[5]));
-  AL_MAP_LUT5 #(
-    .EQN("((B*A)*~(C)*~(D)*~(E)+~((B*A))*C*~(D)*~(E)+(B*A)*C*~(D)*~(E)+~((B*A))*C*~(D)*E+~((B*A))*~(C)*D*E+(B*A)*~(C)*D*E+~((B*A))*C*D*E+(B*A)*C*D*E)"),
-    .INIT(32'hff7000f8))
-    _al_u278 (
-    .a(\U4/n32 ),
-    .b(\U4/n34 ),
-    .c(_al_u275_o),
-    .d(\U4/n28 ),
-    .e(\U4/AddrCtrl [0]),
-    .o(FIFO_DI[0]));
-  AL_MAP_LUT5 #(
-    .EQN("((~D*~(B*A))*~(C)*~(E)+(~D*~(B*A))*C*~(E)+~((~D*~(B*A)))*C*E+(~D*~(B*A))*C*E)"),
-    .INIT(32'hf0f00077))
-    _al_u279 (
-    .a(\U4/n32 ),
-    .b(\U4/n34 ),
-    .c(\U4/AddrCtrl [0]),
+    .b(\U4/n37 ),
+    .c(\U4/n39 ),
     .d(_al_u276_o),
-    .e(\U4/n28 ),
+    .o(_al_u287_o));
+  AL_MAP_LUT5 #(
+    .EQN("(E*~(~C*~(~D*~(B*A))))"),
+    .INIT(32'hf0f70000))
+    _al_u288 (
+    .a(\U4/n31 ),
+    .b(\U4/n33 ),
+    .c(\U4/n27 ),
+    .d(_al_u287_o),
+    .e(_al_u278_o),
+    .o(_al_u288_o));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u289 (
+    .a(\U4/LCD_Ctrl_Reg [4]),
+    .b(i8080_D_pad[4]),
+    .c(_al_u288_o),
+    .o(FIFO_DI[4]));
+  AL_MAP_LUT3 #(
+    .EQN("~(~C*~(B*A))"),
+    .INIT(8'hf8))
+    _al_u290 (
+    .a(\U4/LCD_Ctrl_Reg [4]),
+    .b(i8080_D_pad[3]),
+    .c(_al_u288_o),
     .o(FIFO_DI[3]));
   AL_MAP_LUT1 #(
     .EQN("(~A)"),
     .INIT(2'h1))
-    _al_u280 (
+    _al_u291 (
     .a(FIFO_EMPTY),
     .o(\D1/n28 ));
   AL_MAP_LUT1 #(
     .EQN("(~A)"),
     .INIT(2'h1))
-    _al_u281 (
+    _al_u292 (
     .a(FIFO_EMPTY),
     .o(LCD_B_pad[2]));
   AL_MAP_LUT1 #(
     .EQN("(~A)"),
     .INIT(2'h1))
-    _al_u282 (
+    _al_u293 (
     .a(\FIFO0/logic_fifo_full ),
     .o(\FIFO0/logic_fifo_full_neg ));
   AL_MAP_LUT1 #(
     .EQN("(~A)"),
     .INIT(2'h1))
-    _al_u283 (
+    _al_u294 (
     .a(LED_pad[0]),
     .o(\U1/n2 ));
   AL_MAP_LUT1 #(
     .EQN("(~A)"),
     .INIT(2'h1))
-    _al_u284 (
+    _al_u295 (
     .a(LED_pad[1]),
     .o(\U2/n2 ));
-  AL_MAP_LUT1 #(
-    .EQN("(~A)"),
-    .INIT(2'h1))
-    _al_u285 (
-    .a(nRST_pad),
-    .o(\D1/n0 ));
-  EF2_PHY_SPAD #(
-    //.LOCATION("P9"),
-    //.PULLMODE("NONE"),
-    //.SLEWRATE("FAST"),
-    .DRIVE("16"),
-    .IOTYPE("LVCMOS25"),
-    .MODE("OUT"),
-    .TSMUX("INV"))
-    _al_u68 (
-    .do({open_n559,1'b1}),
-    .ts(1'b1),
-    .opad(LCDBK));  // source/TOP.v(15)
   EF2_PHY_SPAD #(
     //.LOCATION("P54"),
     //.PULLMODE("NONE"),
@@ -5939,10 +6226,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u69 (
-    .do({open_n568,LCD_B_pad[7]}),
+    _al_u64 (
+    .do({open_n511,LCD_B_pad[7]}),
     .ts(1'b1),
-    .opad(LCD_B[7]));  // source/TOP.v(22)
+    .opad(LCD_B[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P53"),
     //.PULLMODE("NONE"),
@@ -5951,10 +6238,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u70 (
-    .do({open_n577,LCD_B_pad[6]}),
+    _al_u65 (
+    .do({open_n520,LCD_B_pad[6]}),
     .ts(1'b1),
-    .opad(LCD_B[6]));  // source/TOP.v(22)
+    .opad(LCD_B[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P52"),
     //.PULLMODE("NONE"),
@@ -5963,10 +6250,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u71 (
-    .do({open_n586,LCD_B_pad[5]}),
+    _al_u66 (
+    .do({open_n529,LCD_B_pad[5]}),
     .ts(1'b1),
-    .opad(LCD_B[5]));  // source/TOP.v(22)
+    .opad(LCD_B[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P51"),
     //.PULLMODE("NONE"),
@@ -5975,10 +6262,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u72 (
-    .do({open_n595,LCD_B_pad[4]}),
+    _al_u67 (
+    .do({open_n538,LCD_B_pad[4]}),
     .ts(1'b1),
-    .opad(LCD_B[4]));  // source/TOP.v(22)
+    .opad(LCD_B[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P49"),
     //.PCICLAMP("ON"),
@@ -5988,9 +6275,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u73 (
-    .do({open_n603,open_n604,open_n605,LCD_B_pad[3]}),
-    .opad(LCD_B[3]));  // source/TOP.v(22)
+    _al_u68 (
+    .do({open_n546,open_n547,open_n548,LCD_B_pad[3]}),
+    .opad(LCD_B[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P48"),
     //.PCICLAMP("ON"),
@@ -6000,9 +6287,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u74 (
-    .do({open_n626,open_n627,open_n628,LCD_B_pad[2]}),
-    .opad(LCD_B[2]));  // source/TOP.v(22)
+    _al_u69 (
+    .do({open_n569,open_n570,open_n571,LCD_B_pad[2]}),
+    .opad(LCD_B[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P47"),
     //.PCICLAMP("ON"),
@@ -6012,9 +6299,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u75 (
-    .do({open_n649,open_n650,open_n651,LCD_B_pad[2]}),
-    .opad(LCD_B[1]));  // source/TOP.v(22)
+    _al_u70 (
+    .do({open_n592,open_n593,open_n594,LCD_B_pad[2]}),
+    .opad(LCD_B[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P45"),
     //.PCICLAMP("ON"),
@@ -6024,9 +6311,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u76 (
-    .do({open_n672,open_n673,open_n674,LCD_B_pad[2]}),
-    .opad(LCD_B[0]));  // source/TOP.v(22)
+    _al_u71 (
+    .do({open_n615,open_n616,open_n617,LCD_B_pad[2]}),
+    .opad(LCD_B[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P62"),
     //.PULLMODE("NONE"),
@@ -6035,10 +6322,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u77 (
-    .do({open_n696,LCD_CLK_pad}),
+    _al_u72 (
+    .do({open_n639,LCD_CLK_pad}),
     .ts(1'b1),
-    .opad(LCD_CLK));  // source/TOP.v(16)
+    .opad(LCD_CLK));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
   EF2_PHY_SPAD #(
     //.LOCATION("P60"),
     //.PULLMODE("NONE"),
@@ -6047,10 +6334,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u78 (
-    .do({open_n705,LCD_DEN_pad}),
+    _al_u73 (
+    .do({open_n648,LCD_DEN_pad}),
     .ts(1'b1),
-    .opad(LCD_DEN));  // source/TOP.v(19)
+    .opad(LCD_DEN));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
   EF2_PHY_PAD #(
     //.LOCATION("P43"),
     //.PCICLAMP("ON"),
@@ -6060,9 +6347,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u79 (
-    .do({open_n713,open_n714,open_n715,LCD_G_pad[7]}),
-    .opad(LCD_G[7]));  // source/TOP.v(21)
+    _al_u74 (
+    .do({open_n656,open_n657,open_n658,LCD_G_pad[7]}),
+    .opad(LCD_G[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P42"),
     //.PCICLAMP("ON"),
@@ -6072,9 +6359,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u80 (
-    .do({open_n736,open_n737,open_n738,LCD_G_pad[6]}),
-    .opad(LCD_G[6]));  // source/TOP.v(21)
+    _al_u75 (
+    .do({open_n679,open_n680,open_n681,LCD_G_pad[6]}),
+    .opad(LCD_G[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P41"),
     //.PCICLAMP("ON"),
@@ -6084,9 +6371,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u81 (
-    .do({open_n759,open_n760,open_n761,LCD_G_pad[5]}),
-    .opad(LCD_G[5]));  // source/TOP.v(21)
+    _al_u76 (
+    .do({open_n702,open_n703,open_n704,LCD_G_pad[5]}),
+    .opad(LCD_G[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P40"),
     //.PCICLAMP("ON"),
@@ -6096,9 +6383,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u82 (
-    .do({open_n782,open_n783,open_n784,LCD_G_pad[4]}),
-    .opad(LCD_G[4]));  // source/TOP.v(21)
+    _al_u77 (
+    .do({open_n725,open_n726,open_n727,LCD_G_pad[4]}),
+    .opad(LCD_G[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P39"),
     //.PCICLAMP("ON"),
@@ -6108,9 +6395,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u83 (
-    .do({open_n805,open_n806,open_n807,LCD_G_pad[3]}),
-    .opad(LCD_G[3]));  // source/TOP.v(21)
+    _al_u78 (
+    .do({open_n748,open_n749,open_n750,LCD_G_pad[3]}),
+    .opad(LCD_G[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P38"),
     //.PCICLAMP("ON"),
@@ -6120,9 +6407,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u84 (
-    .do({open_n828,open_n829,open_n830,LCD_G_pad[2]}),
-    .opad(LCD_G[2]));  // source/TOP.v(21)
+    _al_u79 (
+    .do({open_n771,open_n772,open_n773,LCD_G_pad[2]}),
+    .opad(LCD_G[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P37"),
     //.PCICLAMP("ON"),
@@ -6132,9 +6419,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u85 (
-    .do({open_n851,open_n852,open_n853,LCD_B_pad[2]}),
-    .opad(LCD_G[1]));  // source/TOP.v(21)
+    _al_u80 (
+    .do({open_n794,open_n795,open_n796,LCD_B_pad[2]}),
+    .opad(LCD_G[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P36"),
     //.PCICLAMP("ON"),
@@ -6144,9 +6431,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u86 (
-    .do({open_n874,open_n875,open_n876,LCD_B_pad[2]}),
-    .opad(LCD_G[0]));  // source/TOP.v(21)
+    _al_u81 (
+    .do({open_n817,open_n818,open_n819,LCD_B_pad[2]}),
+    .opad(LCD_G[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
   EF2_PHY_SPAD #(
     //.LOCATION("P58"),
     //.PULLMODE("NONE"),
@@ -6155,10 +6442,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u87 (
-    .do({open_n898,LCD_HYNC_pad}),
+    _al_u82 (
+    .do({open_n841,LCD_HYNC_pad}),
     .ts(1'b1),
-    .opad(LCD_HYNC));  // source/TOP.v(17)
+    .opad(LCD_HYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
   EF2_PHY_PAD #(
     //.LOCATION("P35"),
     //.PCICLAMP("ON"),
@@ -6168,9 +6455,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u88 (
-    .do({open_n906,open_n907,open_n908,LCD_R_pad[7]}),
-    .opad(LCD_R[7]));  // source/TOP.v(20)
+    _al_u83 (
+    .do({open_n849,open_n850,open_n851,LCD_R_pad[7]}),
+    .opad(LCD_R[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P34"),
     //.PCICLAMP("ON"),
@@ -6180,9 +6467,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u89 (
-    .do({open_n929,open_n930,open_n931,LCD_R_pad[6]}),
-    .opad(LCD_R[6]));  // source/TOP.v(20)
+    _al_u84 (
+    .do({open_n872,open_n873,open_n874,LCD_R_pad[6]}),
+    .opad(LCD_R[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P32"),
     //.PCICLAMP("ON"),
@@ -6192,9 +6479,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u90 (
-    .do({open_n952,open_n953,open_n954,LCD_R_pad[5]}),
-    .opad(LCD_R[5]));  // source/TOP.v(20)
+    _al_u85 (
+    .do({open_n895,open_n896,open_n897,LCD_R_pad[5]}),
+    .opad(LCD_R[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P31"),
     //.PCICLAMP("ON"),
@@ -6204,9 +6491,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u91 (
-    .do({open_n975,open_n976,open_n977,LCD_R_pad[4]}),
-    .opad(LCD_R[4]));  // source/TOP.v(20)
+    _al_u86 (
+    .do({open_n918,open_n919,open_n920,LCD_R_pad[4]}),
+    .opad(LCD_R[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P30"),
     //.PCICLAMP("ON"),
@@ -6216,9 +6503,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u92 (
-    .do({open_n998,open_n999,open_n1000,LCD_R_pad[3]}),
-    .opad(LCD_R[3]));  // source/TOP.v(20)
+    _al_u87 (
+    .do({open_n941,open_n942,open_n943,LCD_R_pad[3]}),
+    .opad(LCD_R[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P29"),
     //.PCICLAMP("ON"),
@@ -6228,9 +6515,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u93 (
-    .do({open_n1021,open_n1022,open_n1023,1'b1}),
-    .opad(LCD_R[2]));  // source/TOP.v(20)
+    _al_u88 (
+    .do({open_n964,open_n965,open_n966,1'b1}),
+    .opad(LCD_R[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P28"),
     //.PCICLAMP("ON"),
@@ -6240,9 +6527,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u94 (
-    .do({open_n1044,open_n1045,open_n1046,1'b1}),
-    .opad(LCD_R[1]));  // source/TOP.v(20)
+    _al_u89 (
+    .do({open_n987,open_n988,open_n989,1'b1}),
+    .opad(LCD_R[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P27"),
     //.PCICLAMP("ON"),
@@ -6252,9 +6539,9 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("0"))
-    _al_u95 (
-    .do({open_n1067,open_n1068,open_n1069,1'b1}),
-    .opad(LCD_R[0]));  // source/TOP.v(20)
+    _al_u90 (
+    .do({open_n1010,open_n1011,open_n1012,1'b1}),
+    .opad(LCD_R[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
   EF2_PHY_SPAD #(
     //.LOCATION("P59"),
     //.PULLMODE("NONE"),
@@ -6263,10 +6550,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u96 (
-    .do({open_n1091,LCD_SYNC_pad}),
+    _al_u91 (
+    .do({open_n1034,LCD_SYNC_pad}),
     .ts(1'b1),
-    .opad(LCD_SYNC));  // source/TOP.v(18)
+    .opad(LCD_SYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
   EF2_PHY_SPAD #(
     //.LOCATION("P63"),
     //.PULLMODE("NONE"),
@@ -6275,10 +6562,10 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u97 (
-    .do({open_n1100,LED_pad[1]}),
+    _al_u92 (
+    .do({open_n1043,LED_pad[1]}),
     .ts(1'b1),
-    .opad(LED[1]));  // source/TOP.v(6)
+    .opad(LED[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
   EF2_PHY_SPAD #(
     //.LOCATION("P64"),
     //.PULLMODE("NONE"),
@@ -6287,20 +6574,70 @@ module TOP  // source/TOP.v(1)
     .IOTYPE("LVCMOS25"),
     .MODE("OUT"),
     .TSMUX("INV"))
-    _al_u98 (
-    .do({open_n1109,LED_pad[0]}),
+    _al_u93 (
+    .do({open_n1052,LED_pad[0]}),
     .ts(1'b1),
-    .opad(LED[0]));  // source/TOP.v(6)
+    .opad(LED[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
   EF2_PHY_SPAD #(
     //.LOCATION("P4"),
     //.PULLMODE("PULLUP"),
     .IOTYPE("LVCMOS25"),
     .MODE("IN"),
     .TSMUX("TS"))
-    _al_u99 (
+    _al_u94 (
     .ipad(clk),
     .ts(1'b1),
-    .di(clk_pad));  // source/TOP.v(3)
+    .di(clk_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
+  EF2_PHY_SPAD #(
+    //.LOCATION("P10"),
+    //.PULLMODE("PULLUP"),
+    .IOTYPE("LVCMOS18"),
+    .MODE("IN"),
+    .TSMUX("TS"))
+    _al_u95 (
+    .ipad(i8080_CS),
+    .ts(1'b1),
+    .di(i8080_CS_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
+  EF2_PHY_SPAD #(
+    //.LOCATION("P16"),
+    //.PULLMODE("PULLUP"),
+    .IOTYPE("LVCMOS18"),
+    .MODE("IN"),
+    .TSMUX("TS"))
+    _al_u96 (
+    .ipad(i8080_D[7]),
+    .ts(1'b1),
+    .di(i8080_D_pad[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+  EF2_PHY_SPAD #(
+    //.LOCATION("P17"),
+    //.PULLMODE("PULLUP"),
+    .IOTYPE("LVCMOS18"),
+    .MODE("IN"),
+    .TSMUX("TS"))
+    _al_u97 (
+    .ipad(i8080_D[6]),
+    .ts(1'b1),
+    .di(i8080_D_pad[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+  EF2_PHY_SPAD #(
+    //.LOCATION("P18"),
+    //.PULLMODE("PULLUP"),
+    .IOTYPE("LVCMOS18"),
+    .MODE("IN"),
+    .TSMUX("TS"))
+    _al_u98 (
+    .ipad(i8080_D[5]),
+    .ts(1'b1),
+    .di(i8080_D_pad[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+  EF2_PHY_SPAD #(
+    //.LOCATION("P21"),
+    //.PULLMODE("PULLUP"),
+    .IOTYPE("LVCMOS18"),
+    .MODE("IN"),
+    .TSMUX("TS"))
+    _al_u99 (
+    .ipad(i8080_D[2]),
+    .ts(1'b1),
+    .di(i8080_D_pad[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
   EF2_PHY_CONFIG #(
     .DONE_PERSISTN("ENABLE"),
     .INIT_PERSISTN("ENABLE"),
