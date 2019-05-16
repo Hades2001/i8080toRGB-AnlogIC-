@@ -41,6 +41,8 @@ module TOP
 		.clk2_out	(	CLK_25M		),
 		.clk3_out	(	CLK_9M		)
 	);
+	
+	
 
 	assign	PixeClk = CLK_9M;
 

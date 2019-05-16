@@ -60,7 +60,7 @@ module LCD8080Ctrl
         LCD_BL_Reg      <=  5'b0_0001;
         LCD_Test_Reg    <=  5'b0_0000;
         end
-    else if(( J80_RS == 1'b1 )&&( J80_CS == 1'b0 ))begin
+    else if((LCD_Ctrl_Reg[4] == 1'b0)&&( J80_RS == 1'b1 )&&( J80_CS == 1'b0 ))begin
         case( J80_Data[7:5] )
             A_CTRL  :   LCD_Ctrl_Reg    <=  J80_Data[4:0] ;
             A_Pix   :   LCD_Pix_Reg     <=  J80_Data[4:0] ;

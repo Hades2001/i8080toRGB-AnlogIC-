@@ -8,15 +8,15 @@ IO Statistics
   #inout                1
 
 Gate Statistics
-#Basic gates          213
-  #and                 36
+#Basic gates          215
+  #and                 37
   #nand                 0
   #or                   1
   #nor                  0
   #xor                  0
   #xnor                 0
   #buf                  0
-  #not                 14
+  #not                 15
   #bufif1               1
   #MX21                42
   #FADD                 0
@@ -30,5 +30,5 @@ Report Hierarchy Area:
 +-----------------------------------------+
 |Instance |Module |gates  |seq    |macros |
 +-----------------------------------------+
-|top      |TOP    |94     |119    |34     |
+|top      |TOP    |96     |119    |34     |
 +-----------------------------------------+

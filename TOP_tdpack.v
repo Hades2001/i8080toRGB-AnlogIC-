@@ -1,8 +1,8 @@
 // Verilog netlist created by TD v4.4.433
-// Wed May 15 17:41:28 2019
+// Thu May 16 15:04:52 2019
 
 `timescale 1ns / 1ps
-module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
+module TOP  // source/TOP.v(1)
   (
   clk,
   i8080_CS,
@@ -21,32 +21,32 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   i8080_RS
   );
 
-  input clk;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
-  input i8080_CS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
-  input [7:0] i8080_D;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
-  input i8080_WR;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
-  input nRST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
-  output LCDBK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(14)
-  output [7:0] LCD_B;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
-  output LCD_CLK;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
-  output LCD_DEN;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
-  output [7:0] LCD_G;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
-  output LCD_HYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
-  output [7:0] LCD_R;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
-  output LCD_SYNC;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
-  output [1:0] LED;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
-  inout i8080_RS;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
+  input clk;  // source/TOP.v(3)
+  input i8080_CS;  // source/TOP.v(8)
+  input [7:0] i8080_D;  // source/TOP.v(12)
+  input i8080_WR;  // source/TOP.v(10)
+  input nRST;  // source/TOP.v(4)
+  output LCDBK;  // source/TOP.v(14)
+  output [7:0] LCD_B;  // source/TOP.v(21)
+  output LCD_CLK;  // source/TOP.v(15)
+  output LCD_DEN;  // source/TOP.v(18)
+  output [7:0] LCD_G;  // source/TOP.v(20)
+  output LCD_HYNC;  // source/TOP.v(16)
+  output [7:0] LCD_R;  // source/TOP.v(19)
+  output LCD_SYNC;  // source/TOP.v(17)
+  output [1:0] LED;  // source/TOP.v(6)
+  inout i8080_RS;  // source/TOP.v(9)
 
-  wire [15:0] \D1/LineCount ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(27)
-  wire [15:0] \D1/PixelCount ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(26)
+  wire [15:0] \D1/LineCount ;  // source/VGAMod.v(27)
+  wire [15:0] \D1/PixelCount ;  // source/VGAMod.v(26)
   wire [15:0] \D1/n2 ;
   wire [15:0] \D1/n4 ;
-  wire [7:0] FIFO_DI;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(55)
-  wire [15:0] FIFO_DO;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(54)
-  wire [7:0] LCD_B_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
-  wire [7:0] LCD_G_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
-  wire [7:0] LCD_R_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
-  wire [1:0] LED_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
+  wire [7:0] FIFO_DI;  // source/TOP.v(57)
+  wire [15:0] FIFO_DO;  // source/TOP.v(56)
+  wire [7:0] LCD_B_pad;  // source/TOP.v(21)
+  wire [7:0] LCD_G_pad;  // source/TOP.v(20)
+  wire [7:0] LCD_R_pad;  // source/TOP.v(19)
+  wire [1:0] LED_pad;  // source/TOP.v(6)
   wire [31:0] \U1/Count ;  // source/CLK_MOD.v(15)
   wire [31:0] \U1/n3 ;
   wire [31:0] \U2/Count ;  // source/CLK_MOD.v(15)
@@ -54,10 +54,10 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   wire [15:0] \U4/AddrCtrl ;  // source/LCD8080Ctrl.v(90)
   wire [4:0] \U4/LCD_Ctrl_Reg ;  // source/LCD8080Ctrl.v(43)
   wire [4:0] \U4/LCD_Pix_Reg ;  // source/LCD8080Ctrl.v(44)
-  wire [15:0] \U4/n18 ;
-  wire [7:0] i8080_D_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
-  wire CLK_100M;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(25)
-  wire \D1/FrameFlag ;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(55)
+  wire [15:0] \U4/n20 ;
+  wire [7:0] i8080_D_pad;  // source/TOP.v(12)
+  wire CLK_100M;  // source/TOP.v(25)
+  wire \D1/FrameFlag ;  // source/VGAMod.v(55)
   wire \D1/add0/c11 ;
   wire \D1/add0/c15 ;
   wire \D1/add0/c3 ;
@@ -158,15 +158,15 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   wire \D1/n28 ;
   wire \FIFO0/logic_fifo_full ;
   wire \FIFO0/logic_fifo_full_neg ;
-  wire FIFO_CLK_W;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(49)
-  wire FIFO_EMPTY;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(52)
-  wire FIFO_RE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(50)
-  wire FIFO_RST;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(47)
-  wire FIFO_WE;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(51)
-  wire LCD_CLK_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
-  wire LCD_DEN_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
-  wire LCD_HYNC_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
-  wire LCD_SYNC_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
+  wire FIFO_CLK_W;  // source/TOP.v(51)
+  wire FIFO_EMPTY;  // source/TOP.v(54)
+  wire FIFO_RE;  // source/TOP.v(52)
+  wire FIFO_RST;  // source/TOP.v(49)
+  wire FIFO_WE;  // source/TOP.v(53)
+  wire LCD_CLK_pad;  // source/TOP.v(15)
+  wire LCD_DEN_pad;  // source/TOP.v(18)
+  wire LCD_HYNC_pad;  // source/TOP.v(16)
+  wire LCD_SYNC_pad;  // source/TOP.v(17)
   wire \PLL1/clk0_buf ;  // al_ip/LCDPLL.v(39)
   wire \U1/add0/c11 ;
   wire \U1/add0/c15 ;
@@ -259,56 +259,58 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
   wire \U4/mux10_b0_sel_is_0_o ;
   wire \U4/mux1_b0_sel_is_3_o ;
   wire \U4/mux2_b0_sel_is_3_o ;
-  wire \U4/n17 ;
-  wire \U4/n23 ;
-  wire \U4/n27 ;
-  wire \U4/n31 ;
+  wire \U4/n19 ;
+  wire \U4/n25 ;
+  wire \U4/n29 ;
   wire \U4/n33 ;
-  wire \U4/n37 ;
+  wire \U4/n35 ;
   wire \U4/n39 ;
-  wire \U4/n43 ;
+  wire \U4/n41 ;
+  wire \U4/n45 ;
   wire _al_u125_o;
-  wire _al_u149_o;
-  wire _al_u150_o;
+  wire _al_u146_o;
+  wire _al_u147_o;
   wire _al_u151_o;
   wire _al_u152_o;
   wire _al_u153_o;
+  wire _al_u154_o;
   wire _al_u155_o;
-  wire _al_u156_o;
   wire _al_u157_o;
   wire _al_u158_o;
   wire _al_u159_o;
   wire _al_u160_o;
   wire _al_u161_o;
   wire _al_u162_o;
+  wire _al_u163_o;
   wire _al_u164_o;
-  wire _al_u165_o;
   wire _al_u166_o;
   wire _al_u167_o;
   wire _al_u168_o;
   wire _al_u169_o;
   wire _al_u170_o;
   wire _al_u171_o;
+  wire _al_u172_o;
   wire _al_u173_o;
-  wire _al_u174_o;
   wire _al_u175_o;
   wire _al_u176_o;
   wire _al_u177_o;
-  wire _al_u276_o;
-  wire _al_u277_o;
+  wire _al_u178_o;
+  wire _al_u179_o;
   wire _al_u278_o;
   wire _al_u279_o;
-  wire _al_u283_o;
-  wire _al_u287_o;
-  wire _al_u288_o;
-  wire clk_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
-  wire i8080_CS_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
-  wire i8080_RS_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(9)
-  wire i8080_WR_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
-  wire nRST_pad;  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
+  wire _al_u280_o;
+  wire _al_u281_o;
+  wire _al_u285_o;
+  wire _al_u289_o;
+  wire _al_u290_o;
+  wire clk_pad;  // source/TOP.v(3)
+  wire i8080_CS_pad;  // source/TOP.v(8)
+  wire i8080_RS_pad;  // source/TOP.v(9)
+  wire i8080_WR_pad;  // source/TOP.v(10)
+  wire nRST_pad;  // source/TOP.v(4)
 
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(84)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(84)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(~D*~(~C*~B*~A))"),
@@ -335,11 +337,11 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .b({\U4/LCD_Ctrl_Reg [3],\D1/PixelCount [1]}),
     .c({\D1/FrameFlag ,\D1/FrameFlag }),
     .clk(LCD_CLK_pad),
-    .d({_al_u153_o,\D1/mux3_b0_sel_is_0_o }),
+    .d({_al_u155_o,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/FrameFlag ,\D1/PixelCount [1]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/FrameFlag ,\D1/PixelCount [1]}));  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add0/ucin_al_u314"),
+    //.MACRO("D1/add0/ucin_al_u316"),
     //.R_POSITION("X0Y1Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -352,7 +354,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add0/u11_al_u317  (
+    \D1/add0/u11_al_u319  (
     .a({\D1/LineCount [13],\D1/LineCount [11]}),
     .b({\D1/LineCount [14],\D1/LineCount [12]}),
     .c(2'b00),
@@ -363,7 +365,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add0/c15 ),
     .fx({\D1/n2 [14],\D1/n2 [12]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add0/ucin_al_u314"),
+    //.MACRO("D1/add0/ucin_al_u316"),
     //.R_POSITION("X0Y2Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -376,14 +378,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add0/u15_al_u318  (
+    \D1/add0/u15_al_u320  (
     .a({open_n40,\D1/LineCount [15]}),
     .c(2'b00),
     .d({open_n45,1'b0}),
     .fci(\D1/add0/c15 ),
     .f({open_n62,\D1/n2 [15]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add0/ucin_al_u314"),
+    //.MACRO("D1/add0/ucin_al_u316"),
     //.R_POSITION("X0Y0Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -396,7 +398,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add0/u3_al_u315  (
+    \D1/add0/u3_al_u317  (
     .a({\D1/LineCount [5],\D1/LineCount [3]}),
     .b({\D1/LineCount [6],\D1/LineCount [4]}),
     .c(2'b00),
@@ -407,7 +409,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add0/c7 ),
     .fx({\D1/n2 [6],\D1/n2 [4]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add0/ucin_al_u314"),
+    //.MACRO("D1/add0/ucin_al_u316"),
     //.R_POSITION("X0Y1Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -420,7 +422,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add0/u7_al_u316  (
+    \D1/add0/u7_al_u318  (
     .a({\D1/LineCount [9],\D1/LineCount [7]}),
     .b({\D1/LineCount [10],\D1/LineCount [8]}),
     .c(2'b00),
@@ -431,7 +433,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add0/c11 ),
     .fx({\D1/n2 [10],\D1/n2 [8]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add0/ucin_al_u314"),
+    //.MACRO("D1/add0/ucin_al_u316"),
     //.R_POSITION("X0Y0Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -444,7 +446,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add0/ucin_al_u314  (
+    \D1/add0/ucin_al_u316  (
     .a({\D1/LineCount [1],1'b0}),
     .b({\D1/LineCount [2],\D1/LineCount [0]}),
     .c(2'b00),
@@ -454,7 +456,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add0/c3 ),
     .fx({\D1/n2 [2],\D1/n2 [0]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add1/ucin_al_u319"),
+    //.MACRO("D1/add1/ucin_al_u321"),
     //.R_POSITION("X0Y1Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -467,7 +469,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add1/u11_al_u322  (
+    \D1/add1/u11_al_u324  (
     .a({\D1/PixelCount [13],\D1/PixelCount [11]}),
     .b({\D1/PixelCount [14],\D1/PixelCount [12]}),
     .c(2'b00),
@@ -478,7 +480,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add1/c15 ),
     .fx({\D1/n4 [14],\D1/n4 [12]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add1/ucin_al_u319"),
+    //.MACRO("D1/add1/ucin_al_u321"),
     //.R_POSITION("X0Y2Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -491,14 +493,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add1/u15_al_u323  (
+    \D1/add1/u15_al_u325  (
     .a({open_n142,\D1/PixelCount [15]}),
     .c(2'b00),
     .d({open_n147,1'b0}),
     .fci(\D1/add1/c15 ),
     .f({open_n164,\D1/n4 [15]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add1/ucin_al_u319"),
+    //.MACRO("D1/add1/ucin_al_u321"),
     //.R_POSITION("X0Y0Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -511,7 +513,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add1/u3_al_u320  (
+    \D1/add1/u3_al_u322  (
     .a({\D1/PixelCount [5],\D1/PixelCount [3]}),
     .b({\D1/PixelCount [6],\D1/PixelCount [4]}),
     .c(2'b00),
@@ -522,7 +524,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add1/c7 ),
     .fx({\D1/n4 [6],\D1/n4 [4]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add1/ucin_al_u319"),
+    //.MACRO("D1/add1/ucin_al_u321"),
     //.R_POSITION("X0Y1Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -535,7 +537,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add1/u7_al_u321  (
+    \D1/add1/u7_al_u323  (
     .a({\D1/PixelCount [9],\D1/PixelCount [7]}),
     .b({\D1/PixelCount [10],\D1/PixelCount [8]}),
     .c(2'b00),
@@ -546,7 +548,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\D1/add1/c11 ),
     .fx({\D1/n4 [10],\D1/n4 [8]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("D1/add1/ucin_al_u319"),
+    //.MACRO("D1/add1/ucin_al_u321"),
     //.R_POSITION("X0Y0Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -559,7 +561,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \D1/add1/ucin_al_u319  (
+    \D1/add1/ucin_al_u321  (
     .a({\D1/PixelCount [1],1'b0}),
     .b({\D1/PixelCount [2],\D1/PixelCount [0]}),
     .c(2'b00),
@@ -1638,8 +1640,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .b(2'b10),
     .fci(\D1/lt9_c15 ),
     .f({\D1/n26 ,open_n2400}));
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1668,9 +1670,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [0],\D1/PixelCount [9]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [0],\D1/PixelCount [9]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1699,9 +1701,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [10],\D1/PixelCount [8]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [10],\D1/PixelCount [8]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1730,9 +1732,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [11],\D1/PixelCount [7]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [11],\D1/PixelCount [7]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1761,9 +1763,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [12],\D1/PixelCount [6]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [12],\D1/PixelCount [6]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1792,9 +1794,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [13],\D1/PixelCount [4]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [13],\D1/PixelCount [4]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1823,9 +1825,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [14],\D1/PixelCount [3]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [14],\D1/PixelCount [3]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
@@ -1854,9 +1856,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .clk(LCD_CLK_pad),
     .d({\D1/mux3_b0_sel_is_0_o ,\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .q({\D1/PixelCount [15],\D1/PixelCount [2]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/PixelCount [15],\D1/PixelCount [2]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -1880,13 +1882,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b0|D1/reg1_b9  (
     .b({\D1/LineCount [0],\D1/LineCount [9]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [0],\D1/n2 [9]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [0],\D1/LineCount [9]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [0],\D1/LineCount [9]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -1910,13 +1912,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b10|D1/reg1_b7  (
     .b({\D1/LineCount [10],\D1/LineCount [7]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [10],\D1/n2 [7]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [10],\D1/LineCount [7]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [10],\D1/LineCount [7]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -1940,13 +1942,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b11|D1/reg1_b6  (
     .b({\D1/LineCount [11],\D1/LineCount [6]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [11],\D1/n2 [6]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [11],\D1/LineCount [6]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [11],\D1/LineCount [6]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -1970,13 +1972,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b12|D1/reg1_b4  (
     .b({\D1/LineCount [12],\D1/LineCount [4]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [12],\D1/n2 [4]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [12],\D1/LineCount [4]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [12],\D1/LineCount [4]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -2000,13 +2002,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b13|D1/reg1_b3  (
     .b({\D1/LineCount [13],\D1/LineCount [3]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [13],\D1/n2 [3]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [13],\D1/LineCount [3]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [13],\D1/LineCount [3]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
@@ -2030,13 +2032,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMUX("INV"))
     \D1/reg1_b14|D1/reg1_b15  (
     .b({\D1/LineCount [14],\D1/LineCount [15]}),
-    .c({_al_u177_o,_al_u177_o}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
     .d({\D1/n2 [14],\D1/n2 [15]}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [14],\D1/LineCount [15]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [14],\D1/LineCount [15]}));  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
     //.LUTF1("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
@@ -2059,13 +2061,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \D1/reg1_b2|D1/reg1_b8  (
-    .a({_al_u153_o,_al_u153_o}),
+    .a({_al_u155_o,_al_u155_o}),
     .b({\D1/LineCount [2],\D1/LineCount [8]}),
     .c({\D1/n2 [2],\D1/n2 [8]}),
     .clk(LCD_CLK_pad),
-    .d({_al_u177_o,_al_u177_o}),
+    .d({_al_u179_o,_al_u179_o}),
     .sr(nRST_pad),
-    .q({\D1/LineCount [2],\D1/LineCount [8]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .q({\D1/LineCount [2],\D1/LineCount [8]}));  // source/VGAMod.v(72)
   EF2_PHY_FIFO #(
     .AE(32'b00000000000000000000000000110100),
     .AEP1(32'b00000000000000000000000000111100),
@@ -2263,7 +2265,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .sr(nRST_pad),
     .q({open_n2823,LED_pad[0]}));  // source/CLK_MOD.v(32)
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y1Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2276,7 +2278,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u11_al_u299  (
+    \U1/add0/u11_al_u301  (
     .a({\U1/Count [13],\U1/Count [11]}),
     .b({\U1/Count [14],\U1/Count [12]}),
     .c(2'b00),
@@ -2287,7 +2289,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c15 ),
     .fx({\U1/n3 [14],\U1/n3 [12]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y2Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2300,7 +2302,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u15_al_u300  (
+    \U1/add0/u15_al_u302  (
     .a({\U1/Count [17],\U1/Count [15]}),
     .b({\U1/Count [18],\U1/Count [16]}),
     .c(2'b00),
@@ -2311,7 +2313,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c19 ),
     .fx({\U1/n3 [18],\U1/n3 [16]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y2Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2324,7 +2326,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u19_al_u301  (
+    \U1/add0/u19_al_u303  (
     .a({\U1/Count [21],\U1/Count [19]}),
     .b({\U1/Count [22],\U1/Count [20]}),
     .c(2'b00),
@@ -2335,7 +2337,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c23 ),
     .fx({\U1/n3 [22],\U1/n3 [20]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y3Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2348,7 +2350,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u23_al_u302  (
+    \U1/add0/u23_al_u304  (
     .a({\U1/Count [25],\U1/Count [23]}),
     .b({\U1/Count [26],\U1/Count [24]}),
     .c(2'b00),
@@ -2359,7 +2361,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c27 ),
     .fx({\U1/n3 [26],\U1/n3 [24]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y3Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2372,7 +2374,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u27_al_u303  (
+    \U1/add0/u27_al_u305  (
     .a({\U1/Count [29],\U1/Count [27]}),
     .b({\U1/Count [30],\U1/Count [28]}),
     .c(2'b00),
@@ -2383,7 +2385,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c31 ),
     .fx({\U1/n3 [30],\U1/n3 [28]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y4Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2396,14 +2398,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u31_al_u304  (
+    \U1/add0/u31_al_u306  (
     .a({open_n2914,\U1/Count [31]}),
     .c(2'b00),
     .d({open_n2919,1'b0}),
     .fci(\U1/add0/c31 ),
     .f({open_n2936,\U1/n3 [31]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y0Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2416,7 +2418,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u3_al_u297  (
+    \U1/add0/u3_al_u299  (
     .a({\U1/Count [5],\U1/Count [3]}),
     .b({\U1/Count [6],\U1/Count [4]}),
     .c(2'b00),
@@ -2427,7 +2429,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c7 ),
     .fx({\U1/n3 [6],\U1/n3 [4]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y1Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2440,7 +2442,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/u7_al_u298  (
+    \U1/add0/u7_al_u300  (
     .a({\U1/Count [9],\U1/Count [7]}),
     .b({\U1/Count [10],\U1/Count [8]}),
     .c(2'b00),
@@ -2451,7 +2453,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U1/add0/c11 ),
     .fx({\U1/n3 [10],\U1/n3 [8]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U1/add0/ucin_al_u296"),
+    //.MACRO("U1/add0/ucin_al_u298"),
     //.R_POSITION("X0Y0Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2464,7 +2466,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U1/add0/ucin_al_u296  (
+    \U1/add0/ucin_al_u298  (
     .a({\U1/Count [1],1'b0}),
     .b({\U1/Count [2],\U1/Count [0]}),
     .c(2'b00),
@@ -2938,7 +2940,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .sr(nRST_pad),
     .q({\U1/Count [2],\U1/Count [23]}));  // source/CLK_MOD.v(32)
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y1Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2951,7 +2953,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u11_al_u308  (
+    \U2/add0/u11_al_u310  (
     .a({\U2/Count [13],\U2/Count [11]}),
     .b({\U2/Count [14],\U2/Count [12]}),
     .c(2'b00),
@@ -2962,7 +2964,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c15 ),
     .fx({\U2/n3 [14],\U2/n3 [12]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y2Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2975,7 +2977,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u15_al_u309  (
+    \U2/add0/u15_al_u311  (
     .a({\U2/Count [17],\U2/Count [15]}),
     .b({\U2/Count [18],\U2/Count [16]}),
     .c(2'b00),
@@ -2986,7 +2988,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c19 ),
     .fx({\U2/n3 [18],\U2/n3 [16]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y2Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -2999,7 +3001,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u19_al_u310  (
+    \U2/add0/u19_al_u312  (
     .a({\U2/Count [21],\U2/Count [19]}),
     .b({\U2/Count [22],\U2/Count [20]}),
     .c(2'b00),
@@ -3010,7 +3012,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c23 ),
     .fx({\U2/n3 [22],\U2/n3 [20]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y3Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3023,7 +3025,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u23_al_u311  (
+    \U2/add0/u23_al_u313  (
     .a({\U2/Count [25],\U2/Count [23]}),
     .b({\U2/Count [26],\U2/Count [24]}),
     .c(2'b00),
@@ -3034,7 +3036,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c27 ),
     .fx({\U2/n3 [26],\U2/n3 [24]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y3Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3047,7 +3049,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u27_al_u312  (
+    \U2/add0/u27_al_u314  (
     .a({\U2/Count [29],\U2/Count [27]}),
     .b({\U2/Count [30],\U2/Count [28]}),
     .c(2'b00),
@@ -3058,7 +3060,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c31 ),
     .fx({\U2/n3 [30],\U2/n3 [28]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y4Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3071,14 +3073,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u31_al_u313  (
+    \U2/add0/u31_al_u315  (
     .a({open_n3504,\U2/Count [31]}),
     .c(2'b00),
     .d({open_n3509,1'b0}),
     .fci(\U2/add0/c31 ),
     .f({open_n3526,\U2/n3 [31]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y0Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3091,7 +3093,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u3_al_u306  (
+    \U2/add0/u3_al_u308  (
     .a({\U2/Count [5],\U2/Count [3]}),
     .b({\U2/Count [6],\U2/Count [4]}),
     .c(2'b00),
@@ -3102,7 +3104,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c7 ),
     .fx({\U2/n3 [6],\U2/n3 [4]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y1Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3115,7 +3117,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/u7_al_u307  (
+    \U2/add0/u7_al_u309  (
     .a({\U2/Count [9],\U2/Count [7]}),
     .b({\U2/Count [10],\U2/Count [8]}),
     .c(2'b00),
@@ -3126,7 +3128,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .fco(\U2/add0/c11 ),
     .fx({\U2/n3 [10],\U2/n3 [8]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U2/add0/ucin_al_u305"),
+    //.MACRO("U2/add0/ucin_al_u307"),
     //.R_POSITION("X0Y0Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3139,7 +3141,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U2/add0/ucin_al_u305  (
+    \U2/add0/ucin_al_u307  (
     .a({\U2/Count [1],1'b0}),
     .b({\U2/Count [2],\U2/Count [0]}),
     .c(2'b00),
@@ -3613,7 +3615,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .sr(nRST_pad),
     .q({\U2/Count [2],\U2/Count [23]}));  // source/CLK_MOD.v(32)
   EF2_PHY_LSLICE #(
-    //.MACRO("U4/add0/ucin_al_u324"),
+    //.MACRO("U4/add0/ucin_al_u326"),
     //.R_POSITION("X0Y1Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3626,18 +3628,18 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U4/add0/u11_al_u327  (
+    \U4/add0/u11_al_u329  (
     .a({\U4/AddrCtrl [13],\U4/AddrCtrl [11]}),
     .b({\U4/AddrCtrl [14],\U4/AddrCtrl [12]}),
     .c(2'b00),
     .d(2'b00),
     .e(2'b00),
     .fci(\U4/add0/c11 ),
-    .f({\U4/n18 [13],\U4/n18 [11]}),
+    .f({\U4/n20 [13],\U4/n20 [11]}),
     .fco(\U4/add0/c15 ),
-    .fx({\U4/n18 [14],\U4/n18 [12]}));
+    .fx({\U4/n20 [14],\U4/n20 [12]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U4/add0/ucin_al_u324"),
+    //.MACRO("U4/add0/ucin_al_u326"),
     //.R_POSITION("X0Y2Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3650,14 +3652,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U4/add0/u15_al_u328  (
+    \U4/add0/u15_al_u330  (
     .a({open_n4022,\U4/AddrCtrl [15]}),
     .c(2'b00),
     .d({open_n4027,1'b0}),
     .fci(\U4/add0/c15 ),
-    .f({open_n4044,\U4/n18 [15]}));
+    .f({open_n4044,\U4/n20 [15]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U4/add0/ucin_al_u324"),
+    //.MACRO("U4/add0/ucin_al_u326"),
     //.R_POSITION("X0Y0Z1"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3670,18 +3672,18 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U4/add0/u3_al_u325  (
+    \U4/add0/u3_al_u327  (
     .a({\U4/AddrCtrl [5],\U4/AddrCtrl [3]}),
     .b({\U4/AddrCtrl [6],\U4/AddrCtrl [4]}),
     .c(2'b00),
     .d(2'b00),
     .e(2'b00),
     .fci(\U4/add0/c3 ),
-    .f({\U4/n18 [5],\U4/n18 [3]}),
+    .f({\U4/n20 [5],\U4/n20 [3]}),
     .fco(\U4/add0/c7 ),
-    .fx({\U4/n18 [6],\U4/n18 [4]}));
+    .fx({\U4/n20 [6],\U4/n20 [4]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U4/add0/ucin_al_u324"),
+    //.MACRO("U4/add0/ucin_al_u326"),
     //.R_POSITION("X0Y1Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3694,18 +3696,18 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U4/add0/u7_al_u326  (
+    \U4/add0/u7_al_u328  (
     .a({\U4/AddrCtrl [9],\U4/AddrCtrl [7]}),
     .b({\U4/AddrCtrl [10],\U4/AddrCtrl [8]}),
     .c(2'b00),
     .d(2'b00),
     .e(2'b00),
     .fci(\U4/add0/c7 ),
-    .f({\U4/n18 [9],\U4/n18 [7]}),
+    .f({\U4/n20 [9],\U4/n20 [7]}),
     .fco(\U4/add0/c11 ),
-    .fx({\U4/n18 [10],\U4/n18 [8]}));
+    .fx({\U4/n20 [10],\U4/n20 [8]}));
   EF2_PHY_LSLICE #(
-    //.MACRO("U4/add0/ucin_al_u324"),
+    //.MACRO("U4/add0/ucin_al_u326"),
     //.R_POSITION("X0Y0Z0"),
     .DEMUX0("E"),
     .DEMUX1("E"),
@@ -3718,15 +3720,15 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFXMUX0("SUM"),
     .LSFXMUX1("SUM"),
     .MODE("RIPPLE"))
-    \U4/add0/ucin_al_u324  (
+    \U4/add0/ucin_al_u326  (
     .a({\U4/AddrCtrl [1],1'b0}),
     .b({\U4/AddrCtrl [2],\U4/AddrCtrl [0]}),
     .c(2'b00),
     .d(2'b01),
     .e(2'b01),
-    .f({\U4/n18 [1],open_n4103}),
+    .f({\U4/n20 [1],open_n4103}),
     .fco(\U4/add0/c3 ),
-    .fx({\U4/n18 [2],\U4/n18 [0]}));
+    .fx({\U4/n20 [2],\U4/n20 [0]}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt0_0|U4/lt0_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -3833,7 +3835,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a({1'b0,\U4/AddrCtrl [15]}),
     .b(2'b10),
     .fci(\U4/lt0_c15 ),
-    .f({\U4/n17 ,open_n4318}));
+    .f({\U4/n19 ,open_n4318}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt1_0|U4/lt1_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -3940,7 +3942,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a({1'b0,\U4/AddrCtrl [15]}),
     .b(2'b10),
     .fci(\U4/lt1_c15 ),
-    .f({\U4/n23 ,open_n4536}));
+    .f({\U4/n25 ,open_n4536}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt2_0|U4/lt2_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4047,7 +4049,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a({1'b0,\U4/AddrCtrl [15]}),
     .b(2'b10),
     .fci(\U4/lt2_c15 ),
-    .f({\U4/n27 ,open_n4754}));
+    .f({\U4/n29 ,open_n4754}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt3_0|U4/lt3_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4154,7 +4156,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a(2'b00),
     .b({1'b1,\U4/AddrCtrl [15]}),
     .fci(\U4/lt3_c15 ),
-    .f({\U4/n31 ,open_n4972}));
+    .f({\U4/n33 ,open_n4972}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt4_0|U4/lt4_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4261,7 +4263,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a({1'b0,\U4/AddrCtrl [15]}),
     .b(2'b10),
     .fci(\U4/lt4_c15 ),
-    .f({\U4/n33 ,open_n5190}));
+    .f({\U4/n35 ,open_n5190}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt5_0|U4/lt5_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4368,7 +4370,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a(2'b00),
     .b({1'b1,\U4/AddrCtrl [15]}),
     .fci(\U4/lt5_c15 ),
-    .f({\U4/n37 ,open_n5408}));
+    .f({\U4/n39 ,open_n5408}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt6_0|U4/lt6_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4475,7 +4477,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a({1'b0,\U4/AddrCtrl [15]}),
     .b(2'b10),
     .fci(\U4/lt6_c15 ),
-    .f({\U4/n39 ,open_n5626}));
+    .f({\U4/n41 ,open_n5626}));
   EF2_PHY_MSLICE #(
     //.MACRO("U4/lt7_0|U4/lt7_cin"),
     //.R_POSITION("X0Y0Z0"),
@@ -4582,7 +4584,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .a(2'b00),
     .b({1'b1,\U4/AddrCtrl [15]}),
     .fci(\U4/lt7_c15 ),
-    .f({\U4/n43 ,open_n5844}));
+    .f({\U4/n45 ,open_n5844}));
   EF2_PHY_SPAD #(
     //.CLKSRC("CLK"),
     //.LOCATION("P9"),
@@ -4629,9 +4631,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b10|U4/reg2_b0  (
-    .a({\U4/n18 [10],\U4/n18 [0]}),
+    .a({\U4/n20 [10],\U4/n20 [0]}),
     .b({\U4/AddrCtrl [10],\U4/AddrCtrl [0]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4660,9 +4662,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b11|U4/reg2_b9  (
-    .a({\U4/n18 [11],\U4/n18 [9]}),
+    .a({\U4/n20 [11],\U4/n20 [9]}),
     .b({\U4/AddrCtrl [11],\U4/AddrCtrl [9]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4691,9 +4693,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b12|U4/reg2_b8  (
-    .a({\U4/n18 [12],\U4/n18 [8]}),
+    .a({\U4/n20 [12],\U4/n20 [8]}),
     .b({\U4/AddrCtrl [12],\U4/AddrCtrl [8]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4722,9 +4724,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b13|U4/reg2_b7  (
-    .a({\U4/n18 [13],\U4/n18 [7]}),
+    .a({\U4/n20 [13],\U4/n20 [7]}),
     .b({\U4/AddrCtrl [13],\U4/AddrCtrl [7]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4753,9 +4755,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b14|U4/reg2_b6  (
-    .a({\U4/n18 [14],\U4/n18 [6]}),
+    .a({\U4/n20 [14],\U4/n20 [6]}),
     .b({\U4/AddrCtrl [14],\U4/AddrCtrl [6]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4784,9 +4786,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b15|U4/reg2_b5  (
-    .a({\U4/n18 [15],\U4/n18 [5]}),
+    .a({\U4/n20 [15],\U4/n20 [5]}),
     .b({\U4/AddrCtrl [15],\U4/AddrCtrl [5]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4815,9 +4817,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b1|U4/reg2_b4  (
-    .a({\U4/n18 [1],\U4/n18 [4]}),
+    .a({\U4/n20 [1],\U4/n20 [4]}),
     .b({\U4/AddrCtrl [1],\U4/AddrCtrl [4]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4846,9 +4848,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
     \U4/reg2_b2|U4/reg2_b3  (
-    .a({\U4/n18 [2],\U4/n18 [3]}),
+    .a({\U4/n20 [2],\U4/n20 [3]}),
     .b({\U4/AddrCtrl [2],\U4/AddrCtrl [3]}),
-    .c({\U4/n17 ,\U4/n17 }),
+    .c({\U4/n19 ,\U4/n19 }),
     .clk(CLK_100M),
     .d({_al_u125_o,_al_u125_o}),
     .sr(nRST_pad),
@@ -4904,7 +4906,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u100 (
     .ipad(i8080_D[1]),
     .ts(1'b1),
-    .di(i8080_D_pad[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[1]));  // source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P25"),
     //.PULLMODE("PULLUP"),
@@ -4914,7 +4916,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u101 (
     .ipad(i8080_D[0]),
     .ts(1'b1),
-    .di(i8080_D_pad[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[0]));  // source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P13"),
     //.PULLMODE("PULLUP"),
@@ -4938,7 +4940,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u103 (
     .ipad(i8080_WR),
     .ts(1'b1),
-    .di(i8080_WR_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(10)
+    .di(i8080_WR_pad));  // source/TOP.v(10)
   EF2_PHY_SPAD #(
     //.LOCATION("P12"),
     //.PULLMODE("PULLUP"),
@@ -4948,7 +4950,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u104 (
     .ipad(nRST),
     .ts(1'b1),
-    .di(nRST_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(4)
+    .di(nRST_pad));  // source/TOP.v(4)
   EF2_PHY_LSLICE #(
     //.LUTF0("(~D)"),
     //.LUTF1("(C*~D)"),
@@ -4961,7 +4963,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u107|_al_u292  (
+    \_al_u107|_al_u294  (
     .c({FIFO_DO[3],open_n6090}),
     .d({FIFO_EMPTY,FIFO_EMPTY}),
     .f({LCD_B_pad[6],LCD_B_pad[2]}));
@@ -5078,23 +5080,21 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .d({FIFO_DO[11],FIFO_EMPTY}),
     .f({LCD_R_pad[3],LCD_G_pad[3]}));
   EF2_PHY_LSLICE #(
-    //.LUTF0("(D*C*B*~A)"),
+    //.LUTF0("(C*D)"),
     //.LUTF1("~(C*D)"),
-    //.LUTG0("(D*C*B*~A)"),
+    //.LUTG0("(C*D)"),
     //.LUTG1("~(C*D)"),
-    .INIT_LUTF0(16'b0100000000000000),
+    .INIT_LUTF0(16'b1111000000000000),
     .INIT_LUTF1(16'b0000111111111111),
-    .INIT_LUTG0(16'b0100000000000000),
+    .INIT_LUTG0(16'b1111000000000000),
     .INIT_LUTG1(16'b0000111111111111),
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u124|_al_u161  (
-    .a({open_n6311,\U1/Count [19]}),
-    .b({open_n6312,\U1/Count [17]}),
-    .c({\D1/n15 ,\U1/Count [18]}),
-    .d({\D1/n14 ,\U1/Count [16]}),
-    .f({LCD_HYNC_pad,_al_u161_o}));
+    \_al_u124|_al_u149  (
+    .c({\D1/n15 ,i8080_D_pad[6]}),
+    .d({\D1/n14 ,_al_u147_o}),
+    .f({LCD_HYNC_pad,\U4/mux2_b0_sel_is_3_o }));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*B*~A)"),
     //.LUTF1("(D*C*B*A)"),
@@ -5112,7 +5112,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .b({\D1/n18 ,\D1/n22 }),
     .c({\D1/n20 ,\D1/n24 }),
     .d({\D1/n22 ,\D1/n26 }),
-    .e({open_n6339,\D1/n20 }),
+    .e({open_n6341,\D1/n20 }),
     .f({LCD_DEN_pad,FIFO_RE}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(~C*~D)"),
@@ -5127,42 +5127,41 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
     \_al_u143|_al_u125  (
-    .b({\U4/LCD_Ctrl_Reg [3],open_n6362}),
+    .b({\U4/LCD_Ctrl_Reg [3],open_n6364}),
     .c({LCD_SYNC_pad,LCD_SYNC_pad}),
     .d({LCD_HYNC_pad,LCD_HYNC_pad}),
     .f({\U4/FrameSync ,_al_u125_o}));
   EF2_PHY_LSLICE #(
-    //.LUTF0("(0*D*C*~B*~A)"),
+    //.LUTF0("(D*~(B)*~(C)+D*B*~(C)+~(D)*B*C+D*B*C)"),
     //.LUTF1("~(~(B*A)*~(C)*~(D)+~(B*A)*C*~(D)+~(~(B*A))*C*D+~(B*A)*C*D)"),
-    //.LUTG0("(1*D*C*~B*~A)"),
+    //.LUTG0("(D*~(B)*~(C)+D*B*~(C)+~(D)*B*C+D*B*C)"),
     //.LUTG1("~(~(B*A)*~(C)*~(D)+~(B*A)*C*~(D)+~(~(B*A))*C*D+~(B*A)*C*D)"),
-    .INIT_LUTF0(16'b0000000000000000),
+    .INIT_LUTF0(16'b1100111111000000),
     .INIT_LUTF1(16'b0000111110001000),
-    .INIT_LUTG0(16'b0001000000000000),
+    .INIT_LUTG0(16'b1100111111000000),
     .INIT_LUTG1(16'b0000111110001000),
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u144|_al_u147  (
-    .a({_al_u125_o,i8080_CS_pad}),
-    .b({\U4/n23 ,i8080_D_pad[7]}),
-    .c({i8080_CS_pad,i8080_RS_pad}),
-    .d({\U4/LCD_Ctrl_Reg [4],i8080_D_pad[6]}),
-    .e({open_n6389,i8080_D_pad[5]}),
-    .f({FIFO_WE,\U4/mux2_b0_sel_is_3_o }));
+    \_al_u144|_al_u123  (
+    .a({_al_u125_o,open_n6389}),
+    .b({\U4/n25 ,i8080_WR_pad}),
+    .c({i8080_CS_pad,\U4/LCD_Ctrl_Reg [4]}),
+    .d({\U4/LCD_Ctrl_Reg [4],CLK_100M}),
+    .f({FIFO_WE,FIFO_CLK_W}));
   // source/LCD8080Ctrl.v(70)
   EF2_PHY_LSLICE #(
-    //.LUTF0("(0*D*~C*~B*~A)"),
-    //.LUTF1("(0*D*~C*~B*~A)"),
-    //.LUTG0("(1*D*~C*~B*~A)"),
-    //.LUTG1("(1*D*~C*~B*~A)"),
+    //.LUTF0("(C*B*~D)"),
+    //.LUTF1("(C*D)"),
+    //.LUTG0("(C*B*~D)"),
+    //.LUTG1("(C*D)"),
     .CEMUX("CE"),
     .CLKMUX("CLK"),
     .DFFMODE("FF"),
-    .INIT_LUTF0(16'b0000000000000000),
-    .INIT_LUTF1(16'b0000000000000000),
-    .INIT_LUTG0(16'b0000000100000000),
-    .INIT_LUTG1(16'b0000000100000000),
+    .INIT_LUTF0(16'b0000000011000000),
+    .INIT_LUTF1(16'b1111000000000000),
+    .INIT_LUTG0(16'b0000000011000000),
+    .INIT_LUTG1(16'b1111000000000000),
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"),
@@ -5170,18 +5169,34 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .REG0_SD("MI"),
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
-    \_al_u146|U4/reg0_b0  (
-    .a({i8080_CS_pad,i8080_CS_pad}),
-    .b({i8080_D_pad[7],i8080_D_pad[7]}),
-    .c(i8080_D_pad[6:5]),
+    \_al_u147|U4/reg0_b0  (
+    .b({open_n6416,i8080_D_pad[6]}),
+    .c({i8080_D_pad[5],_al_u146_o}),
     .ce(\U4/mux1_b0_sel_is_3_o ),
     .clk(i8080_WR_pad),
-    .d({i8080_RS_pad,i8080_D_pad[6]}),
-    .e({i8080_D_pad[5],i8080_RS_pad}),
-    .mi({open_n6411,i8080_D_pad[0]}),
+    .d({_al_u146_o,i8080_D_pad[5]}),
+    .mi({open_n6420,i8080_D_pad[0]}),
     .sr(nRST_pad),
-    .f({\U4/mux0_b3_sel_is_3_o ,\U4/mux1_b0_sel_is_3_o }),
-    .q({open_n6426,\U4/LCD_Pix_Reg [0]}));  // source/LCD8080Ctrl.v(70)
+    .f({_al_u147_o,\U4/mux1_b0_sel_is_3_o }),
+    .q({open_n6435,\U4/LCD_Pix_Reg [0]}));  // source/LCD8080Ctrl.v(70)
+  EF2_PHY_LSLICE #(
+    //.LUTF0("(D*C*~(B*A))"),
+    //.LUTF1("(C*~D)"),
+    //.LUTG0("(D*C*~(B*A))"),
+    //.LUTG1("(C*~D)"),
+    .INIT_LUTF0(16'b0111000000000000),
+    .INIT_LUTF1(16'b0000000011110000),
+    .INIT_LUTG0(16'b0111000000000000),
+    .INIT_LUTG1(16'b0000000011110000),
+    .LSFMUX0("FUNC5"),
+    .LSFMUX1("FUNC5"),
+    .MODE("LOGIC"))
+    \_al_u148|_al_u278  (
+    .a({open_n6436,\U4/n39 }),
+    .b({open_n6437,\U4/n41 }),
+    .c({_al_u147_o,\U4/n25 }),
+    .d({i8080_D_pad[6],\U4/n45 }),
+    .f({\U4/mux0_b3_sel_is_3_o ,_al_u278_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*~D*~C*~B*~A)"),
     //.LUTF1("(~D*~C*~B*~A)"),
@@ -5194,14 +5209,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u149|_al_u150  (
+    \_al_u151|_al_u152  (
     .a({\D1/LineCount [0],\D1/LineCount [12]}),
     .b({\D1/LineCount [1],\D1/LineCount [13]}),
     .c({\D1/LineCount [10],\D1/LineCount [14]}),
     .d({\D1/LineCount [11],\D1/LineCount [15]}),
-    .e({open_n6429,_al_u149_o}),
-    .f({_al_u149_o,_al_u150_o}));
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .e({open_n6464,_al_u151_o}),
+    .f({_al_u151_o,_al_u152_o}));
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("((B*~A)*~(C)*~(D)+(B*~A)*C*~(D)+~((B*~A))*C*D+(B*~A)*C*D)"),
     //.LUTF1("(D*C*~B*~A)"),
@@ -5221,15 +5236,15 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .REG0_SD("F"),
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
-    \_al_u151|D1/reg1_b5  (
-    .a({\D1/LineCount [3],_al_u153_o}),
+    \_al_u153|D1/reg1_b5  (
+    .a({\D1/LineCount [3],_al_u155_o}),
     .b({\D1/LineCount [4],\D1/LineCount [5]}),
     .c({\D1/LineCount [2],\D1/n2 [5]}),
     .clk(LCD_CLK_pad),
-    .d({\D1/LineCount [5],_al_u177_o}),
+    .d({\D1/LineCount [5],_al_u179_o}),
     .sr(nRST_pad),
-    .f({_al_u151_o,open_n6467}),
-    .q({open_n6471,\D1/LineCount [5]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .f({_al_u153_o,open_n6502}),
+    .q({open_n6506,\D1/LineCount [5]}));  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*~C*~B*~A)"),
     //.LUTF1("(C*D)"),
@@ -5242,13 +5257,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u153|_al_u152  (
-    .a({open_n6472,\D1/LineCount [6]}),
-    .b({open_n6473,\D1/LineCount [7]}),
-    .c({_al_u152_o,\D1/LineCount [9]}),
-    .d({_al_u150_o,\D1/LineCount [8]}),
-    .e({open_n6476,_al_u151_o}),
-    .f({_al_u153_o,_al_u152_o}));
+    \_al_u155|_al_u154  (
+    .a({open_n6507,\D1/LineCount [6]}),
+    .b({open_n6508,\D1/LineCount [7]}),
+    .c({_al_u154_o,\D1/LineCount [9]}),
+    .d({_al_u152_o,\D1/LineCount [8]}),
+    .e({open_n6511,_al_u153_o}),
+    .f({_al_u155_o,_al_u154_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*~D*~C*~B*~A)"),
     //.LUTF1("(D*C*~B*~A)"),
@@ -5261,13 +5276,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u155|_al_u156  (
+    \_al_u157|_al_u158  (
     .a({\U1/Count [25],\U1/Count [27]}),
     .b({\U1/Count [26],\U1/Count [28]}),
     .c({\U1/Count [23],\U1/Count [29]}),
     .d({\U1/Count [24],\U1/Count [3]}),
-    .e({open_n6499,_al_u155_o}),
-    .f({_al_u155_o,_al_u156_o}));
+    .e({open_n6534,_al_u157_o}),
+    .f({_al_u157_o,_al_u158_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*~B*~A)"),
     //.LUTF1("(~D*~C*~B*~A)"),
@@ -5280,13 +5295,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u157|_al_u158  (
+    \_al_u159|_al_u160  (
     .a({\U1/Count [30],\U1/Count [7]}),
     .b({\U1/Count [31],\U1/Count [8]}),
-    .c({\U1/Count [4],_al_u157_o}),
+    .c({\U1/Count [4],_al_u159_o}),
     .d({\U1/Count [5],\U1/Count [6]}),
-    .e({open_n6522,\U1/Count [9]}),
-    .f({_al_u157_o,_al_u158_o}));
+    .e({open_n6557,\U1/Count [9]}),
+    .f({_al_u159_o,_al_u160_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*~C*~B*~A)"),
     //.LUTF1("(D*~C*~B*~A)"),
@@ -5299,13 +5314,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u159|_al_u160  (
+    \_al_u161|_al_u162  (
     .a({\U1/Count [0],\U1/Count [12]}),
     .b({\U1/Count [1],\U1/Count [13]}),
     .c({\U1/Count [10],\U1/Count [14]}),
-    .d({\U1/Count [11],_al_u159_o}),
-    .e({open_n6545,\U1/Count [15]}),
-    .f({_al_u159_o,_al_u160_o}));
+    .d({\U1/Count [11],_al_u161_o}),
+    .e({open_n6580,\U1/Count [15]}),
+    .f({_al_u161_o,_al_u162_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*B*~A)"),
     //.LUTF1("(D*C*B*A)"),
@@ -5318,13 +5333,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u163|_al_u162  (
-    .a({_al_u156_o,\U1/Count [2]}),
-    .b({_al_u158_o,_al_u161_o}),
-    .c({_al_u160_o,\U1/Count [20]}),
-    .d({_al_u162_o,\U1/Count [21]}),
-    .e({open_n6568,\U1/Count [22]}),
-    .f({\U1/n1 ,_al_u162_o}));
+    \_al_u165|_al_u164  (
+    .a({_al_u158_o,\U1/Count [2]}),
+    .b({_al_u160_o,_al_u163_o}),
+    .c({_al_u162_o,\U1/Count [20]}),
+    .d({_al_u164_o,\U1/Count [21]}),
+    .e({open_n6603,\U1/Count [22]}),
+    .f({\U1/n1 ,_al_u164_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*~D*~C*~B*~A)"),
     //.LUTF1("(D*~C*~B*~A)"),
@@ -5337,13 +5352,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u164|_al_u165  (
+    \_al_u166|_al_u167  (
     .a({\U2/Count [23],\U2/Count [27]}),
     .b({\U2/Count [25],\U2/Count [28]}),
     .c({\U2/Count [26],\U2/Count [29]}),
     .d({\U2/Count [24],\U2/Count [3]}),
-    .e({open_n6591,_al_u164_o}),
-    .f({_al_u164_o,_al_u165_o}));
+    .e({open_n6626,_al_u166_o}),
+    .f({_al_u166_o,_al_u167_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*~C*~B*~A)"),
     //.LUTF1("(~D*~C*~B*~A)"),
@@ -5356,13 +5371,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u166|_al_u167  (
+    \_al_u168|_al_u169  (
     .a({\U2/Count [30],\U2/Count [7]}),
     .b({\U2/Count [31],\U2/Count [8]}),
     .c({\U2/Count [4],\U2/Count [9]}),
     .d({\U2/Count [5],\U2/Count [6]}),
-    .e({open_n6614,_al_u166_o}),
-    .f({_al_u166_o,_al_u167_o}));
+    .e({open_n6649,_al_u168_o}),
+    .f({_al_u168_o,_al_u169_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*B*~A)"),
     //.LUTF1("(D*~C*~B*~A)"),
@@ -5375,13 +5390,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u168|_al_u169  (
+    \_al_u170|_al_u171  (
     .a({\U2/Count [0],\U2/Count [15]}),
     .b({\U2/Count [1],\U2/Count [12]}),
     .c({\U2/Count [10],\U2/Count [13]}),
     .d({\U2/Count [11],\U2/Count [14]}),
-    .e({open_n6637,_al_u168_o}),
-    .f({_al_u168_o,_al_u169_o}));
+    .e({open_n6672,_al_u170_o}),
+    .f({_al_u170_o,_al_u171_o}));
   // source/CLK_MOD.v(32)
   EF2_PHY_LSLICE #(
     //.LUTF0("(~D)"),
@@ -5402,16 +5417,16 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .REG0_SD("F"),
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
-    \_al_u170|U2/CLK_OUT_reg  (
-    .a({\U2/Count [17],open_n6658}),
-    .b({\U2/Count [16],open_n6659}),
-    .c({\U2/Count [18],open_n6660}),
+    \_al_u172|U2/CLK_OUT_reg  (
+    .a({\U2/Count [17],open_n6693}),
+    .b({\U2/Count [16],open_n6694}),
+    .c({\U2/Count [18],open_n6695}),
     .ce(\U2/n1 ),
     .clk(clk_pad),
     .d({\U2/Count [19],LED_pad[1]}),
     .sr(nRST_pad),
-    .f({_al_u170_o,open_n6677}),
-    .q({open_n6681,LED_pad[1]}));  // source/CLK_MOD.v(32)
+    .f({_al_u172_o,open_n6712}),
+    .q({open_n6716,LED_pad[1]}));  // source/CLK_MOD.v(32)
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*B*~A)"),
     //.LUTF1("(D*C*B*A)"),
@@ -5424,13 +5439,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u172|_al_u171  (
-    .a({_al_u165_o,\U2/Count [2]}),
-    .b({_al_u167_o,_al_u170_o}),
-    .c({_al_u169_o,\U2/Count [20]}),
-    .d({_al_u171_o,\U2/Count [21]}),
-    .e({open_n6684,\U2/Count [22]}),
-    .f({\U2/n1 ,_al_u171_o}));
+    \_al_u174|_al_u173  (
+    .a({_al_u167_o,\U2/Count [2]}),
+    .b({_al_u169_o,_al_u172_o}),
+    .c({_al_u171_o,\U2/Count [20]}),
+    .d({_al_u173_o,\U2/Count [21]}),
+    .e({open_n6719,\U2/Count [22]}),
+    .f({\U2/n1 ,_al_u173_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*~D*~C*~B*~A)"),
     //.LUTF1("(~D*~C*~B*~A)"),
@@ -5443,14 +5458,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u173|_al_u174  (
+    \_al_u175|_al_u176  (
     .a({\D1/PixelCount [0],\D1/PixelCount [12]}),
     .b({\D1/PixelCount [1],\D1/PixelCount [13]}),
     .c({\D1/PixelCount [10],\D1/PixelCount [14]}),
     .d({\D1/PixelCount [11],\D1/PixelCount [15]}),
-    .e({open_n6707,_al_u173_o}),
-    .f({_al_u173_o,_al_u174_o}));
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .e({open_n6742,_al_u175_o}),
+    .f({_al_u175_o,_al_u176_o}));
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(D*(B*~(A)*~(C)+B*A*~(C)+~(B)*A*C+B*A*C))"),
     //.LUTF1("(D*~C*~B*~A)"),
@@ -5470,15 +5485,15 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .REG0_SD("F"),
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
-    \_al_u175|D1/reg0_b5  (
+    \_al_u177|D1/reg0_b5  (
     .a({\D1/PixelCount [2],\D1/n4 [5]}),
     .b({\D1/PixelCount [3],\D1/PixelCount [5]}),
     .c({\D1/PixelCount [5],\D1/FrameFlag }),
     .clk(LCD_CLK_pad),
     .d({\D1/PixelCount [4],\D1/mux3_b0_sel_is_0_o }),
     .sr(nRST_pad),
-    .f({_al_u175_o,open_n6745}),
-    .q({open_n6749,\D1/PixelCount [5]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .f({_al_u177_o,open_n6780}),
+    .q({open_n6784,\D1/PixelCount [5]}));  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(0*D*C*B*~A)"),
     //.LUTF1("(C*D)"),
@@ -5491,14 +5506,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u177|_al_u176  (
-    .a({open_n6750,\D1/PixelCount [8]}),
-    .b({open_n6751,\D1/PixelCount [6]}),
-    .c({_al_u176_o,\D1/PixelCount [7]}),
-    .d({_al_u174_o,_al_u175_o}),
-    .e({open_n6754,\D1/PixelCount [9]}),
-    .f({_al_u177_o,_al_u176_o}));
-  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    \_al_u179|_al_u178  (
+    .a({open_n6785,\D1/PixelCount [8]}),
+    .b({open_n6786,\D1/PixelCount [6]}),
+    .c({_al_u178_o,\D1/PixelCount [7]}),
+    .d({_al_u176_o,_al_u177_o}),
+    .e({open_n6789,\D1/PixelCount [9]}),
+    .f({_al_u179_o,_al_u178_o}));
+  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("(B*~(D)*~(C)+B*D*~(C)+~(B)*D*C+B*D*C)"),
     //.LUTF1("(~C*~D)"),
@@ -5518,14 +5533,14 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .REG0_SD("F"),
     .SRMODE("ASYNC"),
     .SRMUX("INV"))
-    \_al_u258|D1/reg1_b1  (
-    .b({open_n6777,\D1/LineCount [1]}),
-    .c({_al_u177_o,_al_u177_o}),
+    \_al_u260|D1/reg1_b1  (
+    .b({open_n6812,\D1/LineCount [1]}),
+    .c({_al_u179_o,_al_u179_o}),
     .clk(LCD_CLK_pad),
-    .d({_al_u153_o,\D1/n2 [1]}),
+    .d({_al_u155_o,\D1/n2 [1]}),
     .sr(nRST_pad),
-    .f({\D1/mux3_b0_sel_is_0_o ,open_n6795}),
-    .q({open_n6799,\D1/LineCount [1]}));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/VGAMod.v(72)
+    .f({\D1/mux3_b0_sel_is_0_o ,open_n6830}),
+    .q({open_n6834,\D1/LineCount [1]}));  // source/VGAMod.v(72)
   EF2_PHY_LSLICE #(
     //.LUTF0("~((D*C)*~((B*A))*~(0)+(D*C)*(B*A)*~(0)+~((D*C))*(B*A)*0+(D*C)*(B*A)*0)"),
     //.LUTF1("~((B*A)*~(C)*~(D)+(B*A)*C*~(D)+~((B*A))*C*D+(B*A)*C*D)"),
@@ -5538,48 +5553,31 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u277|_al_u275  (
-    .a({\U4/n33 ,\U4/n31 }),
-    .b({\U4/n31 ,\U4/n33 }),
-    .c({\U4/n27 ,\U4/n37 }),
-    .d({\U4/AddrCtrl [0],\U4/n39 }),
-    .e({open_n6802,\U4/AddrCtrl [0]}),
-    .f({_al_u277_o,\U4/mux10_b0_sel_is_0_o }));
+    \_al_u279|_al_u277  (
+    .a({\U4/n35 ,\U4/n33 }),
+    .b({\U4/n33 ,\U4/n35 }),
+    .c({\U4/n29 ,\U4/n39 }),
+    .d({\U4/AddrCtrl [0],\U4/n41 }),
+    .e({open_n6837,\U4/AddrCtrl [0]}),
+    .f({_al_u279_o,\U4/mux10_b0_sel_is_0_o }));
   EF2_PHY_LSLICE #(
-    //.LUTF0("(D*~(B)*~(C)+D*B*~(C)+~(D)*B*C+D*B*C)"),
-    //.LUTF1("(~C*~(~B*D))"),
-    //.LUTG0("(D*~(B)*~(C)+D*B*~(C)+~(D)*B*C+D*B*C)"),
-    //.LUTG1("(~C*~(~B*D))"),
-    .INIT_LUTF0(16'b1100111111000000),
-    .INIT_LUTF1(16'b0000110000001111),
-    .INIT_LUTG0(16'b1100111111000000),
-    .INIT_LUTG1(16'b0000110000001111),
-    .LSFMUX0("FUNC5"),
-    .LSFMUX1("FUNC5"),
-    .MODE("LOGIC"))
-    \_al_u278|_al_u123  (
-    .b({\U4/AddrCtrl [0],i8080_WR_pad}),
-    .c({\U4/LCD_Ctrl_Reg [4],\U4/LCD_Ctrl_Reg [4]}),
-    .d({\U4/n27 ,CLK_100M}),
-    .f({_al_u278_o,FIFO_CLK_W}));
-  EF2_PHY_LSLICE #(
-    //.LUTF0("~(~C*~(B*D))"),
+    //.LUTF0("(~C*~(~B*D))"),
     //.LUTF1("(D*C*~(~B*A))"),
-    //.LUTG0("~(~C*~(B*D))"),
+    //.LUTG0("(~C*~(~B*D))"),
     //.LUTG1("(D*C*~(~B*A))"),
-    .INIT_LUTF0(16'b1111110011110000),
+    .INIT_LUTF0(16'b0000110000001111),
     .INIT_LUTF1(16'b1101000000000000),
-    .INIT_LUTG0(16'b1111110011110000),
+    .INIT_LUTG0(16'b0000110000001111),
     .INIT_LUTG1(16'b1101000000000000),
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u279|_al_u281  (
-    .a({\U4/mux10_b0_sel_is_0_o ,open_n6849}),
-    .b({_al_u276_o,\U4/LCD_Ctrl_Reg [4]}),
-    .c({_al_u277_o,_al_u279_o}),
-    .d({_al_u278_o,i8080_D_pad[6]}),
-    .f({_al_u279_o,FIFO_DI[6]}));
+    \_al_u281|_al_u280  (
+    .a({\U4/mux10_b0_sel_is_0_o ,open_n6858}),
+    .b({_al_u278_o,\U4/AddrCtrl [0]}),
+    .c({_al_u279_o,\U4/LCD_Ctrl_Reg [4]}),
+    .d({_al_u280_o,\U4/n29 }),
+    .f({_al_u281_o,_al_u280_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("~(~C*~(B*D))"),
     //.LUTF1("~(~C*~(B*D))"),
@@ -5592,11 +5590,29 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u280|_al_u282  (
+    \_al_u282|_al_u283  (
     .b({\U4/LCD_Ctrl_Reg [4],\U4/LCD_Ctrl_Reg [4]}),
-    .c({_al_u279_o,_al_u279_o}),
-    .d({i8080_D_pad[7],i8080_D_pad[5]}),
-    .f({FIFO_DI[7],FIFO_DI[5]}));
+    .c({_al_u281_o,_al_u281_o}),
+    .d(i8080_D_pad[7:6]),
+    .f(FIFO_DI[7:6]));
+  EF2_PHY_LSLICE #(
+    //.LUTF0("(D*~C*~B*~A)"),
+    //.LUTF1("~(~C*~(B*D))"),
+    //.LUTG0("(D*~C*~B*~A)"),
+    //.LUTG1("~(~C*~(B*D))"),
+    .INIT_LUTF0(16'b0000000100000000),
+    .INIT_LUTF1(16'b1111110011110000),
+    .INIT_LUTG0(16'b0000000100000000),
+    .INIT_LUTG1(16'b1111110011110000),
+    .LSFMUX0("FUNC5"),
+    .LSFMUX1("FUNC5"),
+    .MODE("LOGIC"))
+    \_al_u284|_al_u146  (
+    .a({open_n6909,\U4/LCD_Ctrl_Reg [4]}),
+    .b({\U4/LCD_Ctrl_Reg [4],i8080_CS_pad}),
+    .c({_al_u281_o,i8080_D_pad[7]}),
+    .d({i8080_D_pad[5],i8080_RS_pad}),
+    .f({FIFO_DI[5],_al_u146_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("~(~C*~(B*D))"),
     //.LUTF1("(D*~(C*~(B*A)))"),
@@ -5609,12 +5625,12 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u283|_al_u285  (
-    .a({\U4/mux10_b0_sel_is_0_o ,open_n6900}),
-    .b({_al_u276_o,\U4/LCD_Ctrl_Reg [4]}),
-    .c({_al_u277_o,_al_u283_o}),
-    .d({_al_u278_o,i8080_D_pad[1]}),
-    .f({_al_u283_o,FIFO_DI[1]}));
+    \_al_u285|_al_u287  (
+    .a({\U4/mux10_b0_sel_is_0_o ,open_n6934}),
+    .b({_al_u278_o,\U4/LCD_Ctrl_Reg [4]}),
+    .c({_al_u279_o,_al_u285_o}),
+    .d({_al_u280_o,i8080_D_pad[1]}),
+    .f({_al_u285_o,FIFO_DI[1]}));
   EF2_PHY_LSLICE #(
     //.LUTF0("~(~C*~(B*D))"),
     //.LUTF1("~(~C*~(B*D))"),
@@ -5627,9 +5643,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u284|_al_u286  (
+    \_al_u286|_al_u288  (
     .b({\U4/LCD_Ctrl_Reg [4],\U4/LCD_Ctrl_Reg [4]}),
-    .c({_al_u283_o,_al_u283_o}),
+    .c({_al_u285_o,_al_u285_o}),
     .d({i8080_D_pad[2],i8080_D_pad[0]}),
     .f({FIFO_DI[2],FIFO_DI[0]}));
   EF2_PHY_LSLICE #(
@@ -5644,13 +5660,13 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u287|_al_u288  (
-    .a({\U4/AddrCtrl [0],\U4/n31 }),
-    .b({\U4/n37 ,\U4/n33 }),
-    .c({\U4/n39 ,\U4/n27 }),
-    .d({_al_u276_o,_al_u287_o}),
-    .e({open_n6953,_al_u278_o}),
-    .f({_al_u287_o,_al_u288_o}));
+    \_al_u289|_al_u290  (
+    .a({\U4/AddrCtrl [0],\U4/n33 }),
+    .b({\U4/n39 ,\U4/n35 }),
+    .c({\U4/n41 ,\U4/n29 }),
+    .d({_al_u278_o,_al_u289_o}),
+    .e({open_n6987,_al_u280_o}),
+    .f({_al_u289_o,_al_u290_o}));
   EF2_PHY_LSLICE #(
     //.LUTF0("~(~C*~(B*D))"),
     //.LUTF1("~(~C*~(B*D))"),
@@ -5663,9 +5679,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u289|_al_u290  (
+    \_al_u291|_al_u292  (
     .b(i8080_D_pad[4:3]),
-    .c({_al_u288_o,_al_u288_o}),
+    .c({_al_u290_o,_al_u290_o}),
     .d({\U4/LCD_Ctrl_Reg [4],\U4/LCD_Ctrl_Reg [4]}),
     .f(FIFO_DI[4:3]));
   EF2_PHY_LSLICE #(
@@ -5680,28 +5696,28 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u291|_al_u115  (
-    .c({open_n7004,FIFO_DO[7]}),
+    \_al_u293|_al_u115  (
+    .c({open_n7038,FIFO_DO[7]}),
     .d({FIFO_EMPTY,FIFO_EMPTY}),
     .f({\D1/n28 ,LCD_G_pad[4]}));
   EF2_PHY_LSLICE #(
-    //.LUTF0("(D*C*~(B*A))"),
+    //.LUTF0("(D*C*B*~A)"),
     //.LUTF1("(~D)"),
-    //.LUTG0("(D*C*~(B*A))"),
+    //.LUTG0("(D*C*B*~A)"),
     //.LUTG1("(~D)"),
-    .INIT_LUTF0(16'b0111000000000000),
+    .INIT_LUTF0(16'b0100000000000000),
     .INIT_LUTF1(16'b0000000011111111),
-    .INIT_LUTG0(16'b0111000000000000),
+    .INIT_LUTG0(16'b0100000000000000),
     .INIT_LUTG1(16'b0000000011111111),
     .LSFMUX0("FUNC5"),
     .LSFMUX1("FUNC5"),
     .MODE("LOGIC"))
-    \_al_u293|_al_u276  (
-    .a({open_n7029,\U4/n37 }),
-    .b({open_n7030,\U4/n39 }),
-    .c({open_n7031,\U4/n23 }),
-    .d({\FIFO0/logic_fifo_full ,\U4/n43 }),
-    .f({\FIFO0/logic_fifo_full_neg ,_al_u276_o}));
+    \_al_u295|_al_u163  (
+    .a({open_n7063,\U1/Count [19]}),
+    .b({open_n7064,\U1/Count [17]}),
+    .c({open_n7065,\U1/Count [18]}),
+    .d({\FIFO0/logic_fifo_full ,\U1/Count [16]}),
+    .f({\FIFO0/logic_fifo_full_neg ,_al_u163_o}));
   EF2_PHY_SPAD #(
     //.LOCATION("P54"),
     //.PULLMODE("NONE"),
@@ -5711,9 +5727,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u64 (
-    .do({open_n7058,LCD_B_pad[7]}),
+    .do({open_n7092,LCD_B_pad[7]}),
     .ts(1'b1),
-    .opad(LCD_B[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .opad(LCD_B[7]));  // source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P53"),
     //.PULLMODE("NONE"),
@@ -5723,9 +5739,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u65 (
-    .do({open_n7067,LCD_B_pad[6]}),
+    .do({open_n7101,LCD_B_pad[6]}),
     .ts(1'b1),
-    .opad(LCD_B[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .opad(LCD_B[6]));  // source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P52"),
     //.PULLMODE("NONE"),
@@ -5735,9 +5751,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u66 (
-    .do({open_n7076,LCD_B_pad[5]}),
+    .do({open_n7110,LCD_B_pad[5]}),
     .ts(1'b1),
-    .opad(LCD_B[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .opad(LCD_B[5]));  // source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P51"),
     //.PULLMODE("NONE"),
@@ -5747,9 +5763,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u67 (
-    .do({open_n7085,LCD_B_pad[4]}),
+    .do({open_n7119,LCD_B_pad[4]}),
     .ts(1'b1),
-    .opad(LCD_B[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .opad(LCD_B[4]));  // source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P49"),
     //.PCICLAMP("ON"),
@@ -5760,8 +5776,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u68 (
-    .do({open_n7093,open_n7094,open_n7095,LCD_B_pad[3]}),
-    .opad(LCD_B[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .do({open_n7127,open_n7128,open_n7129,LCD_B_pad[3]}),
+    .opad(LCD_B[3]));  // source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P48"),
     //.PCICLAMP("ON"),
@@ -5772,8 +5788,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u69 (
-    .do({open_n7116,open_n7117,open_n7118,LCD_B_pad[2]}),
-    .opad(LCD_B[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .do({open_n7150,open_n7151,open_n7152,LCD_B_pad[2]}),
+    .opad(LCD_B[2]));  // source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P47"),
     //.PCICLAMP("ON"),
@@ -5784,8 +5800,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u70 (
-    .do({open_n7139,open_n7140,open_n7141,LCD_B_pad[2]}),
-    .opad(LCD_B[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .do({open_n7173,open_n7174,open_n7175,LCD_B_pad[2]}),
+    .opad(LCD_B[1]));  // source/TOP.v(21)
   EF2_PHY_PAD #(
     //.LOCATION("P45"),
     //.PCICLAMP("ON"),
@@ -5796,8 +5812,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u71 (
-    .do({open_n7162,open_n7163,open_n7164,LCD_B_pad[2]}),
-    .opad(LCD_B[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(21)
+    .do({open_n7196,open_n7197,open_n7198,LCD_B_pad[2]}),
+    .opad(LCD_B[0]));  // source/TOP.v(21)
   EF2_PHY_SPAD #(
     //.LOCATION("P62"),
     //.PULLMODE("NONE"),
@@ -5807,9 +5823,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u72 (
-    .do({open_n7186,LCD_CLK_pad}),
+    .do({open_n7220,LCD_CLK_pad}),
     .ts(1'b1),
-    .opad(LCD_CLK));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(15)
+    .opad(LCD_CLK));  // source/TOP.v(15)
   EF2_PHY_SPAD #(
     //.LOCATION("P60"),
     //.PULLMODE("NONE"),
@@ -5819,9 +5835,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u73 (
-    .do({open_n7195,LCD_DEN_pad}),
+    .do({open_n7229,LCD_DEN_pad}),
     .ts(1'b1),
-    .opad(LCD_DEN));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(18)
+    .opad(LCD_DEN));  // source/TOP.v(18)
   EF2_PHY_PAD #(
     //.LOCATION("P43"),
     //.PCICLAMP("ON"),
@@ -5832,8 +5848,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u74 (
-    .do({open_n7203,open_n7204,open_n7205,LCD_G_pad[7]}),
-    .opad(LCD_G[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7237,open_n7238,open_n7239,LCD_G_pad[7]}),
+    .opad(LCD_G[7]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P42"),
     //.PCICLAMP("ON"),
@@ -5844,8 +5860,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u75 (
-    .do({open_n7226,open_n7227,open_n7228,LCD_G_pad[6]}),
-    .opad(LCD_G[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7260,open_n7261,open_n7262,LCD_G_pad[6]}),
+    .opad(LCD_G[6]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P41"),
     //.PCICLAMP("ON"),
@@ -5856,8 +5872,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u76 (
-    .do({open_n7249,open_n7250,open_n7251,LCD_G_pad[5]}),
-    .opad(LCD_G[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7283,open_n7284,open_n7285,LCD_G_pad[5]}),
+    .opad(LCD_G[5]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P40"),
     //.PCICLAMP("ON"),
@@ -5868,8 +5884,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u77 (
-    .do({open_n7272,open_n7273,open_n7274,LCD_G_pad[4]}),
-    .opad(LCD_G[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7306,open_n7307,open_n7308,LCD_G_pad[4]}),
+    .opad(LCD_G[4]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P39"),
     //.PCICLAMP("ON"),
@@ -5880,8 +5896,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u78 (
-    .do({open_n7295,open_n7296,open_n7297,LCD_G_pad[3]}),
-    .opad(LCD_G[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7329,open_n7330,open_n7331,LCD_G_pad[3]}),
+    .opad(LCD_G[3]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P38"),
     //.PCICLAMP("ON"),
@@ -5892,8 +5908,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u79 (
-    .do({open_n7318,open_n7319,open_n7320,LCD_G_pad[2]}),
-    .opad(LCD_G[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7352,open_n7353,open_n7354,LCD_G_pad[2]}),
+    .opad(LCD_G[2]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P37"),
     //.PCICLAMP("ON"),
@@ -5904,8 +5920,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u80 (
-    .do({open_n7341,open_n7342,open_n7343,LCD_B_pad[2]}),
-    .opad(LCD_G[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7375,open_n7376,open_n7377,LCD_B_pad[2]}),
+    .opad(LCD_G[1]));  // source/TOP.v(20)
   EF2_PHY_PAD #(
     //.LOCATION("P36"),
     //.PCICLAMP("ON"),
@@ -5916,8 +5932,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u81 (
-    .do({open_n7364,open_n7365,open_n7366,LCD_B_pad[2]}),
-    .opad(LCD_G[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(20)
+    .do({open_n7398,open_n7399,open_n7400,LCD_B_pad[2]}),
+    .opad(LCD_G[0]));  // source/TOP.v(20)
   EF2_PHY_SPAD #(
     //.LOCATION("P58"),
     //.PULLMODE("NONE"),
@@ -5927,9 +5943,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u82 (
-    .do({open_n7388,LCD_HYNC_pad}),
+    .do({open_n7422,LCD_HYNC_pad}),
     .ts(1'b1),
-    .opad(LCD_HYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(16)
+    .opad(LCD_HYNC));  // source/TOP.v(16)
   EF2_PHY_PAD #(
     //.LOCATION("P35"),
     //.PCICLAMP("ON"),
@@ -5940,8 +5956,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u83 (
-    .do({open_n7396,open_n7397,open_n7398,LCD_R_pad[7]}),
-    .opad(LCD_R[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7430,open_n7431,open_n7432,LCD_R_pad[7]}),
+    .opad(LCD_R[7]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P34"),
     //.PCICLAMP("ON"),
@@ -5952,8 +5968,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u84 (
-    .do({open_n7419,open_n7420,open_n7421,LCD_R_pad[6]}),
-    .opad(LCD_R[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7453,open_n7454,open_n7455,LCD_R_pad[6]}),
+    .opad(LCD_R[6]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P32"),
     //.PCICLAMP("ON"),
@@ -5964,8 +5980,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u85 (
-    .do({open_n7442,open_n7443,open_n7444,LCD_R_pad[5]}),
-    .opad(LCD_R[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7476,open_n7477,open_n7478,LCD_R_pad[5]}),
+    .opad(LCD_R[5]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P31"),
     //.PCICLAMP("ON"),
@@ -5976,8 +5992,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u86 (
-    .do({open_n7465,open_n7466,open_n7467,LCD_R_pad[4]}),
-    .opad(LCD_R[4]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7499,open_n7500,open_n7501,LCD_R_pad[4]}),
+    .opad(LCD_R[4]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P30"),
     //.PCICLAMP("ON"),
@@ -5988,8 +6004,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u87 (
-    .do({open_n7488,open_n7489,open_n7490,LCD_R_pad[3]}),
-    .opad(LCD_R[3]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7522,open_n7523,open_n7524,LCD_R_pad[3]}),
+    .opad(LCD_R[3]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P29"),
     //.PCICLAMP("ON"),
@@ -6000,8 +6016,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u88 (
-    .do({open_n7511,open_n7512,open_n7513,1'b1}),
-    .opad(LCD_R[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7545,open_n7546,open_n7547,1'b1}),
+    .opad(LCD_R[2]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P28"),
     //.PCICLAMP("ON"),
@@ -6012,8 +6028,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u89 (
-    .do({open_n7534,open_n7535,open_n7536,1'b1}),
-    .opad(LCD_R[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7568,open_n7569,open_n7570,1'b1}),
+    .opad(LCD_R[1]));  // source/TOP.v(19)
   EF2_PHY_PAD #(
     //.LOCATION("P27"),
     //.PCICLAMP("ON"),
@@ -6024,8 +6040,8 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("0"))
     _al_u90 (
-    .do({open_n7557,open_n7558,open_n7559,1'b1}),
-    .opad(LCD_R[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(19)
+    .do({open_n7591,open_n7592,open_n7593,1'b1}),
+    .opad(LCD_R[0]));  // source/TOP.v(19)
   EF2_PHY_SPAD #(
     //.LOCATION("P59"),
     //.PULLMODE("NONE"),
@@ -6035,9 +6051,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u91 (
-    .do({open_n7581,LCD_SYNC_pad}),
+    .do({open_n7615,LCD_SYNC_pad}),
     .ts(1'b1),
-    .opad(LCD_SYNC));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(17)
+    .opad(LCD_SYNC));  // source/TOP.v(17)
   EF2_PHY_SPAD #(
     //.LOCATION("P63"),
     //.PULLMODE("NONE"),
@@ -6047,9 +6063,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u92 (
-    .do({open_n7590,LED_pad[1]}),
+    .do({open_n7624,LED_pad[1]}),
     .ts(1'b1),
-    .opad(LED[1]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
+    .opad(LED[1]));  // source/TOP.v(6)
   EF2_PHY_SPAD #(
     //.LOCATION("P64"),
     //.PULLMODE("NONE"),
@@ -6059,9 +6075,9 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     .MODE("OUT"),
     .TSMUX("INV"))
     _al_u93 (
-    .do({open_n7599,LED_pad[0]}),
+    .do({open_n7633,LED_pad[0]}),
     .ts(1'b1),
-    .opad(LED[0]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(6)
+    .opad(LED[0]));  // source/TOP.v(6)
   EF2_PHY_SPAD #(
     //.LOCATION("P4"),
     //.PULLMODE("PULLUP"),
@@ -6071,7 +6087,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u94 (
     .ipad(clk),
     .ts(1'b1),
-    .di(clk_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(3)
+    .di(clk_pad));  // source/TOP.v(3)
   EF2_PHY_SPAD #(
     //.LOCATION("P10"),
     //.PULLMODE("PULLUP"),
@@ -6081,7 +6097,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u95 (
     .ipad(i8080_CS),
     .ts(1'b1),
-    .di(i8080_CS_pad));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(8)
+    .di(i8080_CS_pad));  // source/TOP.v(8)
   EF2_PHY_SPAD #(
     //.LOCATION("P16"),
     //.PULLMODE("PULLUP"),
@@ -6091,7 +6107,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u96 (
     .ipad(i8080_D[7]),
     .ts(1'b1),
-    .di(i8080_D_pad[7]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[7]));  // source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P17"),
     //.PULLMODE("PULLUP"),
@@ -6101,7 +6117,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u97 (
     .ipad(i8080_D[6]),
     .ts(1'b1),
-    .di(i8080_D_pad[6]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[6]));  // source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P18"),
     //.PULLMODE("PULLUP"),
@@ -6111,7 +6127,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u98 (
     .ipad(i8080_D[5]),
     .ts(1'b1),
-    .di(i8080_D_pad[5]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[5]));  // source/TOP.v(12)
   EF2_PHY_SPAD #(
     //.LOCATION("P21"),
     //.PULLMODE("PULLUP"),
@@ -6121,7 +6137,7 @@ module TOP  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(1)
     _al_u99 (
     .ipad(i8080_D[2]),
     .ts(1'b1),
-    .di(i8080_D_pad[2]));  // E:/Fpga_Prj/Anlogic/LCD_8080ToRGB/source/TOP.v(12)
+    .di(i8080_D_pad[2]));  // source/TOP.v(12)
   EF2_PHY_CONFIG #(
     .DONE_PERSISTN("ENABLE"),
     .INIT_PERSISTN("ENABLE"),
